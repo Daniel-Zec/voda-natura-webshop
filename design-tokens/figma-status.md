@@ -9,7 +9,7 @@ Figma file: **VodaNatura — Design System** (`yNO0j0lV3YKQCqgksFEETD`, Starter 
 | Spacing, radius, control sizes | Collection **Layout** (24 variables, WEB code syntax `var(--vn-…)`) | `src/styles/tokens/layout.css` | In sync since 29 Sep 2026 (code is the source) |
 | Shadows | Effect styles Shadow/sm, Shadow/md | `--vn-shadow-sm/md` | In sync |
 | Icons | Page **🔣 Icons**: 20 components `Icon/{name}`, stroke bound to `color/text/primary` | `src/components/ui/Icon` | In sync |
-| Components | — | 32 components, documented in Storybook | **Not in Figma yet** |
+| Components | — | 29 components, documented in Storybook | **Not in Figma yet** |
 
 Gutter, section gap and motion values change with screen width and stay code-only.
 
