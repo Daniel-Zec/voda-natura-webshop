@@ -1,10 +1,11 @@
 /* VodaNatura layout tokens — spacing, radius, shadow, layout widths.
  *
- * NOT YET IN FIGMA. Colour and typography tokens come from the Figma file
- * "VodaNatura — Design System" (see colors.css / typography.css, never edit those by hand).
- * These values were measured from the homepage mock-ups (Claude Design canvas
- * "VodaNatura Landing Page") so the build matches them. Next step: add them to Figma as
- * variables and export them like the colours.
+ * Colour and typography tokens come from the Figma file "VodaNatura — Design System"
+ * (see colors.css / typography.css, never edit those by hand). These values were measured
+ * from the homepage mock-ups (Claude Design canvas "VodaNatura Landing Page").
+ * Since 29 Sep 2026 they are also in Figma: collection "Layout" (space/*, radius/*,
+ * control/*, layout/*) and effect styles Shadow/sm and Shadow/md. Gutter, section gap and
+ * motion stay code-only. If a value changes, change it in both places.
  */
 :root {
   /* Spacing — 4 px base */
