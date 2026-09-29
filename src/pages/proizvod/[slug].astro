@@ -1,0 +1,180 @@
+---
+/**
+ * Product page: /proizvod/{slug}/ (category not in the URL, so moving a product never changes it).
+ * Block order follows the SEO guide: H1, price, stock, cash on delivery, cart → summary →
+ * specs → maintenance → installation → related products.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Breadcrumbs } from '../../components/ui/Breadcrumbs/Breadcrumbs';
+import { ProductGallery } from '../../components/shop/ProductGallery/ProductGallery';
+import { BuyBox } from '../../components/shop/BuyBox/BuyBox';
+import { SpecsTable } from '../../components/shop/SpecsTable/SpecsTable';
+import { InfoCard } from '../../components/shop/InfoCard/InfoCard';
+import { ProductCard } from '../../components/shop/ProductCard/ProductCard';
+import { Overline } from '../../components/ui/Overline/Overline';
+import {
+  products,
+  categoryTrail,
+  productsIn,
+  imageSrc,
+  stockState,
+  toSummary,
+  setting,
+  type CatalogProduct,
+} from '../../lib/catalog';
+import { site } from '../../config/site';
+import { routes } from '../../lib/url';
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug }, props: { product: p } }));
+}
+
+interface Props {
+  product: CatalogProduct;
+}
+const { product: p } = Astro.props;
+
+const trail = categoryTrail(p.categorySlug);
+const crumbs = [
+  { label: 'Početna', href: routes.home() },
+  ...trail.map((c) => ({ label: c.name, href: routes.category(c.slug) })),
+  { label: p.name.split(/\s[–-]\s/)[0] },
+];
+const category = trail[trail.length - 1];
+const related = category
+  ? productsIn(category.slug).filter((x) => x.sku !== p.sku && x.stock !== 'out_of_stock').slice(0, 4)
+  : [];
+const images = p.images.map((i) => ({ src: imageSrc(i.src), alt: i.alt }));
+const stock = stockState(p);
+const isSystem = trail.some((c) => c.slug === 'sistemi');
+const deliveryEstimate = setting('delivery_estimate', site.delivery.estimate);
+
+const title = p.seoTitle ?? `${p.name.split(/\s[–-]\s/)[0]} – ${category?.name ?? 'VodaNatura'} | ${new Intl.NumberFormat('sr-RS').format(p.price)} RSD | VodaNatura`;
+const description =
+  p.seoDescription ?? `${p.summary ?? p.name}`.slice(0, 120).replace(/\s+\S*$/, '') + '. Plaćanje pouzećem, dostava širom Srbije.';
+
+const availability = { in_stock: 'https://schema.org/InStock', out_of_stock: 'https://schema.org/OutOfStock', made_to_order: 'https://schema.org/BackOrder' }[p.stock];
+const pageUrl = new URL(routes.product(p.slug), Astro.site).toString();
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: p.name,
+    sku: p.sku,
+    image: images.map((i) => new URL(i.src, Astro.site).toString()),
+    description: p.summary ?? undefined,
+    offers: {
+      '@type': 'Offer',
+      url: pageUrl,
+      priceCurrency: 'RSD',
+      price: p.price,
+      availability,
+      itemCondition: 'https://schema.org/NewCondition',
+      seller: { '@type': 'Organization', name: site.partner.name },
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.label,
+      item: c.href ? new URL(c.href, Astro.site).toString() : pageUrl,
+    })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} currentHref={trail[1] ? routes.category(trail[1].slug) : undefined} ogImage={p.images[0]?.src}>
+  <div class="vn-container">
+    <Breadcrumbs items={crumbs} />
+
+    <div class="top">
+      <div class="gallery">
+        <ProductGallery images={images} name={p.name} />
+      </div>
+      <div class="info">
+        {p.kicker && <Overline tone="muted">{p.kicker}</Overline>}
+        <h1 class="title">{p.name}</h1>
+        <p class="sku">Šifra: {p.sku}</p>
+        {p.summary && <p class="summary">{p.summary}</p>}
+        <BuyBox
+          sku={p.sku}
+          name={p.name}
+          price={p.price}
+          stock={stock}
+          deliveryNote={stock === 'madeToOrder' ? 'Isporuka po dolasku robe' : `Isporuka za ${deliveryEstimate}`}
+          shippingNote={site.delivery.note}
+          maintenance={p.maintenance ?? undefined}
+          warrantyYears={site.warrantyYears}
+        />
+      </div>
+    </div>
+
+    <div class="details">
+      {p.specs.length > 0 && (
+        <section class="block" aria-labelledby="specs-title">
+          <h2 id="specs-title" class="block-title">Tehničke karakteristike</h2>
+          <SpecsTable specs={p.specs} />
+        </section>
+      )}
+      {p.descriptionHtml && (
+        <section class="block" aria-labelledby="opis-title">
+          <h2 id="opis-title" class="block-title">Opis</h2>
+          <div class="prose" set:html={p.descriptionHtml} />
+        </section>
+      )}
+      {isSystem && (
+        <section class="block" aria-labelledby="ugradnja-title">
+          <h2 id="ugradnja-title" class="block-title">Ugradnja</h2>
+          <InfoCard icon="wrench" tone="info" title="Ugradnja u Subotici ili uz pomoć telefonom" link={{ href: routes.page('ugradnja'), label: 'Kako teče ugradnja' }}>
+            U Subotici i okolini ugradnju radi serviser našeg partnera – zakazujete je telefonom ({site.partner.installationPhone}). Za ostale gradove vaš vodoinstalater dobija uputstvo i pomoć telefonom. Garancija važi uz stručnu ugradnju.
+          </InfoCard>
+        </section>
+      )}
+    </div>
+
+    {related.length > 0 && category && (
+      <section class="block related" aria-labelledby="slicni-title">
+        <h2 id="slicni-title" class="block-title">Još iz kategorije {category.name}</h2>
+        <ul role="list" class="grid">
+          {related.map((r) => (
+            <li><ProductCard product={toSummary(r)} href={routes.product(r.slug)} /></li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .top { display: grid; gap: var(--vn-space-6); padding-top: var(--vn-space-4); }
+  .info { display: flex; flex-direction: column; gap: var(--vn-space-3); }
+  .title { font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+  .sku { font-size: var(--vn-text-body-sm-size); color: var(--vn-color-text-secondary); }
+  .summary { font-size: var(--vn-text-body-lg-size); line-height: var(--vn-text-body-lg-line-height); color: var(--vn-gray-700); max-width: var(--vn-reading-width); }
+
+  .details { display: grid; gap: var(--vn-space-2); }
+  .block { padding-top: var(--vn-section-gap); }
+  .details .block { padding-top: var(--vn-space-10); }
+  .block-title { margin-bottom: var(--vn-space-4); font-size: var(--vn-text-h2-size); line-height: var(--vn-text-h2-line-height); font-weight: var(--vn-text-h2-weight); }
+  .prose { max-width: var(--vn-reading-width); color: var(--vn-gray-700); }
+  .prose :global(p + p) { margin-top: var(--vn-space-3); }
+
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--vn-space-3); }
+  .grid > li { display: flex; }
+  .grid > li > :global(*) { flex: 1 1 auto; }
+
+  @media (min-width: 768px) {
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--vn-space-6); }
+  }
+  @media (min-width: 900px) {
+    .top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--vn-space-12); align-items: start; padding-top: var(--vn-space-6); }
+    .gallery { position: sticky; top: var(--vn-space-6); }
+    .details { max-width: 820px; }
+  }
+  @media (min-width: 1200px) {
+    .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+</style>

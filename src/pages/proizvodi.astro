@@ -1,0 +1,49 @@
+---
+/** All products: an overview of every category group with its subcategories. */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Breadcrumbs } from '../components/ui/Breadcrumbs/Breadcrumbs';
+import { CategoryCard } from '../components/shop/CategoryCard/CategoryCard';
+import { SectionHeader } from '../components/ui/SectionHeader/SectionHeader';
+import { childrenOf, productsIn, categoryImage } from '../lib/catalog';
+import { routes } from '../lib/url';
+
+const groups = childrenOf(null).map((g) => ({
+  group: g,
+  items: childrenOf(g.slug).filter((c) => productsIn(c.slug).length > 0),
+}));
+---
+
+<BaseLayout
+  title="Svi proizvodi – filteri za vodu i ulošci | VodaNatura"
+  description="Svi sistemi za prečišćavanje vode, ulošci, kućišta i rezervni delovi. Cene sa PDV-om, plaćanje pouzećem, dostava širom Srbije."
+>
+  <div class="vn-container">
+    <Breadcrumbs items={[{ label: 'Početna', href: routes.home() }, { label: 'Svi proizvodi' }]} />
+    <h1 class="title">Svi proizvodi</h1>
+    {groups.map(({ group, items }) => (
+      <section class="group" aria-labelledby={`g-${group.slug}`}>
+        <SectionHeader id={`g-${group.slug}`} title={group.name} subtitle={group.description ?? undefined} link={{ href: routes.category(group.slug), label: `Svi (${productsIn(group.slug).length})` }} />
+        <ul role="list" class="grid">
+          {items.map((c) => (
+            <li>
+              <CategoryCard
+                href={routes.category(c.slug)}
+                category={{ slug: c.slug, name: c.name, description: `${c.description ?? ''} · ${productsIn(c.slug).length} proizvoda`, image: categoryImage(c.slug) }}
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</BaseLayout>
+
+<style>
+  .title { padding-top: var(--vn-space-6); font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+  .group { padding-top: var(--vn-space-10); }
+  .grid { list-style: none; margin: var(--vn-space-4) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--vn-space-3); }
+  .grid > li { display: flex; }
+  .grid > li > :global(*) { flex: 1 1 auto; }
+  @media (min-width: 768px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--vn-space-4); } }
+  @media (min-width: 1100px) { .grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+</style>

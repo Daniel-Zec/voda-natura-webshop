@@ -1,0 +1,24 @@
+.nav { padding: var(--vn-space-4) 0 0; }
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--vn-text-body-sm-size);
+  line-height: var(--vn-text-body-sm-line-height);
+  color: var(--vn-color-text-secondary);
+}
+.item { display: flex; align-items: center; gap: 4px; }
+.item + .item::before { content: '›'; color: var(--vn-color-text-muted); padding-right: 2px; }
+.item a { color: var(--vn-color-text-secondary); }
+.item a:hover { color: var(--vn-color-text-link-hover); }
+.item span[aria-current] { color: var(--vn-color-text-primary); font-weight: var(--vn-font-weight-semibold); }
+
+/* Phones: long trails keep only the last two steps visible */
+@media (max-width: 599px) {
+  .item:not(:nth-last-child(-n + 2)) { display: none; }
+  .item:nth-last-child(2)::before { content: '‹'; }
+}

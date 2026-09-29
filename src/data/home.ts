@@ -6,6 +6,7 @@
 import { site } from '../config/site';
 import { routes, url } from '../lib/url';
 import type { CartridgeSummary, CategorySummary, FaqItem, ProductSummary } from './types';
+import { getProductBySku, productsIn, products, toCartridge, toSummary } from '../lib/catalog';
 
 const img = (name: string) => url(`images/products/${name}.webp`);
 
@@ -42,91 +43,35 @@ export const categories: CategorySummary[] = [
   },
 ];
 
-export const featuredProducts: ProductSummary[] = [
-  {
-    sku: 'RO6',
-    slug: 'ro-6-wfu-reverzna-osmoza',
-    name: 'RO 6 WFU – reverzna osmoza',
-    kicker: 'Ispod sudopere · 6 stepeni',
-    summary: 'Do 284 l vode za piće dnevno. Uklanja do 98% rastvorenih materija.',
-    price: 56899,
-    stock: 'inStock',
-    image: { src: img('ro-6-wfu-reverzna-osmoza'), alt: 'RO 6 WFU sistem reverzne osmoze sa rezervoarom' },
-    badge: { label: 'Najbolje za piće', tone: 'info' },
-    // Cartridge codes per stage still open with Decor Ambient (VODANATURA-33); membrane cost is known.
-    maintenance: 'Membrana na 3 godine, oko 2.170 RSD godišnje',
-  },
-  {
-    sku: 'FSCNT',
-    slug: 'fscnt-kuhinjski-filter',
-    name: 'FSCNT – kuhinjski filter',
-    kicker: 'Na slavinu · bez bušenja',
-    summary: 'Uklanja pesak, hlor i organska jedinjenja. Bolji ukus i miris vode.',
-    price: 6422,
-    stock: 'inStock',
-    image: { src: img('fscnt-kuhinjski-filter'), alt: 'FSCNT kuhinjski filter na slavini' },
-    badge: { label: 'Najpovoljniji start', tone: 'natura' },
-    maintenance: '2.438 RSD godišnje (STO 10)',
-  },
-  {
-    sku: 'WS-20',
-    slug: 'ws-20-primo-omeksivac-vode',
-    name: 'WS-20 Primo – omekšivač',
-    kicker: 'Cela kuća · automatska regeneracija',
-    summary: 'Štiti bojler, mašine i slavine od kamenca. Protok 1,2 m³/h.',
-    price: 148104,
-    stock: 'inStock',
-    image: { src: img('ws-20-primo-omeksivac-vode'), alt: 'WS-20 Primo omekšivač vode za celu kuću' },
-    badge: { label: 'Za kuće', tone: 'sand' },
-    maintenance: 'so, 3–4,5 kg po regeneraciji',
-  },
-  {
-    sku: 'WFSH-S',
-    slug: 'wfsh-s-filter-za-tus',
-    name: 'WFSH-S – filter za tuš',
-    kicker: 'Tuš · nije za piće',
-    summary: 'Manje kamenca na tušu i manje hlora koji isušuje kožu.',
-    price: 3541,
-    stock: 'inStock',
-    image: { src: img('wfsh-s-filter-za-tus'), alt: 'WFSH-S hromirani filter za tuš' },
-    maintenance: '2.210 RSD godišnje',
-  },
-];
+/** Homepage systems: products marked "featured" in the admin panel (Supabase is_featured), in their sort order. */
+export const featuredProducts: ProductSummary[] = products
+  .filter((p) => p.featured)
+  .sort((a, b) => a.sort - b.sort)
+  .map(toSummary);
 
-export const popularCartridges: CartridgeSummary[] = [
-  {
-    sku: 'BL10',
-    slug: 'bl-10-ugljeni-blok-ulozak',
-    name: 'BL 10',
-    description: 'Ugljeni blok · hlor, ukus',
-    price: 606,
-    image: { src: img('bl-10-ugljeni-blok-ulozak'), alt: 'BL 10 uložak od aktivnog uglja' },
-  },
-  {
-    sku: 'STO10',
-    slug: 'sto-10-ulozak',
-    name: 'STO 10',
-    description: 'Za FSCNT · 2 stepena',
-    price: 1219,
-    image: { src: img('sto-10-ulozak'), alt: 'STO 10 uložak za kuhinjski filter FSCNT' },
-  },
-  {
-    sku: 'WFST',
-    slug: 'wfst-filter-za-ves-masinu',
-    name: 'WFST',
-    description: 'Veš i sudo mašina',
-    price: 1813,
-    image: { src: img('wfst-filter-za-ves-masinu'), alt: 'WFST filter za veš i sudo mašinu' },
-  },
+/** Cartridge reorder tiles: the most asked-for cartridges (by SKU). */
+const cartridgeTiles: [string, string][] = [
+  ['BL-10', 'Ugljeni blok · hlor, ukus'],
+  ['STO-10', 'Za FSCNT · 2 stepena'],
+  ['WFST', 'Veš i sudo mašina'],
 ];
+export const popularCartridges: CartridgeSummary[] = cartridgeTiles
+  .map(([sku, text]) => {
+    const p = getProductBySku(sku);
+    return p ? toCartridge(p, text) : undefined;
+  })
+  .filter((c): c is CartridgeSummary => Boolean(c));
+
+/** Number of cartridges in the shop, for "Svi ulošci (N)" */
+export const cartridgeCount = productsIn('ulosci').length;
 
 /** Quick links under "Znam šta tražim" */
 export const cartridgeChips = [
   { label: 'BL 10 – ugljeni blok', href: routes.product('bl-10-ugljeni-blok-ulozak') },
   { label: 'STO 10', href: routes.product('sto-10-ulozak') },
-  { label: 'PS – sediment', href: routes.product('ps-sedimentni-ulozak') },
+  { label: 'PS – sediment', href: routes.category('sedimentni-ulosci') },
   { label: 'TLC 75 membrana', href: routes.product('tlc-75-membrana') },
-  { label: 'Big Blue 20"', href: routes.category('ulosci/big-blue') },
+  { label: 'Ugljeni ulošci', href: routes.category('ugljeni-ulosci') },
 ];
 
 /**

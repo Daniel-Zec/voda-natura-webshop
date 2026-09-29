@@ -1,0 +1,64 @@
+.gallery { display: flex; flex-direction: column; gap: var(--vn-space-3); }
+.radio { position: absolute; opacity: 0; pointer-events: none; }
+
+.stage {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--vn-radius-lg);
+  background: var(--vn-color-bg-muted);
+  overflow: hidden;
+}
+.main {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--vn-space-6);
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  opacity: 0;
+  transition: opacity var(--vn-duration-fast) var(--vn-ease);
+}
+
+.thumbs { display: flex; gap: var(--vn-space-2); flex-wrap: wrap; }
+.thumb {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: var(--vn-radius-sm);
+  border: 2px solid var(--vn-color-border-default);
+  background: var(--vn-color-bg-muted);
+  overflow: hidden;
+  cursor: pointer;
+}
+.thumb img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; padding: 4px; }
+.thumb:hover { border-color: var(--vn-color-border-strong); }
+
+/* Show the image whose radio is checked, and mark its thumbnail (up to 8 images) */
+.radio:nth-of-type(1):checked ~ .stage .main:nth-child(1),
+.radio:nth-of-type(2):checked ~ .stage .main:nth-child(2),
+.radio:nth-of-type(3):checked ~ .stage .main:nth-child(3),
+.radio:nth-of-type(4):checked ~ .stage .main:nth-child(4),
+.radio:nth-of-type(5):checked ~ .stage .main:nth-child(5),
+.radio:nth-of-type(6):checked ~ .stage .main:nth-child(6),
+.radio:nth-of-type(7):checked ~ .stage .main:nth-child(7),
+.radio:nth-of-type(8):checked ~ .stage .main:nth-child(8) { opacity: 1; }
+.radio:nth-of-type(1):checked ~ .thumbs .thumb:nth-child(1),
+.radio:nth-of-type(2):checked ~ .thumbs .thumb:nth-child(2),
+.radio:nth-of-type(3):checked ~ .thumbs .thumb:nth-child(3),
+.radio:nth-of-type(4):checked ~ .thumbs .thumb:nth-child(4),
+.radio:nth-of-type(5):checked ~ .thumbs .thumb:nth-child(5),
+.radio:nth-of-type(6):checked ~ .thumbs .thumb:nth-child(6),
+.radio:nth-of-type(7):checked ~ .thumbs .thumb:nth-child(7),
+.radio:nth-of-type(8):checked ~ .thumbs .thumb:nth-child(8) { border-color: var(--vn-color-action-primary); }
+.radio:focus-visible ~ .thumbs { outline: 3px solid var(--vn-color-border-focus); outline-offset: 2px; border-radius: var(--vn-radius-sm); }
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--vn-radius-lg);
+  background: var(--vn-color-bg-muted);
+  color: var(--vn-color-text-muted);
+}

@@ -19,7 +19,7 @@ import { Overline } from '../components/ui/Overline/Overline';
 import { ArrowLink } from '../components/ui/ArrowLink/ArrowLink';
 import { Button } from '../components/ui/Button/Button';
 import { Icon } from '../components/ui/Icon/Icon';
-import { categories, featuredProducts, popularCartridges, cartridgeChips, homeFaq } from '../data/home';
+import { categories, featuredProducts, popularCartridges, cartridgeChips, homeFaq, cartridgeCount } from '../data/home';
 import { site } from '../config/site';
 import { routes, url } from '../lib/url';
 import { formatNumber } from '../lib/format';
@@ -46,7 +46,7 @@ const faqJsonLd = {
   mainEntity: homeFaq.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
 };
 
-const ro = featuredProducts[0];
+const ro = featuredProducts.find((p) => p.sku === 'RO6') ?? featuredProducts[0];
 ---
 
 <BaseLayout
@@ -91,7 +91,7 @@ const ro = featuredProducts[0];
         id="kategorije-title"
         title="Izaberite po potrebi"
         subtitle="Svaka kategorija rešava jedan problem – od ukusa vode do kamenca u bojleru."
-        link={{ href: routes.category('proizvodi'), label: 'Svi proizvodi' }}
+        link={{ href: url('proizvodi/'), label: 'Svi proizvodi' }}
       />
       <ul role="list" class="category-grid section-body">
         {categories.map((c) => (
@@ -172,7 +172,7 @@ const ro = featuredProducts[0];
           <Overline tone="sand">Već imate filter?</Overline>
           <h2 id="ulosci-title" class="reorder-title">Vreme je za nove uloške</h2>
           <p class="reorder-lead">Većina uložaka se menja na 6 meseci. Pronađite svoj po šifri ili po sistemu koji imate.</p>
-          <ArrowLink href={routes.category('ulosci')}>Svi ulošci (55)</ArrowLink>
+          <ArrowLink href={routes.category('ulosci')}>Svi ulošci ({cartridgeCount})</ArrowLink>
         </div>
         <ul role="list" class="reorder-grid">
           {popularCartridges.map((c) => (

@@ -280,3 +280,33 @@ join public.products p on p.sku = r.sku;""")
 
 print('\n'.join(out))
 print(json.dumps(summary, ensure_ascii=False, indent=2), file=sys.stderr)
+
+# ---------------------------------------------------------------- snapshot (same shape as scripts/fetch-catalog.mjs)
+if '--snapshot' in sys.argv:
+    target = Path(sys.argv[sys.argv.index('--snapshot') + 1])
+    by_sku_images = {}
+    for im in image_rows:
+        by_sku_images.setdefault(im['sku'], []).append({'src': im['src'], 'alt': im['alt'] or next(r['name'] for r in rows if r['sku'] == im['sku'])})
+    snapshot = {
+        'generatedAt': '2026-09-29T14:10:00Z',
+        'source': 'import-script',
+        'settings': {
+            'shop_phone': '[TELEFON]', 'shop_hours': 'Radnim danima [RADNO VREME]', 'delivery_estimate': 'oko 4 radna dana',
+            'installation_phone': '[TELEFON DECOR AMBIENT]', 'installation_price': '[CENA UGRADNJE]',
+        },
+        'categories': [
+            {'slug': slug, 'name': name, 'parentSlug': parent, 'sort': sort, 'showInMenu': menu, 'description': desc,
+             'intro': None, 'seoTitle': None, 'seoDescription': None}
+            for slug, name, parent, sort, menu, desc in CATEGORIES
+        ],
+        'products': sorted([
+            {'sku': r['sku'], 'slug': r['slug'], 'name': r['name'], 'categorySlug': r['cat'], 'kicker': r.get('kicker'),
+             'summary': r.get('summary'), 'descriptionHtml': None, 'specs': r.get('specs', []), 'maintenance': r.get('maint'),
+             'badge': {'label': r['bl'], 'tone': r['bt']} if r.get('bl') else None, 'price': r['price'], 'stock': r['stock'],
+             'stockQty': r.get('qty'), 'featured': r.get('feat', False), 'sort': r.get('sort', 100), 'partnerUrl': r.get('url'),
+             'seoTitle': None, 'seoDescription': None, 'images': by_sku_images.get(r['sku'], [])}
+            for r in rows if r.get('vis')
+        ], key=lambda p: (p['sort'], p['name'])),
+    }
+    target.write_text(json.dumps(snapshot, ensure_ascii=False, indent=1) + '\n')
+    print(f'snapshot: {len(snapshot["products"])} products -> {target}', file=sys.stderr)

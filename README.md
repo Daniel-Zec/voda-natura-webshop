@@ -13,7 +13,7 @@ Webshop for home water filters in Serbia. Decor Ambient d.o.o. (Subotica) packs,
 | Components | React + CSS modules | Every reusable part is a React component, documented in Storybook |
 | Design tokens | CSS variables from Figma "VodaNatura — Design System" | One source for colours and type |
 | Design system docs | [Storybook](https://storybook.js.org) | Living catalogue of all components and tokens |
-| Data, login, email, jobs | [Supabase](https://supabase.com) project `vodanatura` (EU Frankfurt) | Next milestone |
+| Data, login, email, jobs | [Supabase](https://supabase.com) project `vodanatura` (EU Frankfurt) | Catalogue live; orders, login and email next |
 | Hosting (test) | GitHub Pages via GitHub Actions | Free; final host decided later |
 
 ## Run it locally
@@ -47,6 +47,17 @@ src/
 design-tokens/          full token JSON from Figma
 docs/                   decisions and notes
 ```
+
+## How the catalogue reaches the site
+
+1. Products, prices, stock and categories live in Supabase (`supabase/migrations/` holds the structure).
+2. Before every build, `scripts/fetch-catalog.mjs` reads the visible catalogue with the public key and writes `src/data/catalog.json`; partner photos are copied to `/images/partner/`.
+3. Astro builds one page per category (`/{slug}/`) and product (`/proizvod/{slug}/`) from that file.
+4. If Supabase can't be reached, the last committed `catalog.json` is used, so the site still builds.
+
+A change in Supabase shows on the site after the next build (any push, or **Actions → Deploy to GitHub Pages → Run workflow**). An automatic rebuild after admin changes comes with the admin panel.
+
+First import from the Decor Ambient feed: `docs/catalog-import.md`.
 
 ## Rules
 

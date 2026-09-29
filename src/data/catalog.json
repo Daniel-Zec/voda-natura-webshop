@@ -1,0 +1,4953 @@
+{
+ "generatedAt": "2026-09-29T14:10:00Z",
+ "source": "import-script",
+ "settings": {
+  "shop_phone": "[TELEFON]",
+  "shop_hours": "Radnim danima [RADNO VREME]",
+  "delivery_estimate": "oko 4 radna dana",
+  "installation_phone": "[TELEFON DECOR AMBIENT]",
+  "installation_price": "[CENA UGRADNJE]"
+ },
+ "categories": [
+  {
+   "slug": "sistemi",
+   "name": "Sistemi za vodu",
+   "parentSlug": null,
+   "sort": 1,
+   "showInMenu": true,
+   "description": "Kompletni sistemi za prečišćavanje vode za stan i kuću.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "filteri-za-pijacu-vodu",
+   "name": "Voda za piće",
+   "parentSlug": "sistemi",
+   "sort": 1,
+   "showInMenu": true,
+   "description": "Reverzna osmoza, kuhinjski filteri i vodomati.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "reverzna-osmoza",
+   "name": "Reverzna osmoza",
+   "parentSlug": "filteri-za-pijacu-vodu",
+   "sort": 1,
+   "showInMenu": true,
+   "description": "Sistemi reverzne osmoze ispod sudopere.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "filteri-za-celu-kucu",
+   "name": "Cela kuća",
+   "parentSlug": "sistemi",
+   "sort": 2,
+   "showInMenu": true,
+   "description": "Pesak, rđa i hlor na ulazu vode u kuću.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "omeksivaci-vode",
+   "name": "Omekšivači",
+   "parentSlug": "sistemi",
+   "sort": 3,
+   "showInMenu": true,
+   "description": "Protiv kamenca u tvrdoj vodi.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "tus-i-kucni-aparati",
+   "name": "Tuš i aparati",
+   "parentSlug": "sistemi",
+   "sort": 4,
+   "showInMenu": true,
+   "description": "Filteri za tuš, veš i sudo mašinu.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "ulosci-i-delovi",
+   "name": "Ulošci i delovi",
+   "parentSlug": null,
+   "sort": 2,
+   "showInMenu": true,
+   "description": "Zamenski ulošci, kućišta i rezervni delovi.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "ulosci",
+   "name": "Ulošci",
+   "parentSlug": "ulosci-i-delovi",
+   "sort": 1,
+   "showInMenu": true,
+   "description": "Zamena na 6 meseci, sve veličine.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "sedimentni-ulosci",
+   "name": "Sedimentni ulošci",
+   "parentSlug": "ulosci",
+   "sort": 1,
+   "showInMenu": true,
+   "description": "Pesak, rđa i sitne čestice.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "ugljeni-ulosci",
+   "name": "Ulošci od aktivnog uglja",
+   "parentSlug": "ulosci",
+   "sort": 2,
+   "showInMenu": true,
+   "description": "Hlor, ukus i miris vode.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "ulosci-za-gvozdje-i-kamenac",
+   "name": "Gvožđe i kamenac",
+   "parentSlug": "ulosci",
+   "sort": 3,
+   "showInMenu": true,
+   "description": "Uklanjanje gvožđa i omekšavanje vode.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "ulosci-za-reverznu-osmozu",
+   "name": "Ulošci i membrane za reverznu osmozu",
+   "parentSlug": "ulosci",
+   "sort": 4,
+   "showInMenu": true,
+   "description": "In-line ulošci i RO membrane.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "ulosci-za-tus",
+   "name": "Ulošci za filter za tuš",
+   "parentSlug": "ulosci",
+   "sort": 5,
+   "showInMenu": true,
+   "description": "Zamenski ulošci za filtere za tuš.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "kucista",
+   "name": "Kućišta",
+   "parentSlug": "ulosci-i-delovi",
+   "sort": 2,
+   "showInMenu": true,
+   "description": "Kućišta za uloške od 10″, 20″ i Big Blue.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  },
+  {
+   "slug": "rezervni-delovi",
+   "name": "Rezervni delovi",
+   "parentSlug": "ulosci-i-delovi",
+   "sort": 3,
+   "showInMenu": false,
+   "description": "Slavine, rezervoari, ventili, spojnice i cevi.",
+   "intro": null,
+   "seoTitle": null,
+   "seoDescription": null
+  }
+ ],
+ "products": [
+  {
+   "sku": "RO6",
+   "slug": "ro-6-wfu-reverzna-osmoza",
+   "name": "RO 6 WFU – Sistem Reverzne Osmoze",
+   "categorySlug": "reverzna-osmoza",
+   "kicker": "Ispod sudopere · 6 stepeni",
+   "summary": "Do 284 l vode za piće dnevno. Uklanja do 98% rastvorenih materija.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "2,8 – 6 bara"
+    },
+    {
+     "label": "RO membrana",
+     "value": "75 GPD (284 lit/dan)"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Priključak",
+     "value": "1/2″, 3/4″, 1″"
+    },
+    {
+     "label": "Dimenzije sklopljenog sistema (Visina x Širina x Dubina)",
+     "value": "47cm x 43cm x 14cm"
+    }
+   ],
+   "maintenance": "Membrana na 3 godine, oko 2.170 RSD godišnje",
+   "badge": {
+    "label": "Najbolje za piće",
+    "tone": "info"
+   },
+   "price": 56899,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": true,
+   "sort": 1,
+   "partnerUrl": "https://decorambient.com/prodavnica/ro-6-sistem-reverzne-osmoze/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "images/products/ro-6-wfu-reverzna-osmoza.webp",
+     "alt": "RO 6 WFU – Sistem Reverzne Osmoze"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-RO6.webp",
+     "alt": "RO 6 WFU – Sistem Reverzne Osmoze"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-RO-Shema.webp",
+     "alt": "RO 6 WFU – Sistem Reverzne Osmoze"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-RO6-General.webp",
+     "alt": "RO 6 WFU – Sistem Reverzne Osmoze"
+    }
+   ]
+  },
+  {
+   "sku": "FSCNT",
+   "slug": "fscnt-kuhinjski-filter",
+   "name": "FSCNT – Kuhinjski filter nadgradni",
+   "categorySlug": "filteri-za-pijacu-vodu",
+   "kicker": "Na slavinu · bez bušenja",
+   "summary": "Uklanja pesak, hlor i organska jedinjenja. Bolji ukus i miris vode.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Filter uložak",
+     "value": "STO"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Maksimalni protok",
+     "value": "6 lit/min"
+    },
+    {
+     "label": "Priključak",
+     "value": "3/4″"
+    }
+   ],
+   "maintenance": "2.438 RSD godišnje (STO 10)",
+   "badge": {
+    "label": "Najpovoljniji start",
+    "tone": "natura"
+   },
+   "price": 6422,
+   "stock": "in_stock",
+   "stockQty": 4,
+   "featured": true,
+   "sort": 2,
+   "partnerUrl": "https://decorambient.com/prodavnica/fscnt-kuhinjski-filter-nadgradni/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "images/products/fscnt-kuhinjski-filter.webp",
+     "alt": "FSCNT – Kuhinjski filter nadgradni"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-FSCNT.webp",
+     "alt": "FSCNT – Kuhinjski filter nadgradni"
+    }
+   ]
+  },
+  {
+   "sku": "WS-20",
+   "slug": "ws-20-primo-omeksivac-vode",
+   "name": "WS-20 PRIMO – Uređaj za omekšavanje vode",
+   "categorySlug": "omeksivaci-vode",
+   "kicker": "Cela kuća · automatska regeneracija",
+   "summary": "Štiti bojler, mašine i slavine od kamenca. Protok 1,2 m³/h.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Nominalni protk",
+     "value": "1,2 m3/h"
+    },
+    {
+     "label": "Zapremina rezervoara",
+     "value": "20 litara"
+    },
+    {
+     "label": "Prosečna potrošnja vode pri regeneraciji",
+     "value": "200 litara"
+    },
+    {
+     "label": "Prosečna potrošnja soli pri regeneraciji",
+     "value": "3-4,5 kg"
+    },
+    {
+     "label": "Kapacitet spremnika za so",
+     "value": "60 kg"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "4-30°C"
+    },
+    {
+     "label": "El. napajanje",
+     "value": "220-240V / 50-60 Hz, 12V(1A)"
+    },
+    {
+     "label": "Potrošnja el. energije",
+     "value": "5W (za vreme regeneracije)"
+    },
+    {
+     "label": "Radni pritisak",
+     "value": "2-8 bara"
+    },
+    {
+     "label": "Veličina priključka",
+     "value": "1″"
+    },
+    {
+     "label": "Dimenzije uloška (Širina/Dubina/Visina)",
+     "value": "32cm/50cm/114cm"
+    }
+   ],
+   "maintenance": "so, 3–4,5 kg po regeneraciji",
+   "badge": {
+    "label": "Za kuće",
+    "tone": "sand"
+   },
+   "price": 148104,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": true,
+   "sort": 3,
+   "partnerUrl": "https://decorambient.com/prodavnica/ws-20-primo-uredjaj-za-omeksavanje-vode/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "images/products/ws-20-primo-omeksivac-vode.webp",
+     "alt": "WS-20 PRIMO – Uređaj za omekšavanje vode"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2026/02/WS-20-Primo.webp",
+     "alt": "WS-20 PRIMO – Uređaj za omekšavanje vode"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-shema-spajanja.webp",
+     "alt": "WS-20 PRIMO – Uređaj za omekšavanje vode"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-Crystal-Teh.podaci.webp",
+     "alt": "WS-20 PRIMO – Uređaj za omekšavanje vode"
+    }
+   ]
+  },
+  {
+   "sku": "WFSH-S",
+   "slug": "wfsh-s-filter-za-tus",
+   "name": "WFSH-S – Filter za tuš sa izmenljivim uloškom",
+   "categorySlug": "tus-i-kucni-aparati",
+   "kicker": "Tuš · nije za piće",
+   "summary": "Manje kamenca na tušu i manje hlora koji isušuje kožu.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-60°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Maksimalni protok",
+     "value": "8 lit/min"
+    },
+    {
+     "label": "Priključak",
+     "value": "1/2″"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "15,5cm x 6cm"
+    }
+   ],
+   "maintenance": "2.210 RSD godišnje",
+   "badge": null,
+   "price": 3541,
+   "stock": "in_stock",
+   "stockQty": 7,
+   "featured": true,
+   "sort": 4,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfsh-s-filter-za-tus-hrom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "images/products/wfsh-s-filter-za-tus.webp",
+     "alt": "WFSH-S – Filter za tuš sa izmenljivim uloškom"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WFSH.webp",
+     "alt": "WFSH-S – Filter za tuš sa izmenljivim uloškom"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-WFSH-S-montage.webp",
+     "alt": "WFSH-S – Filter za tuš sa izmenljivim uloškom"
+    }
+   ]
+  },
+  {
+   "sku": "BL-10",
+   "slug": "bl-10-ugljeni-blok-ulozak",
+   "name": "BL 10 – Uložak od aktivnog uglja za kućište od 10",
+   "categorySlug": "ugljeni-ulosci",
+   "kicker": "Ugljeni blok · hlor, ukus",
+   "summary": "Uložak od aktivnog uglja služi za uklanjaje hlora i hlornih jedinjenja za kućišta od 10 inča.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-55°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "5 lit/min"
+    },
+    {
+     "label": "Kapacitet",
+     "value": "10.000 litara"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna/Širina unutrašnja)",
+     "value": "251mm/68mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 606,
+   "stock": "in_stock",
+   "stockQty": 212,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/bl-10-ulozak-od-aktivnog-uglja-za-kuciste-od-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "images/products/bl-10-ugljeni-blok-ulozak.webp",
+     "alt": "BL 10 – Uložak od aktivnog uglja za kućište od 10"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-BL10.webp",
+     "alt": "BL 10 – Uložak od aktivnog uglja za kućište od 10"
+    }
+   ]
+  },
+  {
+   "sku": "BL-10BB",
+   "slug": "bl-10bb-ulozak-od-aktivnog-uglja-za-big-blue-kuciste-od-10",
+   "name": "BL 10BB – Uložak od aktivnog uglja za Big Blue kućište od 10″",
+   "categorySlug": "ugljeni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od aktivnog uglja služi za uklanjaje hlora i hlornih jedinjenja za Big Blue kućišta od 10 inča.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-55°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "20 lit/min"
+    },
+    {
+     "label": "Kapacitet",
+     "value": "18.000 litara"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna/Širina unutrašnja)",
+     "value": "252mm/106mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 2761,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/bl-10bb-ulozak-od-aktivnog-uglja-za-big-blue-kuciste-od-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-BL-10BB.webp",
+     "alt": "BL 10BB – Uložak od aktivnog uglja za Big Blue kućište od 10″"
+    }
+   ]
+  },
+  {
+   "sku": "BL-20BB",
+   "slug": "bl-20bb-ulozak-od-aktivnog-uglja-za-big-blue-kuciste-od-20",
+   "name": "BL 20BB – Uložak od aktivnog uglja za Big Blue kućište od 20″",
+   "categorySlug": "ugljeni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od aktivnog uglja služi za uklanjaje hlora i hlornih jedinjenja za Big Blue kućišta od 20 inča.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-55°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "60 lit/min"
+    },
+    {
+     "label": "Kapacitet",
+     "value": "22.000 litara"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna/Širina unutrašnja)",
+     "value": "510mm/112mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 5521,
+   "stock": "in_stock",
+   "stockQty": 4,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/bl-20bb-ulozak-od-aktivnog-uglja-za-big-blue-kuciste-od-20/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-BL20BB.webp",
+     "alt": "BL 20BB – Uložak od aktivnog uglja za Big Blue kućište od 20″"
+    }
+   ]
+  },
+  {
+   "sku": "BR-BB",
+   "slug": "br-bb-montazna-pojedinacna-metalna-ploca-za-bb-kucista-10-i-20",
+   "name": "BR BB – Montažna pojedinačna metalna ploča za BB kućišta 10″ i 20″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": null,
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 2364,
+   "stock": "in_stock",
+   "stockQty": 3,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/br-bb/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-1-bracket.webp",
+     "alt": "BR BB – Montažna pojedinačna metalna ploča za BB kućišta 10″ i 20″"
+    }
+   ]
+  },
+  {
+   "sku": "BR1P",
+   "slug": "br1p-montazna-pojedinacna-plasticna-ploca-za-10-kucista",
+   "name": "BR1P – Montažna pojedinačna plastična ploča za 10″ kućišta",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": null,
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 445,
+   "stock": "in_stock",
+   "stockQty": 18,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/br1p-montazna-pojedinacna-plasticna-ploca-za-10-kucista/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-br1p.webp",
+     "alt": "BR1P – Montažna pojedinačna plastična ploča za 10″ kućišta"
+    }
+   ]
+  },
+  {
+   "sku": "BV1214",
+   "slug": "bv-1214-metalni-ventil-1-2-x-1-4",
+   "name": "BV 1214 – Metalni ventil 1/2″ x 1/4″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Metalni ventil 1/2″MT x 1/4″ za RO cev.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Boja",
+     "value": "Hrom"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 809,
+   "stock": "in_stock",
+   "stockQty": 64,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/bv-1214-metalni-ventil-1-2-x-1-4/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-BV1214.webp",
+     "alt": "BV 1214 – Metalni ventil 1/2″ x 1/4″"
+    }
+   ]
+  },
+  {
+   "sku": "BV1414",
+   "slug": "bv-1414-metalni-ventil-1-4-x-1-4",
+   "name": "BV 1414 – Metalni ventil 1/4″ x 1/4″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Metalni ventil 1/4″MT x 1/4″ za RO cev.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Boja",
+     "value": "Hrom"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 727,
+   "stock": "in_stock",
+   "stockQty": 43,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/bv-1414-metalni-ventil-1-4-x-1-4/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-BV.webp",
+     "alt": "BV 1414 – Metalni ventil 1/4″ x 1/4″"
+    }
+   ]
+  },
+  {
+   "sku": "C2000",
+   "slug": "c-2000-jednostruki-nosac-in-line-uloska",
+   "name": "C 2000 – Jednostruki nosač In-line uloška",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Jednostruki nosač In-line uloška za RO sistem.",
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 121,
+   "stock": "in_stock",
+   "stockQty": 46,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/c-2000-jednostruki-nosac-in-line-uloska/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-C2000.webp",
+     "alt": "C 2000 – Jednostruki nosač In-line uloška"
+    }
+   ]
+  },
+  {
+   "sku": "C2500",
+   "slug": "c-2500-jednostruki-nosac-kucista-membrane",
+   "name": "C 2500 – Jednostruki nosač kućišta membrane",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Jednostruki nosač kućišta membrane RO sistema.",
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 121,
+   "stock": "in_stock",
+   "stockQty": 30,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/c-2500-jednostruki-nosac-kucista-membrane/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-C2000.webp",
+     "alt": "C 2500 – Jednostruki nosač kućišta membrane"
+    }
+   ]
+  },
+  {
+   "sku": "C34B",
+   "slug": "c-34-b-konektor-mesingani-3-4-x-3-4-bez-otvora",
+   "name": "C 34 B- Konektor mesingani 3/4″ x 3/4″ bez otvora",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Konektor mesingani 3/4″MIP x 3/4″ bez otvora.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Boja",
+     "value": "Hrom"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 937,
+   "stock": "in_stock",
+   "stockQty": 25,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/c-38-konektor-mesingani-3-4-x-3-4-bez-otvora/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-C-34B.webp",
+     "alt": "C 34 B- Konektor mesingani 3/4″ x 3/4″ bez otvora"
+    }
+   ]
+  },
+  {
+   "sku": "C34",
+   "slug": "c-34-konektor-mesingani-3-4-x-3-4-sa-otvorom-1-4",
+   "name": "C 34 – Konektor mesingani 3/4″ x 3/4″ sa otvorom 1/4″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Konektor mesingani 3/4″MIP x 3/4″ sa otvorom 1/4″.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Boja",
+     "value": "Hrom"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Maksimalni protok",
+     "value": "3,5 l/min"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 937,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/c-34-konektor-mesingani-3-4-x-3-4-sa-otvorom-1-4/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-C-34.webp",
+     "alt": "C 34 – Konektor mesingani 3/4″ x 3/4″ sa otvorom 1/4″"
+    }
+   ]
+  },
+  {
+   "sku": "C38",
+   "slug": "c-38-konektor-mesingani-3-8-x-3-8-sa-otvorom-1-4",
+   "name": "C 38 – Konektor mesingani 3/8″ x 3/8″ sa otvorom 1/4″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Konektor mesingani 3/8″MIP x 3/8″ sa otvorom 1/4″.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Boja",
+     "value": "Hrom"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 937,
+   "stock": "in_stock",
+   "stockQty": 13,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/c-38-konektor-mesingani-3-8-x-3-8-sa-otvorom-1-4/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-C-38.webp",
+     "alt": "C 38 – Konektor mesingani 3/8″ x 3/8″ sa otvorom 1/4″"
+    }
+   ]
+  },
+  {
+   "sku": "CERAM",
+   "slug": "ceram-keramicki-ulozak-za-kucste-od-10",
+   "name": "CERAM – Keramički uložak za kućšte od 10″",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od specijalne keramike za kućište od 10 inča, finoće filtriranja od 0,3 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "3 lit/min"
+    },
+    {
+     "label": "Kapacitet",
+     "value": "10.000 litara"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "250mm/70mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1663,
+   "stock": "in_stock",
+   "stockQty": 15,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ceram-keramicki-ulozak-za-kucste-od-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-CERAM.webp",
+     "alt": "CERAM – Keramički uložak za kućšte od 10″"
+    }
+   ]
+  },
+  {
+   "sku": "CW929",
+   "slug": "cw-929-vodomat-samostojeci-sa-ro-sistemom",
+   "name": "CW 929 – Vodomat samostojeći sa RO sistemom",
+   "categorySlug": "filteri-za-pijacu-vodu",
+   "kicker": "Samostojeći · topla, hladna i sobna voda",
+   "summary": "Samostojeći vodomat sa sistemom reverzne osmoze.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Potrebni priključci su",
+     "value": "vodovodna mreža od 3/4″ sa stalnim pritiskom većim od 2,8 bara (max. 6 bara), kanalizaciona mreža za otpadnu vodu, električna mreža od 220V stalnog napona."
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 199344,
+   "stock": "made_to_order",
+   "stockQty": null,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/cw-929-vodomat-samostojeci-sa-ro-sistemom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-COOLER-CW-929C.webp",
+     "alt": "CW 929 – Vodomat samostojeći sa RO sistemom"
+    }
+   ]
+  },
+  {
+   "sku": "DC2000",
+   "slug": "dc-2000-dvostruki-nosac-in-line-uloska",
+   "name": "DC 2000 – Dvostruki nosač In-line uloška",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Dvostruki nosač In-line uloška za RO sistem.",
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 121,
+   "stock": "in_stock",
+   "stockQty": 25,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/dc-2000-dvostruki-nosac-in-line-uloska/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-DC2000.webp",
+     "alt": "DC 2000 – Dvostruki nosač In-line uloška"
+    }
+   ]
+  },
+  {
+   "sku": "DC2500",
+   "slug": "dc-2500-dvostruki-nosac-kucista-membrane-i-in-line-uloska",
+   "name": "DC 2500 – Dvostruki nosač kućišta membrane i In-line uloška",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Jednostruki nosač kućišta membrane RO sistema.",
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 121,
+   "stock": "in_stock",
+   "stockQty": 48,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/dc-2500-dvostruki-nosac-kucista-membrane-i-in-line-uloska/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-DC2500.webp",
+     "alt": "DC 2500 – Dvostruki nosač kućišta membrane i In-line uloška"
+    }
+   ]
+  },
+  {
+   "sku": "DW8",
+   "slug": "dw-8-crystal-uredjaj-za-omeksavanje-vode-8l",
+   "name": "DW 8 CRYSTAL – Uređaj za omekšavanje vode 8L",
+   "categorySlug": "omeksivaci-vode",
+   "kicker": "Cela kuća · automatska regeneracija",
+   "summary": "Uređaj za omekšavanje vode.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Nominalni protk",
+     "value": "0,5 m3/h"
+    },
+    {
+     "label": "Zapremina rezervoara",
+     "value": "8 litara"
+    },
+    {
+     "label": "Prosečna potrošnja vode pri regeneraciji",
+     "value": "100 litara"
+    },
+    {
+     "label": "Prosečna potrošnja soli pri regeneraciji",
+     "value": "2-2,5 kg"
+    },
+    {
+     "label": "Kapacitet spremnika za so",
+     "value": "21 kg"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "4-30°C"
+    },
+    {
+     "label": "El. napajanje",
+     "value": "220-240V / 50-60 Hz, 12V(1A)"
+    },
+    {
+     "label": "Potrošnja el. energije",
+     "value": "5W (za vreme regeneracije)"
+    },
+    {
+     "label": "Radni pritisak",
+     "value": "2-8 bara"
+    },
+    {
+     "label": "Veličina priključka",
+     "value": "1″"
+    },
+    {
+     "label": "Dimenzije uloška (Širina/Dubina/Visina)",
+     "value": "32cm/50cm/67cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 133294,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/dw-8-crystal-uredjaj-za-omeksavanje-vode-8l/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-BLUE-Line-DW8.webp",
+     "alt": "DW 8 CRYSTAL – Uređaj za omekšavanje vode 8L"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-BLUE-Line-DW8-dim.webp",
+     "alt": "DW 8 CRYSTAL – Uređaj za omekšavanje vode 8L"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-shema-spajanja.webp",
+     "alt": "DW 8 CRYSTAL – Uređaj za omekšavanje vode 8L"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-Crystal-Teh.podaci.webp",
+     "alt": "DW 8 CRYSTAL – Uređaj za omekšavanje vode 8L"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Blue-Line-3.webp",
+     "alt": "DW 8 CRYSTAL – Uređaj za omekšavanje vode 8L"
+    }
+   ]
+  },
+  {
+   "sku": "EL-20M 20BB",
+   "slug": "el-20m-20bb-ulozak-od-talasastog-polipropilena-za-big-blue-kucista-od",
+   "name": "EL 20M 20BB- Uložak od talasastog Polipropilena za Big Blue kućišta od 20″",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od talasastog polipropilena za Big Blue kućište od 20 inča, finoće filtriranja 20 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 5454,
+   "stock": "in_stock",
+   "stockQty": 4,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/el-20m-20bb-ulozak-od-talasastog-polipropilena-za-big-blue-kucista-od-20/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-EL10.webp",
+     "alt": "EL 20M 20BB- Uložak od talasastog Polipropilena za Big Blue kućišta od 20″"
+    }
+   ]
+  },
+  {
+   "sku": "EL-10M",
+   "slug": "el-10m-ulozak-od-talasastog-polipropilena-za-kucista-od-10",
+   "name": "EL-10M- Uložak od talasastog Polipropilena za kućišta od 10″",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od talasastog polipropilena za kućište od 10 inča, finoće filtriranja 10 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "25 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "250mm/67mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1024,
+   "stock": "in_stock",
+   "stockQty": 230,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/el-10m-ulozak-od-talasastog-polipropilena-za-kucista-od-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-EL10.webp",
+     "alt": "EL-10M- Uložak od talasastog Polipropilena za kućišta od 10″"
+    }
+   ]
+  },
+  {
+   "sku": "EL-5M",
+   "slug": "el-5m-ulozak-od-talasastog-polipropilena-za-kucista-od-10",
+   "name": "EL-5M- Uložak od talasastog Polipropilena za kućišta od 10″",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od talasastog polipropilena za kućište od 10 inča, finoće filtriranja 5 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "25 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "250mm/67mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1024,
+   "stock": "in_stock",
+   "stockQty": 17,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/el-5m-ulozak-od-talasastog-polipropilena-za-kucista-od-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-EL10.webp",
+     "alt": "EL-5M- Uložak od talasastog Polipropilena za kućišta od 10″"
+    }
+   ]
+  },
+  {
+   "sku": "FCC-N",
+   "slug": "fcc-n-jednorucna-slavina-novo",
+   "name": "FCC N – Jednoručna slavina NOVO",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Jednostruka slavina novog dizajna za RO sisteme.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Boja",
+     "value": "Hrom"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Maksimalni protok",
+     "value": "3,5 l/min"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 6760,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/fcc-jednorucna-slavina-nova/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-FCC-N.webp",
+     "alt": "FCC N – Jednoručna slavina NOVO"
+    }
+   ]
+  },
+  {
+   "sku": "FCC",
+   "slug": "fcc-jednorucna-slavina",
+   "name": "FCC – Jednoručna slavina",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Jednostruka slavina za RO sisteme.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Boja",
+     "value": "Hrom"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Maksimalni protok",
+     "value": "3,5 l/min"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 3832,
+   "stock": "in_stock",
+   "stockQty": 6,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/fcc-jednostruka-slavina/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-FCC.webp",
+     "alt": "FCC – Jednoručna slavina"
+    }
+   ]
+  },
+  {
+   "sku": "FCDC",
+   "slug": "fcdc-dvorucna-slavina",
+   "name": "FCDC – Dvoručna slavina",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Dvostruka slavina za RO sisteme.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Boja",
+     "value": "Hrom"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Maksimalni protok",
+     "value": "3,5 l/min"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 4902,
+   "stock": "in_stock",
+   "stockQty": 27,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/fcdc-dvostruka-slavina/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-FCDC.webp",
+     "alt": "FCDC – Dvoručna slavina"
+    }
+   ]
+  },
+  {
+   "sku": "FCDC-N",
+   "slug": "fcdc-n-dvorucna-slavina-novo",
+   "name": "FCDC-N – Dvoručna slavina NOVO",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Dvostruka slavina novog dizajna za RO sisteme.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Boja",
+     "value": "Hrom"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Maksimalni protok",
+     "value": "3,5 l/min"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 8018,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/fcdc-n-dvorucna-slavina-novo/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-FCDC-N.webp",
+     "alt": "FCDC-N – Dvoručna slavina NOVO"
+    }
+   ]
+  },
+  {
+   "sku": "FCWFSH-S",
+   "slug": "fcwfsh-s-ulozak-filtera-za-tus-wfsh-s",
+   "name": "FCWFSH-S – Uložak filtera za tuš WFSH-S",
+   "categorySlug": "ulosci-za-tus",
+   "kicker": null,
+   "summary": "Uložak filter za tuš WFSH-S punjen aktivnim ugljem.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-60°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Maksimalni protok",
+     "value": "8 lit/min"
+    },
+    {
+     "label": "Priključak",
+     "value": "1/2″"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "15,5cm x 6cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1105,
+   "stock": "out_of_stock",
+   "stockQty": null,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/fcwfsh-s-ulozak-filtera-za-tus-wfsh-s/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-FCWFSH-S.webp",
+     "alt": "FCWFSH-S – Uložak filtera za tuš WFSH-S"
+    }
+   ]
+  },
+  {
+   "sku": "IR-10",
+   "slug": "ir-10-ulozak-za-uklanjanje-gvozdja-iz-vode-za-kucista-od-10",
+   "name": "IR 10 – Uložak za uklanjanje gvožđa iz vode, za kućišta od 10″",
+   "categorySlug": "ulosci-za-gvozdje-i-kamenac",
+   "kicker": null,
+   "summary": "Uložak za uklanjanje gvožđa iz vode, za kućišta od 10 inča.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "5 lit/min"
+    },
+    {
+     "label": "Kapacitet",
+     "value": "2.000 litara"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna/Širina unutrašnja)",
+     "value": "251mm/73mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1838,
+   "stock": "out_of_stock",
+   "stockQty": null,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ir-10-ulozak-za-uklanjanje-gvozdja-iz-vode-za-kucista-od-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-IR10.webp",
+     "alt": "IR 10 – Uložak za uklanjanje gvožđa iz vode, za kućišta od 10″"
+    }
+   ]
+  },
+  {
+   "sku": "IR-10BB",
+   "slug": "ir-10bb-ulozak-za-uklanjanje-gvozdja-iz-vode-za-big-blue-kucista-od-10",
+   "name": "IR 10BB – Uložak za uklanjanje gvožđa iz vode, za Big Blue kućišta od 10″",
+   "categorySlug": "ulosci-za-gvozdje-i-kamenac",
+   "kicker": null,
+   "summary": "Uložak za uklanjanje gvožđa iz vode, za Big Blue kućišta od 10 inča.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "20 lit/min"
+    },
+    {
+     "label": "Kapacitet",
+     "value": "4.000 litara"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna/Širina unutrašnja)",
+     "value": "251mm/117mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 5932,
+   "stock": "out_of_stock",
+   "stockQty": null,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ir-10bb-ulozak-za-uklanjanje-gvozdja-iz-vode-za-big-blue-kucista-od-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-IR10BB.webp",
+     "alt": "IR 10BB – Uložak za uklanjanje gvožđa iz vode, za Big Blue kućišta od 10″"
+    }
+   ]
+  },
+  {
+   "sku": "IR-20BB",
+   "slug": "ir-20bb-ulozak-za-uklanjanje-gvozdja-iz-vode-za-big-blue-kucista-od-20",
+   "name": "IR 20BB – Uložak za uklanjanje gvožđa iz vode, za Big Blue kućišta od 20″",
+   "categorySlug": "ulosci-za-gvozdje-i-kamenac",
+   "kicker": null,
+   "summary": "Uložak za uklanjanje gvožđa iz vode, za Big Blue kućišta od 20 inča.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "30 lit/min"
+    },
+    {
+     "label": "Kapacitet",
+     "value": "8.000 litara"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna/Širina unutrašnja)",
+     "value": "509mm/117mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 10234,
+   "stock": "in_stock",
+   "stockQty": 4,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ir-20bb-ulozak-za-uklanjanje-gvozdja-iz-vode-za-big-blue-kucista-od-20/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-IR20BB.webp",
+     "alt": "IR 20BB – Uložak za uklanjanje gvožđa iz vode, za Big Blue kućišta od 20″"
+    }
+   ]
+  },
+  {
+   "sku": "L-BIO-Q",
+   "slug": "l-bio-q-in-line-biokeramicki-ulozak-sa-brzom-spojnicom",
+   "name": "L BIO Q – In-line biokeramički uložak sa brzom spojnicom",
+   "categorySlug": "ulosci-za-reverznu-osmozu",
+   "kicker": null,
+   "summary": "In-line biokeramički uložak za sisteme reverzne osmoze. Menja se na 6 meseci.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "2,5 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "10″ x 2″"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 4484,
+   "stock": "in_stock",
+   "stockQty": 4,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/l-bio-q-in-line-biokeramicki-ulozak-sa-brzom-spojnicom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-L-BIO-Q.webp",
+     "alt": "L BIO Q – In-line biokeramički uložak sa brzom spojnicom"
+    }
+   ]
+  },
+  {
+   "sku": "L-GAC-Q-NS",
+   "slug": "l-gac-q-ns-in-line-bakterostaticki-ulozak-sa-brzom-spojnicom",
+   "name": "L GAC Q NS – In-line bakterostatički uložak sa brzom spojnicom",
+   "categorySlug": "ulosci-za-reverznu-osmozu",
+   "kicker": null,
+   "summary": "In-line bakterostatički uložak sa brzom spojnicom.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "9 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "3,5 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "10″ x 2″"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1057,
+   "stock": "in_stock",
+   "stockQty": 8,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/l-gac-q-ns-in-line-bakterostaticki-ulozak-sa-brzom-spojnicom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-L-GAC-Q-NS.webp",
+     "alt": "L GAC Q NS – In-line bakterostatički uložak sa brzom spojnicom"
+    }
+   ]
+  },
+  {
+   "sku": "L-GAC-Q",
+   "slug": "l-gac-q-in-line-ulozak-granuliranog-aktivnog-uglja-sa-brzom-spojnico",
+   "name": "L GAC Q – In-line uložak granuliranog aktivnog uglja sa brzom spojnico",
+   "categorySlug": "ulosci-za-reverznu-osmozu",
+   "kicker": null,
+   "summary": "In-line uložak za uklanjanje hlora i organskih jedinjenja iz vode, sa brzom spojnicom.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "3,5 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "10″ x 2″"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 977,
+   "stock": "in_stock",
+   "stockQty": 341,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/l-gac-q-in-line-ulozak-granuliranog-aktivnog-uglja-sa-brzom-spojnicom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-L-GAC-Q.webp",
+     "alt": "L GAC Q – In-line uložak granuliranog aktivnog uglja sa brzom spojnico"
+    }
+   ]
+  },
+  {
+   "sku": "L-MIN-Q",
+   "slug": "l-min-q-in-line-mineralizirajuci-ulozak-sa-brzom-spojnicom",
+   "name": "L MIN Q – In-line mineralizirajući uložak sa brzom spojnicom",
+   "categorySlug": "ulosci-za-reverznu-osmozu",
+   "kicker": null,
+   "summary": "In-line uložak za mineralizaciju vode sa brzom spojnicom.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "3,5 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "10″ x 2″"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1145,
+   "stock": "in_stock",
+   "stockQty": 599,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/l-min-q-in-line-mineralizirajuci-ulozak-sa-brzom-spojnicom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-L-MIN-Q.webp",
+     "alt": "L MIN Q – In-line mineralizirajući uložak sa brzom spojnicom"
+    }
+   ]
+  },
+  {
+   "sku": "L-MIN",
+   "slug": "l-min-in-line-mineralizirajuci-ulozak",
+   "name": "L MIN – In-line mineralizirajući uložak",
+   "categorySlug": "ulosci-za-reverznu-osmozu",
+   "kicker": null,
+   "summary": "In-line uložak za mineralizaciju vode.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "3,5 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "10″ x 2″"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1051,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/l-min-in-line-mineralizirajuci-ulozak/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-L-MIN.webp",
+     "alt": "L MIN – In-line mineralizirajući uložak"
+    }
+   ]
+  },
+  {
+   "sku": "L-PS-Q",
+   "slug": "l-ps-q-in-line-sedimentni-ulozak-sa-brzom-spojnicom",
+   "name": "L PS Q – In-line sedimentni uložak sa brzom spojnicom",
+   "categorySlug": "ulosci-za-reverznu-osmozu",
+   "kicker": null,
+   "summary": "In-line sedimentni uložak sa brzom spojnicom.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "4 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "10″ x 2″"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 809,
+   "stock": "in_stock",
+   "stockQty": 285,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/l-ps-q-in-line-sedimentni-ulozak-sa-brzom-spojnicom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-L-PS-Q.webp",
+     "alt": "L PS Q – In-line sedimentni uložak sa brzom spojnicom"
+    }
+   ]
+  },
+  {
+   "sku": "L-YOUNG-Q",
+   "slug": "l-young-q-in-line-alkalizirajuci-jonizirajuci-mineralizirajuci-ulozak",
+   "name": "L YOUNG Q – In-line alkalizirajući-jonizirajući-mineralizirajući uložak sa brzom spojnicom",
+   "categorySlug": "ulosci-za-reverznu-osmozu",
+   "kicker": null,
+   "summary": "In-line uložak koji dodaje minerale i podiže pH vode posle reverzne osmoze. Menja se na 12 meseci.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "12 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "2,5 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "10″ x 2″"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 5756,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/l-young-q-in-line-alkalizirajuci-jonizirajuci-mineralizirajuci-ulozak-sa-brzom-spojnicom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-L-YOUNG-Q.webp",
+     "alt": "L YOUNG Q – In-line alkalizirajući-jonizirajući-mineralizirajući uložak sa brzom spojnicom"
+    }
+   ]
+  },
+  {
+   "sku": "MATTEO",
+   "slug": "matteo-cetvorostepeni-sistem-za-filtriranje-velikog-protoka-1000-l-h",
+   "name": "Matteo – četvorostepeni sistem za filtriranje velikog protoka – 1000 l/h",
+   "categorySlug": "filteri-za-celu-kucu",
+   "kicker": "Cela kuća · 4 stepena · UV lampa",
+   "summary": null,
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 128218,
+   "stock": "made_to_order",
+   "stockQty": null,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/matteo-cetvorostepeni-sistem-za-filtriranje-velikog-protoka-1000-l-h/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-USTM-Matteo.webp",
+     "alt": "Matteo – četvorostepeni sistem za filtriranje velikog protoka – 1000 l/h"
+    }
+   ]
+  },
+  {
+   "sku": "NET-10",
+   "slug": "net-10-ulozak-mrezasti-za-kucista-od-10",
+   "name": "NET 10 – Uložak mrežasti za kućišta od 10",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Mrežasti uložak za kućište od 10 inča, je namenjen za uklanjanje krupnijih i sedimentnih nečistoća preko 70 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-70°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "30 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna/Širina unutrašnja)",
+     "value": "250mm/68mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1333,
+   "stock": "in_stock",
+   "stockQty": 1,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/net-10-ulozak-mrezasti-za-kucista-od-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-NET10.webp",
+     "alt": "NET 10 – Uložak mrežasti za kućišta od 10"
+    }
+   ]
+  },
+  {
+   "sku": "NETSS-20BB",
+   "slug": "net-ss-20bb-ulozak-mrezasti-za-big-blue-kuciste-od-20-sa-mrezicom-do-n",
+   "name": "NET SS 20BB – Uložak mrežasti za Big Blue kućište od 20″ sa mrežicom do nerđajućeg čelka",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Mrežasti uložak sa mrežicom od nerđajućeg čelika za Big Blue kućište od 20 inča, namenjen je za uklanjanje krupnijih i sedimentnih nečistoća preko 150 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-70°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "550 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna/Širina unutrašnja)",
+     "value": "510mm/114mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 27745,
+   "stock": "in_stock",
+   "stockQty": 1,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/net-ss-20bb-ulozak-mrezasti-za-big-blue-kuciste-od-20/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-NETSS-20BB.webp",
+     "alt": "NET SS 20BB – Uložak mrežasti za Big Blue kućište od 20″ sa mrežicom do nerđajućeg čelka"
+    }
+   ]
+  },
+  {
+   "sku": "PP-10M",
+   "slug": "pp-10m-polipropilenski-koncani-ulozak-od-10-10",
+   "name": "PP 10M – Polipropilenski končani uložak od 10″ – 10",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od končanog polipropilena za kućište od 10 inča, finoće filtriranja od 10 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "25 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "255mm/55mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 451,
+   "stock": "in_stock",
+   "stockQty": 18,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/pp-10-polipropilenski-koncani-ulozak-od-10-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PP5.webp",
+     "alt": "PP 10M – Polipropilenski končani uložak od 10″ – 10"
+    }
+   ]
+  },
+  {
+   "sku": "PP 20M 10BB",
+   "slug": "pp-20m-10bb-polipropilenski-koncani-ulozak-za-big-blue-kuciste-10-20",
+   "name": "PP 20M 10BB – Polipropilenski končani uložak za Big Blue kućište 10″ – 20µ",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od končanog polipropilena za Big Blue kućište od 10 inča, finoće filtriranja 20 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "60 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "260mm/103mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 2000,
+   "stock": "in_stock",
+   "stockQty": 1,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/pp-20m-10bb-polipropilenski-koncani-ulozak-za-big-blue-kuciste-10-20u/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PP20-M10-BB.webp",
+     "alt": "PP 20M 10BB – Polipropilenski končani uložak za Big Blue kućište 10″ – 20µ"
+    }
+   ]
+  },
+  {
+   "sku": "PP20M-L",
+   "slug": "pp-20m-l-ulozak-od-koncanog-polipropilena-za-slim-kucista-od-20-finoce",
+   "name": "PP 20M L – Uložak od končanog Polipropilena za SLIM kućišta od 20″, finoće 20µ",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od končanog polipropilena za SLIM kućište od 20 inča, finoće filtriranja 20 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "30 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "510mm/58mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1462,
+   "stock": "in_stock",
+   "stockQty": 90,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/pp-20m-l-ulozak-od-koncanog-polipropilena-za-slim-kucista-od-20-finoce-20/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PP-L.webp",
+     "alt": "PP 20M L – Uložak od končanog Polipropilena za SLIM kućišta od 20″, finoće 20µ"
+    }
+   ]
+  },
+  {
+   "sku": "PP-20M",
+   "slug": "pp-20m-polipropilenski-koncani-ulozak-od-10",
+   "name": "PP 20M – Polipropilenski končani uložak od 10″ –",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od končanog polipropilena za kućište od 10 inča, finoće filtriranja od 20 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "25 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "255mm/55mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 451,
+   "stock": "in_stock",
+   "stockQty": 110,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/pp-20-polipropilenski-koncani-ulozak-od-10-20/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PP20.webp",
+     "alt": "PP 20M – Polipropilenski končani uložak od 10″ –"
+    }
+   ]
+  },
+  {
+   "sku": "PP-20M-20BB",
+   "slug": "pp-20m-20bb-ulozak-od-koncanog-polipropilena-20-mikrona-od-20",
+   "name": "PP 20M-20BB Uložak od končanog polipropilena 20 mikrona od 20″",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": null,
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "60 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "510mm/103mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 4322,
+   "stock": "in_stock",
+   "stockQty": 20,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/pp-20m-20bb-ulozak-od-koncanog-polipropilena-20-mikrona-od-20/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PP20M20BB.webp",
+     "alt": "PP 20M-20BB Uložak od končanog polipropilena 20 mikrona od 20″"
+    }
+   ]
+  },
+  {
+   "sku": "PP-50M",
+   "slug": "pp-50m-polipropilenski-koncani-ulozak-od-10-50",
+   "name": "PP 50M – Polipropilenski končani uložak od 10″ – 50µ",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od končanog polipropilena za kućište od 10 inča, finoće filtriranja od 50 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "25 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "255mm/55mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 451,
+   "stock": "in_stock",
+   "stockQty": 98,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/pp-50-polipropilenski-koncani-ulozak-od-10-50/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PP20.webp",
+     "alt": "PP 50M – Polipropilenski končani uložak od 10″ – 50µ"
+    }
+   ]
+  },
+  {
+   "sku": "PP-5M",
+   "slug": "pp-5m-polipropilenski-koncani-ulozak-od-10-5",
+   "name": "PP 5M – Polipropilenski končani uložak od 10″ – 5",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od končanog polipropilena za kućište od 10 inča, finoće filtriranja od 5 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "25 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "255mm/55mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 451,
+   "stock": "in_stock",
+   "stockQty": 104,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/pp-5-polipropilenski-koncani-ulozak-od-10-5/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PP5.webp",
+     "alt": "PP 5M – Polipropilenski končani uložak od 10″ – 5"
+    }
+   ]
+  },
+  {
+   "sku": "PS-10M",
+   "slug": "ps-10m-ulozak-od-penastog-polipropilena-za-kucista-od-10-10",
+   "name": "PS 10M – Uložak od penastog Polipropilena za kućišta od 10″ – 10µ",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za kućište od 10 inča, finoće filtriranja od 10 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "25 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "253mm/60mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 425,
+   "stock": "in_stock",
+   "stockQty": 177,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-10-ulozak-od-penastog-polipropilena-za-kucista-od-10-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PS-10.webp",
+     "alt": "PS 10M – Uložak od penastog Polipropilena za kućišta od 10″ – 10µ"
+    }
+   ]
+  },
+  {
+   "sku": "PS10M20BB",
+   "slug": "ps-10m-20bb-ulozak-od-penastog-polipropilena-za-big-blue-kuciste-od-20",
+   "name": "PS 10M-20BB – Uložak od penastog Polipropilena za Big Blue kućište od 20″ – 10µ",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za Big Blue kućište od 20 inča, finoće filtriranja od 10 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "60 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "510mm/110mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 3332,
+   "stock": "in_stock",
+   "stockQty": null,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-10m-20bb-ulozak-od-penastog-polipropilena-za-big-blue-kuciste-od-20-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2023/01/n-PS20M20BB.webp",
+     "alt": "PS 10M-20BB – Uložak od penastog Polipropilena za Big Blue kućište od 20″ – 10µ"
+    }
+   ]
+  },
+  {
+   "sku": "PS10M-L",
+   "slug": "ps-10m-l-ulozak-od-penastog-polipropilena-za-slim-kucista-od-20-10",
+   "name": "PS 10M-L – Uložak od penastog Polipropilena za SLIM kućišta od 20″ – 10µ",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za SLIM kućište od 20 inča, finoće filtriranja od 10 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "30 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "510mm/60mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 882,
+   "stock": "in_stock",
+   "stockQty": 67,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-10m-l-ulozak-od-penastog-polipropilena-za-slim-kucista-od-20-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-PS-L.webp",
+     "alt": "PS 10M-L – Uložak od penastog Polipropilena za SLIM kućišta od 20″ – 10µ"
+    }
+   ]
+  },
+  {
+   "sku": "PS-1M",
+   "slug": "ps-1m-ulozak-od-penastog-polipropilena-za-kucista-od-10-1",
+   "name": "PS 1M – Uložak od penastog Polipropilena za kućišta od 10″ – 1µ",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za kućište od 10 inča, finoće filtriranja od 1 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "25 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "253mm/60mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 425,
+   "stock": "in_stock",
+   "stockQty": 108,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-5-ulozak-od-penastog-polipropilena-za-kucista-od-10-1/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PS-10.webp",
+     "alt": "PS 1M – Uložak od penastog Polipropilena za kućišta od 10″ – 1µ"
+    }
+   ]
+  },
+  {
+   "sku": "PS 1M-20BB",
+   "slug": "ps-1m-20bb-ulozak-od-penastog-polipropilena-za-big-blue-kuciste-od-20",
+   "name": "PS 1M-20BB – Uložak od penastog Polipropilena za Big Blue kućište od 20″",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za Big Blue kućište od 20 inča, finoće filtriranja 1 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "60 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "510mm/110mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 3332,
+   "stock": "in_stock",
+   "stockQty": 16,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-1m-20bb-ulozak-od-penastog-polipropilena-za-big-blue-kuciste-od-20/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2023/01/n-PS20M20BB.webp",
+     "alt": "PS 1M-20BB – Uložak od penastog Polipropilena za Big Blue kućište od 20″"
+    }
+   ]
+  },
+  {
+   "sku": "PS1M-L",
+   "slug": "ps-1m-l-ulozak-od-penastog-polipropilena-za-slim-kucista-od-20-1",
+   "name": "PS 1M-L – Uložak od penastog Polipropilena za SLIM kućišta od 20″ – 1µ",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za SLIM kućište od 20 inča, finoće filtriranja od 1 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "30 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "510mm/60mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 882,
+   "stock": "in_stock",
+   "stockQty": 26,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-1m-l-ulozak-od-penastog-polipropilena-za-slim-kucista-od-20-1%c2%b5/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": []
+  },
+  {
+   "sku": "PS 20M 10BB",
+   "slug": "ps-20m-10bb-ulozak-od-penastog-polipropilena-za-big-blue-kucista",
+   "name": "PS 20M 10BB – Uložak od penastog Polipropilena za Big Blue kućišta",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za Big Blue kućište od 10 inča, finoće filtriranja 20 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "40 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "253mm/110mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1589,
+   "stock": "in_stock",
+   "stockQty": 3,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-20m-10bb-ulozak-od-penastog-polipropilena-za-big-blue-kucista/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PS1M10BB.webp",
+     "alt": "PS 20M 10BB – Uložak od penastog Polipropilena za Big Blue kućišta"
+    }
+   ]
+  },
+  {
+   "sku": "PS-20M",
+   "slug": "ps-20m-ulozak-od-penastog-polipropilena-za-kucista-od-10-20",
+   "name": "PS 20M – Uložak od penastog Polipropilena za kućišta od 10″ – 20µ",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za kućište od 10 inča, finoće filtriranja od 20 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "25 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "253mm/60mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 425,
+   "stock": "in_stock",
+   "stockQty": 304,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-20-ulozak-od-penastog-polipropilena-za-kucista-od-10-20/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PS-10.webp",
+     "alt": "PS 20M – Uložak od penastog Polipropilena za kućišta od 10″ – 20µ"
+    }
+   ]
+  },
+  {
+   "sku": "PS 20M-20BB",
+   "slug": "ps-20m-20bb-ulozak-od-penastog-polipropilena-za-big-blue-kuciste-od-20",
+   "name": "PS 20M-20BB – Uložak od penastog Polipropilena za Big Blue kućište od 20″",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za Big Blue kućište od 20 inča, finoće filtriranja 20 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "60 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "510mm/110mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 3332,
+   "stock": "in_stock",
+   "stockQty": 19,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-20m-20bb-ulozak-od-penastog-polipropilena-za-big-blue-kuciste-od-20/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2023/01/n-PS20M20BB.webp",
+     "alt": "PS 20M-20BB – Uložak od penastog Polipropilena za Big Blue kućište od 20″"
+    }
+   ]
+  },
+  {
+   "sku": "PS-50M",
+   "slug": "ps-50m-ulozak-od-penastog-polipropilena-za-kucista-od-10-50",
+   "name": "PS 50M – Uložak od penastog Polipropilena za kućišta od 10″ – 50µ",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za kućište od 10 inča, finoće filtriranja od 50 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "25 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "253mm/60mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 425,
+   "stock": "in_stock",
+   "stockQty": 40,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-50-ulozak-od-penastog-polipropilena-za-kucista-od-10-50/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PS-10.webp",
+     "alt": "PS 50M – Uložak od penastog Polipropilena za kućišta od 10″ – 50µ"
+    }
+   ]
+  },
+  {
+   "sku": "PS 5M 10BB",
+   "slug": "ps-5m-10bb-ulozak-od-penastog-polipropilena-za-big-blue-kucista",
+   "name": "PS 5M 10BB – Uložak od penastog Polipropilena za Big Blue kućišta",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za Big Blue kućište od 10 inča, finoće filtriranja 5 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "40 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "253mm/110mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1589,
+   "stock": "in_stock",
+   "stockQty": 1,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-5m-10bb-ulozak-od-penastog-polipropilena-za-big-blue-kucista/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PS1M10BB.webp",
+     "alt": "PS 5M 10BB – Uložak od penastog Polipropilena za Big Blue kućišta"
+    }
+   ]
+  },
+  {
+   "sku": "PS-5M",
+   "slug": "ps-5m-ulozak-od-penastog-polipropilena-za-kucista-od-10-5",
+   "name": "PS 5M – Uložak od penastog Polipropilena za kućišta od 10″ – 5µ",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za kućište od 10 inča, finoće filtriranja od 5 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "25 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "253mm/60mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 425,
+   "stock": "in_stock",
+   "stockQty": 259,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-5-ulozak-od-penastog-polipropilena-za-kucista-od-10-5/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-PS-10.webp",
+     "alt": "PS 5M – Uložak od penastog Polipropilena za kućišta od 10″ – 5µ"
+    }
+   ]
+  },
+  {
+   "sku": "PS 5M-20BB",
+   "slug": "ps-5m-20bb-ulozak-od-penastog-polipropilena-za-big-blue-kuciste-od-20",
+   "name": "PS 5M-20BB – Uložak od penastog Polipropilena za Big Blue kućište od 20″",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za Big Blue kućište od 20 inča, finoće filtriranja 5 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "60 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "510mm/110mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 3332,
+   "stock": "in_stock",
+   "stockQty": 5,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-5m-20bb-ulozak-od-penastog-polipropilena-za-big-blue-kuciste-od-20/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2023/01/n-PS20M20BB.webp",
+     "alt": "PS 5M-20BB – Uložak od penastog Polipropilena za Big Blue kućište od 20″"
+    }
+   ]
+  },
+  {
+   "sku": "PS5M-L",
+   "slug": "ps-5m-l-ulozak-od-penastog-polipropilena-za-slim-kucista-od-20-5",
+   "name": "PS 5M-L – Uložak od penastog Polipropilena za SLIM kućišta od 20″ – 5µ",
+   "categorySlug": "sedimentni-ulosci",
+   "kicker": null,
+   "summary": "Uložak od penastog polipropilena za SLIM kućište od 20 inča, finoće filtriranja od 5 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "30 lit/min"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna)",
+     "value": "510mm/60mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 882,
+   "stock": "in_stock",
+   "stockQty": 28,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ps-5m-l-ulozak-od-penastog-polipropilena-za-slim-kucista-od-20-5/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-PS-L.webp",
+     "alt": "PS 5M-L – Uložak od penastog Polipropilena za SLIM kućišta od 20″ – 5µ"
+    }
+   ]
+  },
+  {
+   "sku": "Q-CV0201",
+   "slug": "q-cv-0201-povratni-ventil-sa-brzom-spojnicom",
+   "name": "Q CV 0201 – Povratni ventil sa brzom spojnicom",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Povratni ventil sa brzom spojnicom 1/4″Q.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica i 1/4″ brza spojnica"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1394,
+   "stock": "in_stock",
+   "stockQty": 10,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-cv-0201-povratni-ventil-sa-brzom-spojnicom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Q-CV0201.webp",
+     "alt": "Q CV 0201 – Povratni ventil sa brzom spojnicom"
+    }
+   ]
+  },
+  {
+   "sku": "Q-CV1244",
+   "slug": "q-cv-1244-ventil-za-rezervoar-ro-sistema-sa-brzom-spojnicom",
+   "name": "Q CV 1244 – Ventil za rezervoar RO sistema sa brzom spojnicom",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Ventil za rezervoar RO sa brzom spojnicom 1/4″Q.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 898,
+   "stock": "in_stock",
+   "stockQty": 26,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-cv-1244-ventil-za-rezervoar-ro-sistema-sa-brzom-spojnicom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-QCV1244.webp",
+     "alt": "Q CV 1244 – Ventil za rezervoar RO sistema sa brzom spojnicom"
+    }
+   ]
+  },
+  {
+   "sku": "Q-CV1344",
+   "slug": "q-cv-1344-ventil-1-4-x-1-4-sa-brzom-spojnicom",
+   "name": "Q CV 1344 – Ventil 1/4″ x 1/4″ sa brzom spojnicom",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Ventil sa brzom spojnicom 1/4″Q x 1/4″Q.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1280,
+   "stock": "in_stock",
+   "stockQty": 7,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-cv-1344-ventil-1-4-x-1-4-sa-brzom-spojnicom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-QCV1344.webp",
+     "alt": "Q CV 1344 – Ventil 1/4″ x 1/4″ sa brzom spojnicom"
+    }
+   ]
+  },
+  {
+   "sku": "Q-CV3142",
+   "slug": "q-cv-3142-koleno-sa-ventilom-1-4-x-1-8",
+   "name": "Q CV 3142 – Koleno sa ventilom 1/4″ x 1/8″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Koleno sa kontra-ventilom sa brzom spojnicom 1/4″Q x 1/8″GZ.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 748,
+   "stock": "in_stock",
+   "stockQty": 60,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-cv-3142-koleno-sa-ventilom-1-4-x-1-8/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-QCV3142.webp",
+     "alt": "Q CV 3142 – Koleno sa ventilom 1/4″ x 1/8″"
+    }
+   ]
+  },
+  {
+   "sku": "Q-CV3344",
+   "slug": "q-cv-3344-konektor-sa-ventilom-1-4-x-1-4",
+   "name": "Q CV 3344 – Konektor sa ventilom 1/4″ x 1/4″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Ravni konektor sa kontra-ventilom sa brzom spojnicom 1/4″Q x 1/4″Q.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1064,
+   "stock": "in_stock",
+   "stockQty": 70,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-cv-3344-konektor-sa-ventilom-1-4-x-1-4/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-QCV3344.webp",
+     "alt": "Q CV 3344 – Konektor sa ventilom 1/4″ x 1/4″"
+    }
+   ]
+  },
+  {
+   "sku": "QFR350",
+   "slug": "q-fr-350-limitator-protoka",
+   "name": "Q FR 350 – Limitator protoka",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Limitator protoka za RO sistem.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Protok",
+     "value": "350 ml/min"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1044,
+   "stock": "in_stock",
+   "stockQty": 30,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-fr-350-limitator-protoka/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-QFR350.webp",
+     "alt": "Q FR 350 – Limitator protoka"
+    }
+   ]
+  },
+  {
+   "sku": "QFR420",
+   "slug": "q-fr-420-limitator-protoka",
+   "name": "Q FR 420 – Limitator protoka",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Limitator protoka za RO sistem.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Protok",
+     "value": "420 ml/min"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 970,
+   "stock": "in_stock",
+   "stockQty": 45,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-fr-420-limitator-protoka/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-QFR420.webp",
+     "alt": "Q FR 420 – Limitator protoka"
+    }
+   ]
+  },
+  {
+   "sku": "QME0402",
+   "slug": "q-me-0402-musko-koleno-1-4-x-1-8",
+   "name": "Q ME 0402 – Muško koleno 1/4″ x 1/8″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Muško koleno 1/4″Q x 1/8″GZ.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica i 1/8″ muški navoj"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 296,
+   "stock": "in_stock",
+   "stockQty": 56,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-me-0402-musko-koleno-sa-brzom-spojnicom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Q-ME.webp",
+     "alt": "Q ME 0402 – Muško koleno 1/4″ x 1/8″"
+    }
+   ]
+  },
+  {
+   "sku": "QME0404",
+   "slug": "q-me-0404-musko-koleno-1-4-x-1-4",
+   "name": "Q ME 0404 – Muško koleno 1/4″ x 1/4″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Muško koleno 1/4″Q x 1/4″GZ.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica i 1/4″ muški navoj"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 317,
+   "stock": "in_stock",
+   "stockQty": 134,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-me-0404-musko-koleno-1-4-x-1-4/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Q-ME0404.webp",
+     "alt": "Q ME 0404 – Muško koleno 1/4″ x 1/4″"
+    }
+   ]
+  },
+  {
+   "sku": "Q-PV0404",
+   "slug": "q-pv-0404-ventil-za-redukciju-pritiska",
+   "name": "Q PV 0404 – Ventil za redukciju pritiska",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Ventil za redukciju pritiska sa brzom spojanicoa 1/4″Q x 1/4″Q.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica"
+    },
+    {
+     "label": "Izlazni pritisak",
+     "value": "4.8 bara"
+    },
+    {
+     "label": "Maksimalni pritisak",
+     "value": "20 bara"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Dimenzije (Dužina x Prečnik)",
+     "value": "10.5 x 3.7 cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 2155,
+   "stock": "in_stock",
+   "stockQty": 25,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-pv-0404-ventil-za-redukciju-pritiska/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-QPV0404.webp",
+     "alt": "Q PV 0404 – Ventil za redukciju pritiska"
+    }
+   ]
+  },
+  {
+   "sku": "Q-SA0404",
+   "slug": "q-sa-0404-cevni-adapter-sa-navojem-1-4",
+   "name": "Q SA 0404 – Cevni adapter sa navojem 1/4″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Adapter za brzu spojnicu 1/4″Q na navoj 1/4″GZ.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica i muški navoj 1/4″"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 128,
+   "stock": "in_stock",
+   "stockQty": 98,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-sa-0404-cevni-adapter-sa-navojem-1-4/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Q-SA0404.webp",
+     "alt": "Q SA 0404 – Cevni adapter sa navojem 1/4″"
+    }
+   ]
+  },
+  {
+   "sku": "Q-SE0404",
+   "slug": "q-se-0404-cevno-koleno-1-4n-x-1-4q",
+   "name": "Q SE 0404 – Cevno Koleno 1/4″N x 1/4″Q",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Vezno koleno za brzo spajanje 1/4″N na 1/4″Q.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 156,
+   "stock": "in_stock",
+   "stockQty": 9,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-se-0404-cevno-koleno-1-4n-x-1-4q/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Q-SE0404.webp",
+     "alt": "Q SE 0404 – Cevno Koleno 1/4″N x 1/4″Q"
+    }
+   ]
+  },
+  {
+   "sku": "Q-UC0404",
+   "slug": "q-uc-0404-konektor-za-cev-1-4-x-1-4",
+   "name": "Q UC 0404 – Konektor za cev 1/4″ x 1/4″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Brza spojnica 1/4″Q x 1/4″Q.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica i 1/4″ brza spojnica"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 224,
+   "stock": "in_stock",
+   "stockQty": 74,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-uc-0404-konektor-za-cev-1-4-x-1-4/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Q-UC0404.webp",
+     "alt": "Q UC 0404 – Konektor za cev 1/4″ x 1/4″"
+    }
+   ]
+  },
+  {
+   "sku": "Q-UE0404",
+   "slug": "q-ue-0404-koleno-union-1-4-x-1-4",
+   "name": "Q UE 0404 – Koleno Union 1/4″ x 1/4″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Vezno koleno za brzo spajanje 1/4″Q na 1/4″Q.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 203,
+   "stock": "in_stock",
+   "stockQty": 200,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-ue-0404-koleno-union-1-4-x-1-4/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Q-UE0404.webp",
+     "alt": "Q UE 0404 – Koleno Union 1/4″ x 1/4″"
+    }
+   ]
+  },
+  {
+   "sku": "Q-UT0404",
+   "slug": "q-ut-0404-t-razdelnik-sa-brzom-spojnicom-1-4",
+   "name": "Q UT 0404 – T razdelnik sa brzom spojnicom 1/4″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "T razdelnik sa brzim spojanicama 1/4″Q x 1/4″Q x 1/4″.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "1/4″ brza spojnica"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 438,
+   "stock": "in_stock",
+   "stockQty": 60,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/q-ut-0404-t-razdelnik-sa-brzom-spojnicom-1-4/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-QUT0404.webp",
+     "alt": "Q UT 0404 – T razdelnik sa brzom spojnicom 1/4″"
+    }
+   ]
+  },
+  {
+   "sku": "W UN 1",
+   "slug": "r-un-1-o-ring-prsten-zaptivka-80x3mm",
+   "name": "R UN 1 – O-ring prsten zaptivka 80x3mm",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "O-ring gumena zaptivka za 10″ kućišta tipa WFW EMI i WFU. Dimenzije zaptivke su 80 x 3 mm.",
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 175,
+   "stock": "in_stock",
+   "stockQty": 36,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/r-un-1-o-ring-prsten-zaptivka-80x3mm/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2022/05/n-O-ring.webp",
+     "alt": "R UN 1 – O-ring prsten zaptivka 80x3mm"
+    }
+   ]
+  },
+  {
+   "sku": "RO6-MP",
+   "slug": "ro-6-mp-sistem-reverzne-osmoze-sa-boost-er-pumpom",
+   "name": "RO 6 MP – Sistem Reverzne Osmoze sa boost-er pumpom",
+   "categorySlug": "reverzna-osmoza",
+   "kicker": "Ispod sudopere · sa pumpom za nizak pritisak",
+   "summary": "6 stepeni sistem reverzne osmoze sa boost-er pumpom za podizanje pritiska u sistemu.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "2,8 – 6 bara"
+    },
+    {
+     "label": "Radni pritisak pumpe",
+     "value": "5,5 bara"
+    },
+    {
+     "label": "Maksimalni pritisak pumpe",
+     "value": "8,5 bara"
+    },
+    {
+     "label": "Napajanje pumpe",
+     "value": "(AC) 230V / (DC) 24V"
+    },
+    {
+     "label": "RO membrana",
+     "value": "75 GPD (284 lit/dan)"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Priključak",
+     "value": "3/8″, 1/2″, 3/4″"
+    },
+    {
+     "label": "Dimenzije sklopljenog sistema (Visina x Širina x Dubina)",
+     "value": "47cm x 43cm x 14cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 90425,
+   "stock": "in_stock",
+   "stockQty": 1,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/ro-6-mp-sistem-reverzne-osmoze-sa-boost-er-pumpom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-RO6-Pomp.webp",
+     "alt": "RO 6 MP – Sistem Reverzne Osmoze sa boost-er pumpom"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-RO-Shema.webp",
+     "alt": "RO 6 MP – Sistem Reverzne Osmoze sa boost-er pumpom"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-RO6-General.webp",
+     "alt": "RO 6 MP – Sistem Reverzne Osmoze sa boost-er pumpom"
+    }
+   ]
+  },
+  {
+   "sku": "ROTP12",
+   "slug": "rot-12-rezervoar-od-za-ro-sistem",
+   "name": "ROT 12 – Rezervoar od za RO sistem",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": null,
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 12239,
+   "stock": "in_stock",
+   "stockQty": 5,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/rot-12-rezervoar-od-za-ro-sistem/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Rezervoar.webp",
+     "alt": "ROT 12 – Rezervoar od za RO sistem"
+    }
+   ]
+  },
+  {
+   "sku": "ROTP19",
+   "slug": "rot-19-rezervoar-od-za-ro-sistem",
+   "name": "ROT 19 – Rezervoar od za RO sistem",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": null,
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 12718,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/rot-19-rezervoar-od-za-ro-sistem/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Rezervoar.webp",
+     "alt": "ROT 19 – Rezervoar od za RO sistem"
+    }
+   ]
+  },
+  {
+   "sku": "CW929-WL-C",
+   "slug": "rucica-vodomata-cw929-hladna",
+   "name": "Ručica vodomata CW929 – hladna",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": null,
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 2558,
+   "stock": "in_stock",
+   "stockQty": 20,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/rucica-vodomata-cw929-hladna/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2022/11/viber-image-2026-02-24-11-16-09-413.jpg",
+     "alt": "Ručica vodomata CW929 – hladna"
+    }
+   ]
+  },
+  {
+   "sku": "CW929-WL-C-1",
+   "slug": "rucica-vodomata-cw929-sobna-temperatura",
+   "name": "Ručica vodomata CW929 – sobna temperatura",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": null,
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 2558,
+   "stock": "in_stock",
+   "stockQty": 15,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/rucica-vodomata-cw929/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2026/02/viber-image-2026-02-24-11-17-12-684.jpg",
+     "alt": "Ručica vodomata CW929 – sobna temperatura"
+    }
+   ]
+  },
+  {
+   "sku": "CW929-WL-H",
+   "slug": "rucica-vodomata-cw929-vrela",
+   "name": "Ručica vodomata CW929 – vrela",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": null,
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 2558,
+   "stock": "in_stock",
+   "stockQty": 14,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/rucica-vodomata-cw929-vrela/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2022/11/viber-image-2026-02-24-11-16-33-904.jpg",
+     "alt": "Ručica vodomata CW929 – vrela"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2022/11/viber-image-2026-02-24-11-16-33-904.jpg",
+     "alt": "Ručica vodomata CW929 – vrela"
+    }
+   ]
+  },
+  {
+   "sku": "ST-10",
+   "slug": "st-10-ulozak-za-omeksavanje-vode-za-kucista-od-10",
+   "name": "ST 10 – Uložak za omekšavanje vode, za kućišta od 10",
+   "categorySlug": "ulosci-za-gvozdje-i-kamenac",
+   "kicker": null,
+   "summary": "Uložak za omekšavanje vode za kućišta od 10 inča.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "6 lit/min"
+    },
+    {
+     "label": "Kapacitet",
+     "value": "2.000 litara"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna/Širina unutrašnja)",
+     "value": "251mm/73mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1495,
+   "stock": "in_stock",
+   "stockQty": 18,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/st-10-ulozak-za-omeksavanje-vode-za-kucista-od-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-ST10.webp",
+     "alt": "ST 10 – Uložak za omekšavanje vode, za kućišta od 10"
+    }
+   ]
+  },
+  {
+   "sku": "ST-10BB",
+   "slug": "st-10bb-ulozak-za-omeksavanje-vode-za-big-blue-kucista-od-10",
+   "name": "ST 10BB – Uložak za omekšavanje vode, za Big Blue kućišta od 10″",
+   "categorySlug": "ulosci-za-gvozdje-i-kamenac",
+   "kicker": null,
+   "summary": "Uložak za omekšavanje vode za Big Blue kućišta od 10 inča.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "20 lit/min"
+    },
+    {
+     "label": "Kapacitet",
+     "value": "3.000 litara"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna/Širina unutrašnja)",
+     "value": "253mm/119mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 5106,
+   "stock": "in_stock",
+   "stockQty": 1,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/st-10bb-ulozak-za-omeksavanje-vode-za-big-blue-kucista-od-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-ST10BB.webp",
+     "alt": "ST 10BB – Uložak za omekšavanje vode, za Big Blue kućišta od 10″"
+    }
+   ]
+  },
+  {
+   "sku": "ST-20BB",
+   "slug": "st-20bb-ulozak-za-omeksavanje-vode-za-big-blue-kucista-od-20",
+   "name": "ST 20BB – Uložak za omekšavanje vode, za Big Blue kućišta od 20″",
+   "categorySlug": "ulosci-za-gvozdje-i-kamenac",
+   "kicker": null,
+   "summary": "Uložak za omekšavanje vode za Big Blue kućišta od 20 inča.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "30 lit/min"
+    },
+    {
+     "label": "Kapacitet",
+     "value": "4.000 litara"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna/Širina unutrašnja)",
+     "value": "510mm/119mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 8389,
+   "stock": "made_to_order",
+   "stockQty": null,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/st-20bb-ulozak-za-omeksavanje-vode-za-big-blue-kucista-od-20/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-ST20BB.webp",
+     "alt": "ST 20BB – Uložak za omekšavanje vode, za Big Blue kućišta od 20″"
+    }
+   ]
+  },
+  {
+   "sku": "STO-10",
+   "slug": "sto-10-ulozak",
+   "name": "STO 10 – Uložak Polipropilen – Aktivni ugalj za kućište od 10″",
+   "categorySlug": "ugljeni-ulosci",
+   "kicker": "Za FSCNT · 2 stepena",
+   "summary": "Uložak za dvofaznu filtraciju od penastog polipropilena i aktivnog uglja za kućište od 10 inča, finoće filtriranja od 10 mikrona.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6 meseci"
+    },
+    {
+     "label": "Efikasan protok",
+     "value": "6 lit/min"
+    },
+    {
+     "label": "Kapacitet",
+     "value": "4.000 litara"
+    },
+    {
+     "label": "Dimenzije uloška (Visina/Širina spoljna/Širina unutrašnja)",
+     "value": "251mm/74mm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1219,
+   "stock": "in_stock",
+   "stockQty": 20,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/sto-ulozak-polipropilen-aktivni-ugalj-za-kuciste-od-10/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "images/products/sto-10-ulozak.webp",
+     "alt": "STO 10 – Uložak Polipropilen – Aktivni ugalj za kućište od 10″"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-CTO.webp",
+     "alt": "STO 10 – Uložak Polipropilen – Aktivni ugalj za kućište od 10″"
+    }
+   ]
+  },
+  {
+   "sku": "TLC100",
+   "slug": "tlc-100-membrana-100-gpd-vontron",
+   "name": "TLC 100 – Membrana 100 GPD – VONTRON",
+   "categorySlug": "ulosci-za-reverznu-osmozu",
+   "kicker": null,
+   "summary": "Membrana za sistem reverzne osmoze (RO).",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Učinkovitost",
+     "value": "100 galona/dan (380 litara/dan)"
+    },
+    {
+     "label": "Maksimalni protok",
+     "value": "2 gal/min (7.8 l/min)"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Radni pritisak",
+     "value": "2.8-8.6 bara"
+    },
+    {
+     "label": "Servisni interval",
+     "value": "5 godina"
+    },
+    {
+     "label": "Dimenzije uloška (Širina/Dužina)",
+     "value": "1.75″/12″"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 9089,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/tlc-100-membrana-100-gpd-vontron/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Vontron-75.webp",
+     "alt": "TLC 100 – Membrana 100 GPD – VONTRON"
+    }
+   ]
+  },
+  {
+   "sku": "TLC75",
+   "slug": "tlc-75-membrana",
+   "name": "TLC 75 ECO- Membrana 75 GPD – VONTRON",
+   "categorySlug": "ulosci-za-reverznu-osmozu",
+   "kicker": null,
+   "summary": "Membrana za sistem reverzne osmoze (RO).",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Učinkovitost",
+     "value": "75 galona/dan (285 litara/dan)"
+    },
+    {
+     "label": "Maksimalni protok",
+     "value": "2 gal/min (7.8 l/min)"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Radni pritisak",
+     "value": "2.8-8.6 bara"
+    },
+    {
+     "label": "Servisni interval",
+     "value": "3 godina"
+    },
+    {
+     "label": "Dimenzije uloška (Širina/Dužina)",
+     "value": "1.75″/12″"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 6505,
+   "stock": "in_stock",
+   "stockQty": 14,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/tlc-75-membrana-75-gpd-vontron/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Vontron-75.webp",
+     "alt": "TLC 75 ECO- Membrana 75 GPD – VONTRON"
+    }
+   ]
+  },
+  {
+   "sku": "TUBE14W",
+   "slug": "tube-14-w-cev-pe-1-4-bela",
+   "name": "TUBE 14 W – Cev PE 1/4″ – Bela",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Cev od 1/4″ za RO sisteme sa brzom spojnicom.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Boja",
+     "value": "Bela (white)"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Maksimalni protok",
+     "value": "3,5 l/min"
+    },
+    {
+     "label": "Spoljni prečnik cevi",
+     "value": "1/4″"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 88,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/tube-14-w-cev-pe-1-4-bela/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-Tube14-W.webp",
+     "alt": "TUBE 14 W – Cev PE 1/4″ – Bela"
+    }
+   ]
+  },
+  {
+   "sku": "WF10BB1-2",
+   "slug": "wf-10bb-1-2-big-blue-kuciste-od-10-sa-dvostrukom-o-ring-zaptivkom-prik",
+   "name": "WF 10BB 1-2 – Big Blue kućište od 10″ sa dvostrukom O-ring zaptivkom, priključkom od 1 cola",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "BIG BLUE kućište od 10″ sa priključkom od 1 cola se koristi na mestima da je potrebna veća količina filtrirane vode.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "4-38°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Dimenzije kućišta (V/Š)",
+     "value": "34,5cm / 17,5cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 12421,
+   "stock": "in_stock",
+   "stockQty": 1,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wf-10bb-1-2-big-blue-kuciste-od-10-sa-dvostrukom-o-ring-zaptivkom-prikljuckom-od-1-cola/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WF10BB1-2.webp",
+     "alt": "WF 10BB 1-2 – Big Blue kućište od 10″ sa dvostrukom O-ring zaptivkom, priključkom od 1 cola"
+    }
+   ]
+  },
+  {
+   "sku": "WF20BB11-22",
+   "slug": "wf-20bb-1-1-2-2-big-blue-kuciste-od-20-sa-dvostrukom-o-ring-zaptivkom",
+   "name": "WF 20BB 1 1/2 -2 – Big Blue kućište od 20″ sa dvostrukom O-ring zaptivkom, priključkom od 6/4 cola",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "Veliko BIG BLUE kućište od 20″ sa priključkom od 6/4 cola se koristi na mestima da je potrebna veća količina filtrirane vode.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "4-38°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Dimenzije kućišta (V/Š)",
+     "value": "60cm / 17,5cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 22997,
+   "stock": "in_stock",
+   "stockQty": 6,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wf-20bb-1-1-2-2-big-blue-kuciste-od-20-sa-dvostrukom-o-ring-zaptivkom-prikljuckom-od-6-4-cola/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WF-20BB-2x3-1.webp",
+     "alt": "WF 20BB 1 1/2 -2 – Big Blue kućište od 20″ sa dvostrukom O-ring zaptivkom, priključkom od 6/4 cola"
+    }
+   ]
+  },
+  {
+   "sku": "WF20BB1-2",
+   "slug": "wf-20bb-1-2-big-blue-kuciste-od-20-sa-dvostrukom-o-ring-zaptivkom-prik",
+   "name": "WF 20BB 1-2 – Big Blue kućište od 20″ sa dvostrukom O-ring zaptivkom, priključkom od 1 cola",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "Veliko BIG BLUE kućište od 20″ sa priključkom od 1 cola se koristi na mestima da je potrebna veća količina filtrirane vode.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "4-38°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Dimenzije kućišta (V/Š)",
+     "value": "60cm / 17,5cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 19356,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wf-20bb-1-2-big-blue-kuciste-od-20-sa-dvostrukom-o-ring-zaptivkom-prikljuckom-od-1-cola/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WF-20BB-2x3-1.webp",
+     "alt": "WF 20BB 1-2 – Big Blue kućište od 20″ sa dvostrukom O-ring zaptivkom, priključkom od 1 cola"
+    }
+   ]
+  },
+  {
+   "sku": "WF PRE 34",
+   "slug": "wf-pre-34-predfilter-mrezasti-sa-ispiranjem",
+   "name": "WF PRE 34 – Predfilter mrežasti sa ispiranjem",
+   "categorySlug": "filteri-za-celu-kucu",
+   "kicker": null,
+   "summary": "Kompletan filterski set za predfiltraciju vode bilo kog sistema.",
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 14810,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wf-pre-34-predfilter-mrezasti-sa-ispiranjem/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WF-PRE-34.webp",
+     "alt": "WF PRE 34 – Predfilter mrežasti sa ispiranjem"
+    }
+   ]
+  },
+  {
+   "sku": "WF SLIM 20 3/4",
+   "slug": "wf-slim-20-3-4-slim-kuciste-od-20-sa-prikljuckom-od-3-4-cola",
+   "name": "WF SLIM 20 3/4 – SLIM Kućište od 20″ sa priključkom od 3/4 cola",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "Slim kućište od 20″ sa priključkom od 3/4 cola.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Dimenzije kućišta (V/Š)",
+     "value": "58cm / 13,5cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 9522,
+   "stock": "in_stock",
+   "stockQty": 2,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wf-slim-20-3-4-slim-kuciste-od-20-sa-prikljuckom-od-3-4-cola/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WF-20-slim.webp",
+     "alt": "WF SLIM 20 3/4 – SLIM Kućište od 20″ sa priključkom od 3/4 cola"
+    }
+   ]
+  },
+  {
+   "sku": "WF UP 1",
+   "slug": "wf-up-1-vezni-elemenat-od-1-col-za-wfu",
+   "name": "WF UP 1 – Vezni elemenat od 1 col za WFU",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Vezni elemenat za brzo spajanje WFU sa vodovodnom instalacijom od 1″.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "brza spojnica / spoljni navoj od 1 cola"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 378,
+   "stock": "in_stock",
+   "stockQty": 13,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wf-up-1-vezni-elemenat-od-1-col-za-wfu/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2020/05/n-WF-UP1.webp",
+     "alt": "WF UP 1 – Vezni elemenat od 1 col za WFU"
+    }
+   ]
+  },
+  {
+   "sku": "WF UP 12",
+   "slug": "wf-up-12-vezni-elemenat-od-1-2-cola-za-wfu",
+   "name": "WF UP 12 – Vezni elemenat od 1/2 cola za WFU",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Vezni elemenat za brzo spajanje WFU sa vodovodnom instalacijom od 1/2″.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "brza spojnica / spoljni navoj od 1/2 cola"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 378,
+   "stock": "in_stock",
+   "stockQty": 32,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wf-up-12-vezni-elemenat-od-1-2-cola-za-wfu/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2020/05/n-WF-UP12.webp",
+     "alt": "WF UP 12 – Vezni elemenat od 1/2 cola za WFU"
+    }
+   ]
+  },
+  {
+   "sku": "WF UP 34",
+   "slug": "wf-up-34-vezni-elemenat-od-3-4-cola-za-wfu",
+   "name": "WF UP 34 – Vezni elemenat od 3/4 cola za WFU",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Vezni elemenat za brzo spajanje WFU sa vodovodnom instalacijom od 3/4″.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "brza spojnica / spoljni navoj od 3/4 cola"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 378,
+   "stock": "in_stock",
+   "stockQty": 22,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wf-up-34-vezni-elemenat-od-3-4-cola-za-wfu/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2020/05/n-WF-UP34.webp",
+     "alt": "WF UP 34 – Vezni elemenat od 3/4 cola za WFU"
+    }
+   ]
+  },
+  {
+   "sku": "WF UPN",
+   "slug": "wf-upn-vezni-elemenat-za-dva-wfu-kucista",
+   "name": "WF UPN – Vezni elemenat za dva WFU kućišta",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Vezni elemenat za brzo spajanje dva WFU kućišta.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "brza spojnica"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 384,
+   "stock": "in_stock",
+   "stockQty": 9,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wf-upn-vezni-elemenat-za-dva-wfu-kucista/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2020/05/h-WF-UPN.webp",
+     "alt": "WF UPN – Vezni elemenat za dva WFU kućišta"
+    }
+   ]
+  },
+  {
+   "sku": "WF UPQ",
+   "slug": "wf-upq-vezni-elemenat-za-wfu-kucista-za-q-spojnicu-od-1-4",
+   "name": "WF UPQ – Vezni elemenat za WFU kućišta za Q spojnicu od 1/4″",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Vezni elemenat za brzo spajanje WFU kućišta i creva od 1/4″",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Priključak",
+     "value": "brza spojnica / priključak za brzu spojnicu"
+    },
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 412,
+   "stock": "in_stock",
+   "stockQty": 4,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wf-upq-vezni-elemenat-za-wfu-kucista-za-q-spojnicu-od-1-4/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2020/05/n-WF-UPQ.webp",
+     "alt": "WF UPQ – Vezni elemenat za WFU kućišta za Q spojnicu od 1/4″"
+    }
+   ]
+  },
+  {
+   "sku": "WFSH-LEMON-1",
+   "slug": "wfsh-freesia-filter-za-tus-sa-mirisom-freesia-aroma-therapy",
+   "name": "WFSH FREESIA – Filter za tuš sa mirisom freesia – Aroma Therapy",
+   "categorySlug": "tus-i-kucni-aparati",
+   "kicker": null,
+   "summary": "Filter za tuš sa mirisom freesia – Aroma Therapy",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-60°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Kapacitet filtriranja",
+     "value": "7200 litara"
+    },
+    {
+     "label": "Servisni vek",
+     "value": "2-3 meseca"
+    },
+    {
+     "label": "Priključak",
+     "value": "1/2″"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "15,5cm x 6cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 4411,
+   "stock": "in_stock",
+   "stockQty": 5,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfsh-freesia-filter-za-tus-sa-mirisom-freesia-aroma-therapy/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WFSH-Freesia.webp",
+     "alt": "WFSH FREESIA – Filter za tuš sa mirisom freesia – Aroma Therapy"
+    }
+   ]
+  },
+  {
+   "sku": "WFSH-LEMON",
+   "slug": "wfsh-lemon-filter-za-tus-sa-mirisom-limuna-aroma-therapy",
+   "name": "WFSH LEMON – Filter za tuš sa mirisom limuna – Aroma Therapy",
+   "categorySlug": "tus-i-kucni-aparati",
+   "kicker": null,
+   "summary": "Filter za tuš na bazi polifosfata.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-60°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Kapacitet filtriranja",
+     "value": "7200 litara"
+    },
+    {
+     "label": "Servisni vek",
+     "value": "2-3 meseca"
+    },
+    {
+     "label": "Priključak",
+     "value": "1/2″"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "15,5cm x 6cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 4411,
+   "stock": "in_stock",
+   "stockQty": 5,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfsh-lemon-filter-za-tus-sa-mirisom-limuna-aroma-therapy/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WFSH-Lemon.webp",
+     "alt": "WFSH LEMON – Filter za tuš sa mirisom limuna – Aroma Therapy"
+    }
+   ]
+  },
+  {
+   "sku": "WFST",
+   "slug": "wfst-filter-za-ves-masinu",
+   "name": "WFST – Filter za veš-mašinu i sudo-mašinu sa sunđerom",
+   "categorySlug": "tus-i-kucni-aparati",
+   "kicker": "Veš i sudo mašina",
+   "summary": "Filter za veš-mašinu i sudo-mašinu na bazi polifosfata.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "6000 litara"
+    },
+    {
+     "label": "Priključak",
+     "value": "3/4″"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "15,5cm x 6cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1813,
+   "stock": "in_stock",
+   "stockQty": 5,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfst-filter-za-ves-masinu-i-sudo-masinu/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "images/products/wfst-filter-za-ves-masinu.webp",
+     "alt": "WFST – Filter za veš-mašinu i sudo-mašinu sa sunđerom"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-WFST.webp",
+     "alt": "WFST – Filter za veš-mašinu i sudo-mašinu sa sunđerom"
+    }
+   ]
+  },
+  {
+   "sku": "WFST-1",
+   "slug": "wfst-1-filter-za-ves-masinu-i-sudo-masinu",
+   "name": "WFST/1 – Filter za veš-mašinu i sudo-mašinu",
+   "categorySlug": "tus-i-kucni-aparati",
+   "kicker": null,
+   "summary": "Filter za veš-mašinu i sudo-mašinu na bazi polifosfata.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-40°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "6 bara"
+    },
+    {
+     "label": "Servisni ciklus",
+     "value": "7000 litara"
+    },
+    {
+     "label": "Priključak",
+     "value": "3/4″"
+    },
+    {
+     "label": "Dimenzije uloška (Dužina/Spoljni prečnik)",
+     "value": "15,5cm x 6cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 2179,
+   "stock": "in_stock",
+   "stockQty": 3,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfst-1-filter-za-ves-masinu-i-sudo-masinu/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-WFST-1.webp",
+     "alt": "WFST/1 – Filter za veš-mašinu i sudo-mašinu"
+    }
+   ]
+  },
+  {
+   "sku": "WFU10",
+   "slug": "wfu-10-univerzalno-dvodelno-kuciste-od-10-sa-brzom-spojnicom",
+   "name": "WFU 10 – Univerzalno dvodelno kućište od 10″ sa brzom spojnicom",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "Univerzalno dvodelno kućište za uložak od 10″ u kombinaciji sa univerzalnom brzom spojnicom.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "8 bara"
+    },
+    {
+     "label": "Dimenzije kućišta (V/Š)",
+     "value": "32cm / 11cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 1981,
+   "stock": "in_stock",
+   "stockQty": 10,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfu10-kuciste-10-inca-univerzalno/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2016/05/n-WFU-10.webp",
+     "alt": "WFU 10 – Univerzalno dvodelno kućište od 10″ sa brzom spojnicom"
+    }
+   ]
+  },
+  {
+   "sku": "WFU SET",
+   "slug": "wfu10-set-univerzalno-dvodelno-kuciste-od-10-sa-brzom-spojnicom-u-setu",
+   "name": "WFU10 SET – Univerzalno dvodelno kućište od 10″ sa brzom spojnicom u setu sa ključem i nosačem",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "Univerzalno dvodelno kućište za uložak od 10″ u kombinaciji sa univerzalnom brzom spojnicom, u setu sa ključem i nosačem.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "8 bara"
+    },
+    {
+     "label": "Dimenzije kućišta (V/Š)",
+     "value": "32cm / 11cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 2680,
+   "stock": "in_stock",
+   "stockQty": 8,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfu10-set-univerzalno-dvodelno-kuciste-od-10-sa-brzom-spojnicom-u-setu-sa-kljucem-i-nosacem/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WFU-Set.webp",
+     "alt": "WFU10 SET – Univerzalno dvodelno kućište od 10″ sa brzom spojnicom u setu sa ključem i nosačem"
+    }
+   ]
+  },
+  {
+   "sku": "WFW1EMI-SET",
+   "slug": "wfw-1-emi-set-dvodelno-emi-kuciste-od-10-sa-mesinganim-prikljuckom-od",
+   "name": "WFW 1 EMI SET – Dvodelno EMI kućište od 10” sa mesinganim priključkom od 1 cola u setu za montažu",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "Dvodelni tip kućišta EMI od 10 inča sa mesinganim priključkom od 1 col, sa 2 dihtung prstena, sigurnosni patent,upotrebljava se za vodu pri optimalnoj temperaturi pijaće vode.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "8 bara"
+    },
+    {
+     "label": "Dimenzije kućišta (V/Š)",
+     "value": "32cm / 11cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 3912,
+   "stock": "in_stock",
+   "stockQty": 12,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfw-1-emi-set-dvodelno-emi-kuciste-od-10-sa-mesinganim-prikljuckom-od-1-cola-u-setu-za-montazu/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-WFW1-SET.webp",
+     "alt": "WFW 1 EMI SET – Dvodelno EMI kućište od 10” sa mesinganim priključkom od 1 cola u setu za montažu"
+    }
+   ]
+  },
+  {
+   "sku": "WFW12EMI-SET",
+   "slug": "wfw-12-emi-set-dvodelno-emi-kuciste-od-10-sa-mesinganim-prikljuckom-od",
+   "name": "WFW 12 EMI SET – Dvodelno EMI kućište od 10” sa mesinganim priključkom od 1/2 cola u setu za montažu",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "Dvodelni tip kućišta EMI od 10 inča sa mesinganim priključkom od 1/2 col, sa 2 dihtung prstena, sigurnosni patent,upotrebljava se za vodu pri optimalnoj temperaturi pijaće vode.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "8 bara"
+    },
+    {
+     "label": "Dimenzije kućišta (V/Š)",
+     "value": "32cm / 11cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 3481,
+   "stock": "in_stock",
+   "stockQty": 80,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfw-12-emi-set-dvodelno-emi-kuciste-od-10-sa-mesinganim-prikljuckom-od-1-2-cola-u-setu-za-montazu/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-WFW1-SET.webp",
+     "alt": "WFW 12 EMI SET – Dvodelno EMI kućište od 10” sa mesinganim priključkom od 1/2 cola u setu za montažu"
+    }
+   ]
+  },
+  {
+   "sku": "WFW12EMI",
+   "slug": "wfw-12-emi-dvodelno-emi-kuciste-od-10-sa-mesinganim-prikljuckom-od-1-2",
+   "name": "WFW 12 EMI – Dvodelno EMI kućište od 10” sa mesinganim priključkom od 1/2 cola",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "Dvodelni tip kućišta EMI od 10 inča sa mesinganim priključkom od 1/2 col, sa 2 dihtung prstena, sigurnosni patent,upotrebljava se za vodu pri optimalnoj temperaturi pijaće vode.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "8 bara"
+    },
+    {
+     "label": "Dimenzije kućišta (V/Š)",
+     "value": "32cm / 11cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 2767,
+   "stock": "in_stock",
+   "stockQty": 14,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfw-12-emi-dvodelno-emi-kuciste-od-10-sa-mesinganim-prikljuckom-od-1-2-cola/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WFW-EMI.webp",
+     "alt": "WFW 12 EMI – Dvodelno EMI kućište od 10” sa mesinganim priključkom od 1/2 cola"
+    }
+   ]
+  },
+  {
+   "sku": "WFW14EMIBWQ",
+   "slug": "wfw-14-emi-bw-q-dvodelno-belo-emi-kuciste-od-10-sa-brzom-spojnicom",
+   "name": "WFW 14 EMI BW Q – Dvodelno belo EMI kućište od 10” sa brzom spojnicom",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "Dvodelni tip kućišta EMI od 10 inča sa brzom spojnicom, sa 2 dihtung prstena, sigurnosni patent,upotrebljava se za vodu pri optimalnoj temperaturi pijaće vode.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "8 bara"
+    },
+    {
+     "label": "Dimenzije kućišta (V/Š)",
+     "value": "32cm / 11cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 2659,
+   "stock": "in_stock",
+   "stockQty": 12,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfw-14-emi-bw-q-dvodelno-belo-emi-kuciste-od-10-sa-brzom-spojnicom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WFW-EMI.webp",
+     "alt": "WFW 14 EMI BW Q – Dvodelno belo EMI kućište od 10” sa brzom spojnicom"
+    }
+   ]
+  },
+  {
+   "sku": "WFW34EMI-SET",
+   "slug": "wfw-34-emi-set-dvodelno-emi-kuciste-od-10-sa-mesinganim-prikljuckom-od",
+   "name": "WFW 34 EMI SET – Dvodelno EMI kućište od 10” sa mesinganim priključkom od 3/4 cola u setu za montažu",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "Dvodelni tip kućišta EMI od 10 inča sa mesinganim priključkom od 3/4 col, sa 2 dihtung prstena, sigurnosni patent,upotrebljava se za vodu pri optimalnoj temperaturi pijaće vode.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "8 bara"
+    },
+    {
+     "label": "Dimenzije kućišta (V/Š)",
+     "value": "32cm / 11cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 3690,
+   "stock": "in_stock",
+   "stockQty": 9,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfw-34-emi-set-dvodelno-emi-kuciste-od-10-sa-mesinganim-prikljuckom-od-3-4-cola-u-setu-za-montazu-3/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2019/11/n-WFW1-SET.webp",
+     "alt": "WFW 34 EMI SET – Dvodelno EMI kućište od 10” sa mesinganim priključkom od 3/4 cola u setu za montažu"
+    }
+   ]
+  },
+  {
+   "sku": "WFW34EMI",
+   "slug": "wfw-34-emi-dvodelno-emi-kuciste-od-10-sa-mesinganim-prikljuckom-od-3-4",
+   "name": "WFW 34 EMI – Dvodelno EMI kućište od 10” sa mesinganim priključkom od 3/4 cola",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "Dvodelni tip kućišta EMI od 10 inča sa mesinganim priključkom od 3/4 col, sa 2 dihtung prstena, sigurnosni patent,upotrebljava se za vodu pri optimalnoj temperaturi pijaće vode.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-30°C"
+    },
+    {
+     "label": "Maksimalni radni pritisak",
+     "value": "8 bara"
+    },
+    {
+     "label": "Dimenzije kućišta (V/Š)",
+     "value": "32cm / 11cm"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 2983,
+   "stock": "in_stock",
+   "stockQty": 4,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wfw-34-emi-dvodelno-emi-kuciste-od-10-sa-mesinganim-prikljuckom-od-3-4-cola/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WFW-EMI.webp",
+     "alt": "WFW 34 EMI – Dvodelno EMI kućište od 10” sa mesinganim priključkom od 3/4 cola"
+    }
+   ]
+  },
+  {
+   "sku": "WR-BB",
+   "slug": "wr-bb-kljuc-za-big-blue-kuciste",
+   "name": "WR BB – Ključ za Big Blue kućište",
+   "categorySlug": "kucista",
+   "kicker": null,
+   "summary": "Ključ za Big Blue kućište od 10″ i 20″.",
+   "descriptionHtml": null,
+   "specs": [],
+   "maintenance": null,
+   "badge": null,
+   "price": 1124,
+   "stock": "in_stock",
+   "stockQty": 33,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/wr-bb-kljuc-za-big-blue-kuciste/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-WR-BB.webp",
+     "alt": "WR BB – Ključ za Big Blue kućište"
+    }
+   ]
+  },
+  {
+   "sku": "YT25Q",
+   "slug": "yt-25-q-kuciste-za-ro-membranu-sa-brzom-spojnicom",
+   "name": "YT 25 Q – Kućište za RO membranu sa brzom spojnicom",
+   "categorySlug": "rezervni-delovi",
+   "kicker": null,
+   "summary": "Kućište za 12″ membrane sa brzom spojnicom.",
+   "descriptionHtml": null,
+   "specs": [
+    {
+     "label": "Radna temperatura",
+     "value": "2-45°C"
+    },
+    {
+     "label": "Radni pritisak",
+     "value": "6 bara"
+    }
+   ],
+   "maintenance": null,
+   "badge": null,
+   "price": 2411,
+   "stock": "in_stock",
+   "stockQty": 44,
+   "featured": false,
+   "sort": 100,
+   "partnerUrl": "https://decorambient.com/prodavnica/yt-25-q-kuciste-za-ro-membranu-sa-brzom-spojnicom/",
+   "seoTitle": null,
+   "seoDescription": null,
+   "images": [
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-YT25-Q.webp",
+     "alt": "YT 25 Q – Kućište za RO membranu sa brzom spojnicom"
+    },
+    {
+     "src": "https://decorambient.com/wp-content/uploads/2025/11/n-YT25.webp",
+     "alt": "YT 25 Q – Kućište za RO membranu sa brzom spojnicom"
+    }
+   ]
+  }
+ ]
+}

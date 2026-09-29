@@ -12,4 +12,6 @@ Astro 7 (static) + React 19 components with CSS modules, Storybook 10 for the de
 - Pages must work without JavaScript where possible; interactive parts are islands (`client:visible`).
 - The repository is public: never commit secrets. Test admin login details live in Jira, not here.
 - Decisions already made (29 Sep 2026): no shipping price or free shipping on the site; commission earned after 7 days by default (admin setting); no invoices — commission summary by date range; price override = manual correction; auto price sync from decorambient.com; Serbian Latin only; B2C house systems first; orders emailed from narudzbine@vodanatura.com.
+- Catalogue: Supabase → `scripts/fetch-catalog.mjs` (prebuild) → `src/data/catalog.json` → pages via `src/lib/catalog.ts`. The sandbox can't reach Supabase, so local builds use the committed snapshot; use the Supabase MCP tools for database work and commit migrations to `supabase/migrations/`.
+- Internal data (partner texts, data notes, commission rules) lives in admin-only tables (`product_internal`, `commission_rules`); never add it to public tables.
 - Run `npx astro check` and `npm run build` before committing.

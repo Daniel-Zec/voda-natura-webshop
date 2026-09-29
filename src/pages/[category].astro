@@ -1,0 +1,104 @@
+---
+/**
+ * Category page, one per catalogue category: /reverzna-osmoza/, /ulosci/, …
+ * Shows the category's own products and those of its subcategories.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Breadcrumbs } from '../components/ui/Breadcrumbs/Breadcrumbs';
+import { Chip } from '../components/ui/Chip/Chip';
+import { ProductCard } from '../components/shop/ProductCard/ProductCard';
+import { categories, categoryTrail, childrenOf, productsIn, toSummary, type CatalogCategory } from '../lib/catalog';
+import { routes } from '../lib/url';
+
+export function getStaticPaths() {
+  return categories.map((c) => ({ params: { category: c.slug }, props: { category: c } }));
+}
+
+interface Props {
+  category: CatalogCategory;
+}
+const { category } = Astro.props;
+
+const trail = categoryTrail(category.slug);
+const children = childrenOf(category.slug).filter((c) => productsIn(c.slug).length > 0);
+const items = productsIn(category.slug).sort((a, b) => a.sort - b.sort || a.name.localeCompare(b.name, 'sr'));
+const crumbs = [{ label: 'Početna', href: routes.home() }, ...trail.map((c) => ({ label: c.name, href: routes.category(c.slug) }))];
+
+const title = category.seoTitle ?? `${category.name} – cene i ponuda | VodaNatura`;
+const description =
+  category.seoDescription ??
+  `${items.length} proizvoda: ${category.name.toLowerCase()} za kuću i stan. Cene sa PDV-om, plaćanje pouzećem, stručna pomoć pri izboru.`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.label, item: new URL(c.href, Astro.site).toString() })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: category.name,
+    description: category.description,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: items.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(routes.product(p.slug), Astro.site).toString() })),
+    },
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} currentHref={routes.category(trail[1]?.slug ?? category.slug)}>
+  <div class="vn-container">
+    <Breadcrumbs items={crumbs} />
+
+    <header class="head">
+      <h1 class="title">{category.name}</h1>
+      {(category.intro ?? category.description) && <p class="lead">{category.intro ?? category.description}</p>}
+      {children.length > 0 && (
+        <nav aria-label="Podkategorije" class="chips">
+          {children.map((c) => (
+            <Chip href={routes.category(c.slug)} tone="neutral">
+              {c.name} <span class="count">({productsIn(c.slug).length})</span>
+            </Chip>
+          ))}
+        </nav>
+      )}
+    </header>
+
+    <p class="meta">{items.length} {items.length === 1 ? 'proizvod' : 'proizvoda'} · sve cene su sa PDV-om · plaćanje pouzećem</p>
+
+    {items.length > 0 ? (
+      <ul role="list" class="grid">
+        {items.map((p) => (
+          <li><ProductCard product={toSummary(p)} href={routes.product(p.slug)} /></li>
+        ))}
+      </ul>
+    ) : (
+      <p class="empty">U ovoj kategoriji trenutno nema proizvoda.</p>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .head { display: flex; flex-direction: column; gap: var(--vn-space-3); padding-top: var(--vn-space-6); }
+  .title { font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+  .lead { max-width: var(--vn-reading-width); font-size: var(--vn-text-body-lg-size); line-height: var(--vn-text-body-lg-line-height); color: var(--vn-gray-700); }
+  .chips { display: flex; flex-wrap: wrap; gap: var(--vn-space-2); margin-top: var(--vn-space-2); }
+  .count { color: var(--vn-color-text-muted); font-weight: var(--vn-font-weight-regular); }
+  .meta { margin: var(--vn-space-6) 0 var(--vn-space-4); font-size: var(--vn-text-body-sm-size); color: var(--vn-color-text-secondary); }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--vn-space-3); }
+  .grid > li { display: flex; }
+  .grid > li > :global(*) { flex: 1 1 auto; }
+  .empty { padding: var(--vn-space-10) 0; color: var(--vn-color-text-secondary); }
+
+  @media (min-width: 768px) {
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--vn-space-6); }
+  }
+  @media (min-width: 1000px) {
+    .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (min-width: 1200px) {
+    .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+</style>
