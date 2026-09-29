@@ -40,7 +40,7 @@ async function localizeImage(src) {
 
 async function get(path) {
   const res = await fetch(`${URL_}/rest/v1/${path}`, {
-    headers: { apikey: KEY, Authorization: `Bearer ${KEY}` },
+    headers: { apikey: KEY },
     signal: AbortSignal.timeout(20000),
   });
   if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
