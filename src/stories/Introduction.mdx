@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# VodaNatura — design system
+
+This is the living catalogue of every reusable part of the VodaNatura webshop. Each component here is **the same code the site uses**, so the catalogue can't drift from the shop. Shop text is in Serbian (Latin); these docs are in English.
+
+## Where the values come from
+
+| What | Source | File in the code |
+| --- | --- | --- |
+| Colours (54 primitives, 41 tokens) | Figma "VodaNatura — Design System" | `src/styles/tokens/colors.css` |
+| Typography (22 styles, desktop + phone) | Figma "VodaNatura — Design System" | `src/styles/tokens/typography.css` |
+| Spacing, radius, shadows | Measured from the homepage mock-ups (not in Figma yet) | `src/styles/tokens/layout.css` |
+| Font | Open Sans 400 / 600 / 700, self-hosted with č ć š ž đ | `src/assets/fonts/` |
+
+**When something changes:** change it in Figma → export the variables → replace `colors.css` / `typography.css`. Never edit those CSS files by hand.
+
+## Rules
+
+1. **Tokens, not hex codes.** Components use only `--vn-color-*`, `--vn-text-*`, `--vn-space-*`, `--vn-radius-*`.
+2. **Logo colours are decoration.** `accent-water` and `accent-natura` are for icons and illustrations, never text on white.
+3. **Green = buying, blue = guidance.** `action-primary` for "Dodaj u korpu", `action-secondary` for "Pronađi pravi filter".
+4. **Nothing under 12 px** (11 px only for UPPERCASE Overline). Inputs are 16 px on phones.
+5. **Touch targets at least 44 × 44 px.**
+6. **Works without JavaScript wherever possible:** search is a plain form, the FAQ uses `<details>`, cart buttons use `data-` attributes.
+
+## Groups
+
+- **Foundations** — colours, typography, spacing, icons
+- **UI** — basic parts: button, badge, price, search, stepper…
+- **Shop** — shop parts: product card, savings calculator, FAQ…
+- **Layout** — header, announcement bar, footer
+
+Use the toolbar to switch the viewport (phone 390 / tablet 768 / desktop 1440) and background, and the **Accessibility** tab to check contrast and labels.

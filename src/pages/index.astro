@@ -1,0 +1,309 @@
+---
+/**
+ * Homepage — built from the "VodaNatura Landing Page" mock-ups (desktop 1440 + phone 390).
+ * Differences from the mock-up are intentional and listed in docs/homepage-decisions.md.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Hero } from '../components/shop/Hero/Hero';
+import { TrustBar } from '../components/shop/TrustBar/TrustBar';
+import { ChoosePath } from '../components/shop/ChoosePath/ChoosePath';
+import { CategoryCard } from '../components/shop/CategoryCard/CategoryCard';
+import { SavingsCalculator } from '../components/shop/SavingsCalculator/SavingsCalculator';
+import { ProductCard } from '../components/shop/ProductCard/ProductCard';
+import { StepList } from '../components/shop/StepList/StepList';
+import { InfoCard } from '../components/shop/InfoCard/InfoCard';
+import { CartridgeCard } from '../components/shop/CartridgeCard/CartridgeCard';
+import { FaqList } from '../components/shop/FaqList/FaqList';
+import { SectionHeader } from '../components/ui/SectionHeader/SectionHeader';
+import { Overline } from '../components/ui/Overline/Overline';
+import { ArrowLink } from '../components/ui/ArrowLink/ArrowLink';
+import { Button } from '../components/ui/Button/Button';
+import { Icon } from '../components/ui/Icon/Icon';
+import { categories, featuredProducts, popularCartridges, cartridgeChips, homeFaq } from '../data/home';
+import { site } from '../config/site';
+import { routes, url } from '../lib/url';
+import { formatNumber } from '../lib/format';
+
+const hero = (name: string) => [640, 960, 1680].map((w) => `${url(`images/hero/${name}-${w}.webp`)} ${w}w`).join(', ');
+
+const trustItems = [
+  { icon: 'cash' as const, tone: 'natura' as const, title: 'Plaćate tek kad stigne', text: 'Gotovinom kuriru, pri preuzimanju paketa.' },
+  { icon: 'shield' as const, tone: 'natura' as const, title: `Garancija ${site.warrantyYears} godine`, text: 'Na uređaje i kućišta, uz stručnu ugradnju.' },
+  { icon: 'award' as const, tone: 'water' as const, title: 'Sertifikovana kućišta', shortTitle: 'Atest Instituta „Batut”', text: 'EU sertifikat i atest Instituta „Batut”.' },
+  { icon: 'phone' as const, tone: 'water' as const, title: 'Pomoć telefonom', text: 'Pri izboru i ugradnji – i vašem majstoru.' },
+];
+
+const steps = [
+  { title: 'Izaberite', text: 'Sami ili uz kviz. Uporedite do 3 proizvoda jedan pored drugog.' },
+  { title: 'Poručite bez registracije', text: 'Ime, telefon i adresa – to je sve. Potvrda stiže odmah na e-mail.' },
+  { title: `Stiže ${site.delivery.courier} kurirom`, text: `Za ${site.delivery.estimate}. Dostavu plaćate kuriru, a cena zavisi od težine paketa.` },
+  { title: 'Platite pri preuzimanju', text: 'Gotovinom kuriru, tek kada paket stigne na vašu adresu.' },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homeFaq.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+};
+
+const ro = featuredProducts[0];
+---
+
+<BaseLayout
+  title="Filteri za vodu za kuću – plaćanje pouzećem | VodaNatura"
+  description="Sistemi za prečišćavanje vode za kuću i stan: reverzna osmoza, omekšivači, ulošci. Plaćanje pouzećem, dostava širom Srbije."
+  jsonLd={[faqJsonLd]}
+>
+  <div class="vn-container">
+    <Hero
+      overline="Filteri za vodu za stanove i kuće u Srbiji"
+      overlineShort="Filteri za vodu za stanove i kuće"
+      title="Čista voda iz vaše slavine. Bez nošenja flaša."
+      lead="Filter ugrađen ispod sudopere daje vodu za piće i kuvanje za celu porodicu – svaki dan, bez gajbi, kesa i plastike."
+      leadShort="Voda za piće i kuvanje za celu porodicu – bez gajbi, kesa i plastike."
+      image={{ src: url('images/hero/filtrirana-voda-iz-slavine-1680.webp'), srcSet: hero('filtrirana-voda-iz-slavine'), alt: 'Filtrirana voda iz kuhinjske slavine puni čašu' }}
+      primary={{ href: routes.finder(), label: 'Pronađi pravi filter', note: '5 pitanja' }}
+      secondary={{ href: '#proizvodi', label: 'Pogledaj sisteme' }}
+      promises={['Plaćanje pouzećem', `Garancija ${site.warrantyYears} godine`, 'Bez registracije']}
+    />
+
+    <section class="trust">
+      <TrustBar items={trustItems} />
+    </section>
+
+    <section class="section" id="izbor" aria-labelledby="izbor-title">
+      <SectionHeader
+        id="izbor-title"
+        title="Kako želite da izaberete filter?"
+        subtitle="Uz našu pomoć ili sami – korpa i poručivanje su isti."
+        align="center"
+      />
+      <div class="section-body">
+        <ChoosePath
+          quiz={{ href: routes.finder(), questions: ['Stan ili kuća?', 'Gradski vodovod ili bunar?', 'Šta vam smeta: ukus hlora, kamenac, gvožđe?'] }}
+          search={{ action: routes.search(), chips: cartridgeChips, allHref: routes.category('ulosci') }}
+        />
+      </div>
+    </section>
+
+    <section class="section" id="kategorije" aria-labelledby="kategorije-title">
+      <SectionHeader
+        id="kategorije-title"
+        title="Izaberite po potrebi"
+        subtitle="Svaka kategorija rešava jedan problem – od ukusa vode do kamenca u bojleru."
+        link={{ href: routes.category('proizvodi'), label: 'Svi proizvodi' }}
+      />
+      <ul role="list" class="category-grid section-body">
+        {categories.map((c) => (
+          <li><CategoryCard category={c} href={routes.category(c.slug)} wideOnMobile={c.slug === 'ulosci'} /></li>
+        ))}
+      </ul>
+    </section>
+  </div>
+
+  <section class="savings" id="usteda" aria-labelledby="usteda-title">
+    <div class="vn-container savings-grid">
+      <div class="savings-text">
+        <Overline tone="brand">Flaširana voda vs. filter</Overline>
+        <h2 id="usteda-title" class="savings-title">Koliko flaša vaša porodica ponese kući za godinu dana?</h2>
+        <div class="savings-calc">
+        <SavingsCalculator client:visible cta={{ href: routes.category('filteri-za-pijacu-vodu'), label: 'Pogledaj filtere za vodu za piće' }}>
+          Za poređenje: sistem reverzne osmoze {ro.name.split(' –')[0]} košta <strong>{formatNumber(ro.price)} RSD jednom</strong>, a membrana se menja na 3 godine (oko 2.170 RSD godišnje). Kuhinjski filter FSCNT: <strong>2.438 RSD godišnje</strong> za uloške.
+        </SavingsCalculator>
+        </div>
+      </div>
+      <figure class="savings-photo">
+        <img
+          src={url('images/hero/porodica-kuhinja-filtrirana-voda-1680.webp')}
+          srcset={hero('porodica-kuhinja-filtrirana-voda')}
+          sizes="(min-width: 900px) 50vw, 100vw"
+          alt="Porodica u kuhinji sipa filtriranu vodu iz slavine"
+          width="1680"
+          height="944"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="savings-caption">
+          <Icon name="dropShine" size={36} />
+          <span><strong>Manje plastike, manje nošenja.</strong> Voda za piće, kafu i kuvanje – direktno iz slavine.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="vn-container">
+    <section class="section" id="proizvodi" aria-labelledby="proizvodi-title">
+      <SectionHeader
+        id="proizvodi-title"
+        title="Najtraženiji sistemi"
+        subtitle="Sve cene su sa PDV-om. Uz svaki sistem vidite i koliko košta godišnje održavanje."
+        link={{ href: routes.category('sistemi'), label: 'Svi sistemi' }}
+      />
+      <ul role="list" class="product-grid section-body">
+        {featuredProducts.map((p) => (
+          <li><ProductCard product={p} href={routes.product(p.slug)} /></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section" id="kako" aria-labelledby="kako-title">
+      <SectionHeader
+        id="kako-title"
+        title="Kako poručivanje funkcioniše"
+        subtitle="Bez registracije i bez plaćanja karticom unapred."
+        align="center"
+      />
+      <div class="section-body">
+        <StepList steps={steps} />
+      </div>
+      <div class="info-grid">
+        <InfoCard icon="wrench" tone="info" title="Ugradnja" link={{ href: routes.page('ugradnja'), label: 'Kako teče ugradnja' }}>
+          U Subotici i okolini ugradnju radi serviser našeg partnera – zakazujete je telefonom ({site.partner.installationPhone}), cena {site.partner.installationPrice}. Za ostale gradove, vaš vodoinstalater dobija uputstvo i pomoć telefonom.
+        </InfoCard>
+        <InfoCard icon="flask" tone="brand" title="Niste sigurni kakvu vodu imate?" link={{ href: routes.guide('analiza-vode'), label: 'Kako do analize vode' }}>
+          Uradite analizu u najbližem zavodu za javno zdravlje i pošaljite nam rezultate. Naš tehnolog besplatno predlaže sistem.
+        </InfoCard>
+      </div>
+    </section>
+
+    <section class="section" id="ulosci" aria-labelledby="ulosci-title">
+      <div class="reorder">
+        <div class="reorder-text">
+          <Overline tone="sand">Već imate filter?</Overline>
+          <h2 id="ulosci-title" class="reorder-title">Vreme je za nove uloške</h2>
+          <p class="reorder-lead">Većina uložaka se menja na 6 meseci. Pronađite svoj po šifri ili po sistemu koji imate.</p>
+          <ArrowLink href={routes.category('ulosci')}>Svi ulošci (55)</ArrowLink>
+        </div>
+        <ul role="list" class="reorder-grid">
+          {popularCartridges.map((c) => (
+            <li><CartridgeCard cartridge={c} href={routes.product(c.slug)} /></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section faq" id="pomoc" aria-labelledby="pomoc-title">
+      <div class="faq-intro">
+        <h2 id="pomoc-title" class="faq-title">Česta pitanja</h2>
+        <p class="faq-lead">Ne vidite odgovor? Pozovite nas – pomažemo i oko izbora i oko ugradnje.</p>
+        <Button href={site.contact.phoneHref ? `tel:${site.contact.phoneHref}` : routes.page('kontakt')} variant="outlineBrand" size="lg" icon="phone">
+          {site.contact.phone}
+        </Button>
+      </div>
+      <FaqList items={homeFaq} />
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .trust { padding-top: var(--vn-space-4); }
+  .section { padding-top: var(--vn-section-gap); }
+  .section-body { margin-top: var(--vn-space-4); }
+
+  .category-grid,
+  .product-grid,
+  .reorder-grid { list-style: none; margin-left: 0; margin-right: 0; padding: 0; }
+  .category-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--vn-space-3); }
+  .category-grid > li:nth-child(odd):last-child { grid-column: 1 / -1; }
+  .category-grid > li,
+  .product-grid > li,
+  .reorder-grid > li { display: flex; }
+  .category-grid > li > :global(*),
+  .product-grid > li > :global(*),
+  .reorder-grid > li > :global(*) { flex: 1 1 auto; }
+  .product-grid { display: grid; gap: var(--vn-space-3); }
+
+  /* Savings band */
+  .savings { margin-top: var(--vn-section-gap); padding: var(--vn-space-10) 0; background: var(--vn-color-bg-eco-soft); }
+  .savings-grid { display: flex; flex-direction: column; gap: var(--vn-space-4); }
+  .savings-title {
+    font-size: var(--vn-text-h2-size);
+    line-height: var(--vn-text-h2-line-height);
+    font-weight: var(--vn-font-weight-bold);
+  }
+  .savings-photo { position: relative; margin: 0; }
+  .savings-photo img { width: 100%; height: 200px; object-fit: cover; object-position: 75% 50%; border-radius: var(--vn-radius-lg); }
+  /* Phones: label, title, photo, calculator (as in the mobile mock-up) */
+  @media (max-width: 899px) {
+    .savings-text { display: contents; }
+    .savings-text > :global(p) { order: 1; }
+    .savings-title { order: 2; margin-top: calc(-1 * var(--vn-space-2)); }
+    .savings-photo { order: 3; }
+    .savings-calc { order: 4; }
+  }
+  .savings-caption { display: none; }
+
+  /* Info cards */
+  .info-grid { display: grid; gap: var(--vn-space-3); margin-top: var(--vn-space-4); }
+
+  /* Cartridge reorder band */
+  .reorder { display: flex; flex-direction: column; gap: var(--vn-space-5); padding: var(--vn-space-6) var(--vn-space-4); border-radius: var(--vn-radius-xl); background: var(--vn-color-bg-warm); }
+  .reorder-text { display: flex; flex-direction: column; gap: var(--vn-space-3); align-items: flex-start; }
+  .reorder-title { font-size: var(--vn-text-h2-size); line-height: var(--vn-text-h2-line-height); font-weight: var(--vn-text-h2-weight); }
+  .reorder-lead { color: var(--vn-gray-700); }
+  /* Phones: a sideways-scrolling row of cartridge tiles */
+  .reorder-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 62%;
+    gap: var(--vn-space-3);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-inline: calc(-1 * var(--vn-space-4));
+    padding: 0 var(--vn-space-4) var(--vn-space-2);
+    scrollbar-width: thin;
+  }
+  .reorder-grid > li { scroll-snap-align: start; }
+
+  /* FAQ */
+  .faq { display: flex; flex-direction: column; gap: var(--vn-space-5); }
+  .faq-intro { display: flex; flex-direction: column; gap: var(--vn-space-4); align-items: flex-start; }
+  .faq-title { font-size: var(--vn-text-h2-size); line-height: var(--vn-text-h2-line-height); font-weight: var(--vn-text-h2-weight); }
+  .faq-lead { color: var(--vn-gray-700); }
+
+  @media (min-width: 600px) {
+    .reorder-grid { grid-auto-flow: row; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; margin-inline: 0; padding: 0; }
+  }
+
+  @media (min-width: 768px) {
+    .trust { padding-top: var(--vn-space-8); }
+    .section-body { margin-top: var(--vn-space-8); }
+    .category-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--vn-space-4); }
+    .category-grid > li:nth-child(odd):last-child { grid-column: auto; }
+    .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--vn-space-6); }
+    .info-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--vn-space-6); margin-top: var(--vn-space-8); }
+  }
+
+  @media (min-width: 900px) {
+    .savings { padding: var(--vn-space-20) 0; }
+    .savings-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--vn-space-16); align-items: center; }
+    .savings-text { display: flex; flex-direction: column; gap: var(--vn-space-6); }
+    .savings-title { margin-top: 0; font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); }
+    .savings-photo { height: 640px; }
+    .savings-photo img { height: 100%; border-radius: var(--vn-radius-2xl); object-position: 72% 50%; }
+    .savings-caption {
+      position: absolute;
+      left: var(--vn-space-6);
+      right: var(--vn-space-6);
+      bottom: var(--vn-space-6);
+      display: flex;
+      align-items: center;
+      gap: var(--vn-space-4);
+      padding: var(--vn-space-5) var(--vn-space-6);
+      border-radius: var(--vn-radius-lg);
+      background: rgb(255 255 255 / 0.94);
+    }
+    .savings-caption :global(svg) { flex-shrink: 0; color: var(--vn-color-accent-natura); }
+
+    .reorder { display: grid; grid-template-columns: 4fr 8fr; gap: var(--vn-space-6); align-items: center; padding: var(--vn-space-12); border-radius: var(--vn-radius-2xl); }
+    .reorder-text { gap: var(--vn-space-4); }
+    .reorder-grid { gap: var(--vn-space-4); }
+
+    .faq { display: grid; grid-template-columns: 4fr 8fr; gap: var(--vn-space-6); }
+  }
+
+  @media (min-width: 1100px) {
+    .category-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+</style>

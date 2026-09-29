@@ -1,0 +1,81 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vn-space-2);
+  padding: 0 var(--vn-space-6);
+  border: 1px solid transparent;
+  border-radius: var(--vn-radius-sm);
+  font-family: inherit;
+  font-size: var(--vn-text-body-size);
+  line-height: 1;
+  font-weight: var(--vn-font-weight-semibold);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--vn-duration-fast) var(--vn-ease),
+    border-color var(--vn-duration-fast) var(--vn-ease),
+    color var(--vn-duration-fast) var(--vn-ease);
+}
+.button:hover { text-decoration: none; }
+
+.md { height: var(--vn-control-md); }
+.lg { height: var(--vn-control-lg); }
+
+.fullWidth { width: 100%; }
+
+.iconOnly {
+  padding: 0;
+  width: var(--vn-control-md);
+  flex-shrink: 0;
+}
+.iconOnly.md { width: var(--vn-touch-min); height: var(--vn-touch-min); }
+.iconOnly.lg { width: var(--vn-control-lg); }
+
+/* Primary — green: add to cart, order */
+.primary {
+  background: var(--vn-color-action-primary);
+  color: var(--vn-color-text-inverse);
+}
+.primary:hover { background: var(--vn-color-action-primary-hover); color: var(--vn-color-text-inverse); }
+.primary:active { background: var(--vn-color-action-primary-pressed); }
+
+/* Secondary — blue: guidance (product finder, learn more) */
+.secondary {
+  background: var(--vn-color-action-secondary);
+  color: var(--vn-color-text-inverse);
+}
+.secondary:hover { background: var(--vn-color-action-secondary-hover); color: var(--vn-color-text-inverse); }
+.secondary:active { background: var(--vn-color-action-secondary-pressed); }
+
+/* Outline — neutral second choice next to a filled button */
+.outline {
+  background: var(--vn-color-surface-card);
+  color: var(--vn-color-text-primary);
+  border-color: var(--vn-color-border-strong);
+}
+.outline:hover { background: var(--vn-color-action-ghost-hover); color: var(--vn-color-text-primary); }
+
+/* Outline brand — blue outline (phone call, secondary guidance) */
+.outlineBrand {
+  background: transparent;
+  color: var(--vn-color-text-link);
+  border-color: var(--vn-color-action-secondary);
+}
+.outlineBrand:hover { background: var(--vn-color-bg-brand-soft); color: var(--vn-color-text-link-hover); }
+
+/* Ghost — text only */
+.ghost {
+  background: transparent;
+  color: var(--vn-color-text-link);
+  padding: 0 var(--vn-space-3);
+}
+.ghost:hover { background: var(--vn-color-action-ghost-hover); color: var(--vn-color-text-link-hover); }
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  background: var(--vn-color-action-disabled);
+  color: var(--vn-color-text-disabled);
+  border-color: transparent;
+  cursor: not-allowed;
+}

@@ -1,0 +1,11 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--vn-touch-min);
+  font-size: var(--vn-text-body-size);
+  font-weight: var(--vn-font-weight-semibold);
+  color: var(--vn-color-text-link);
+}
+.arrow { transition: transform var(--vn-duration-fast) var(--vn-ease); }
+.link:hover .arrow { transform: translateX(3px); }

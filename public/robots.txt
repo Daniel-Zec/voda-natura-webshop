@@ -1,0 +1,3 @@
+# Test phase: nothing is indexed. Replace at launch (see SEO Build Guide, robots.txt section).
+User-agent: *
+Disallow: /

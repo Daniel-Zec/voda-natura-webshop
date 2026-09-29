@@ -1,0 +1,111 @@
+/* VodaNatura colour tokens — generated from Figma file “VodaNatura — Design System”.
+ * Logo colours: VODA Blue #00AEEF (blue-500), NATURA Green #39B54A (green-500, leaf included), text dark grey #414042 (gray-800).
+ * Use the semantic --vn-color-* tokens in components; primitives are the palette behind them. */
+:root {
+  /* Font */
+  --vn-font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Primitives */
+  --vn-blue-50: #EAF8FE;
+  --vn-blue-100: #CDEFFC;
+  --vn-blue-200: #9EE0FA;
+  --vn-blue-300: #66CEF6;
+  --vn-blue-400: #2DBDF2;
+  --vn-blue-500: #00AEEF;
+  --vn-blue-600: #008FCC;
+  --vn-blue-700: #0071A4;
+  --vn-blue-800: #055A82;
+  --vn-blue-900: #0B4461;
+  --vn-blue-950: #082C40;
+
+  --vn-green-50: #EFF9F1;
+  --vn-green-100: #D7F0DB;
+  --vn-green-200: #B4E3BA;
+  --vn-green-300: #8CD496;
+  --vn-green-400: #61C46E;
+  --vn-green-500: #39B54A;
+  --vn-green-600: #2A9239;
+  --vn-green-700: #1F752B;
+  --vn-green-800: #195D22;
+  --vn-green-900: #15471C;
+  --vn-green-950: #0D2B11;
+
+  --vn-gray-0: #FFFFFF;
+  --vn-gray-50: #F8F8F7;
+  --vn-gray-100: #F0EFEE;
+  --vn-gray-200: #E2E1DF;
+  --vn-gray-300: #CBCAC8;
+  --vn-gray-400: #A3A2A1;
+  --vn-gray-500: #737273;
+  --vn-gray-600: #5E5D5F;
+  --vn-gray-700: #4F4E50;
+  --vn-gray-800: #414042;
+  --vn-gray-900: #2A292B;
+  --vn-gray-950: #1A1A1B;
+
+  --vn-sand-50: #FBF8F3;
+  --vn-sand-100: #F5EFE5;
+  --vn-sand-200: #EBE1D0;
+  --vn-sand-300: #DCCBB0;
+  --vn-sand-400: #C7AE88;
+  --vn-sand-500: #AE916A;
+  --vn-sand-600: #8F7453;
+  --vn-sand-700: #6F5A41;
+  --vn-sand-800: #534434;
+  --vn-sand-900: #3A3026;
+
+  --vn-red-50: #FDEEEE;
+  --vn-red-100: #FAD4D4;
+  --vn-red-500: #E04848;
+  --vn-red-600: #C93030;
+  --vn-red-700: #A82424;
+
+  --vn-amber-50: #FEF6E4;
+  --vn-amber-100: #FCE8B8;
+  --vn-amber-500: #F2A516;
+  --vn-amber-600: #C98200;
+  --vn-amber-700: #9A6200;
+
+  /* Semantic tokens */
+  --vn-color-bg-page: var(--vn-gray-0); /* Main page background */
+  --vn-color-bg-subtle: var(--vn-sand-50); /* Warm light sections (alternate bands, footer top) */
+  --vn-color-bg-warm: var(--vn-sand-100); /* Warm tan cards and highlight sections */
+  --vn-color-bg-muted: var(--vn-gray-50); /* Neutral muted areas, table stripes, admin panel background */
+  --vn-color-bg-brand-soft: var(--vn-blue-50); /* Soft water-blue background (info banners, hero tint) */
+  --vn-color-bg-eco-soft: var(--vn-green-50); /* Soft green background (savings, eco messages) */
+  --vn-color-bg-inverse: var(--vn-gray-900); /* Dark sections, footer */
+  --vn-color-surface-card: var(--vn-gray-0); /* Cards, modals, dropdowns */
+  --vn-color-surface-overlay: var(--vn-gray-950); /* Modal backdrop (use at 50% opacity) */
+  --vn-color-text-primary: var(--vn-gray-900); /* Headings and body text */
+  --vn-color-text-secondary: var(--vn-gray-600); /* Supporting text, descriptions */
+  --vn-color-text-muted: var(--vn-gray-500); /* Captions, placeholders, meta info */
+  --vn-color-text-disabled: var(--vn-gray-400); /* Disabled labels */
+  --vn-color-text-inverse: var(--vn-gray-0); /* Text on dark or coloured backgrounds */
+  --vn-color-text-brand: var(--vn-green-700); /* Green brand text, highlighted prices */
+  --vn-color-text-link: var(--vn-blue-700); /* Links */
+  --vn-color-text-link-hover: var(--vn-blue-800); /* Links on hover */
+  --vn-color-border-subtle: var(--vn-gray-100); /* Dividers inside cards */
+  --vn-color-border-default: var(--vn-gray-200); /* Card and input borders */
+  --vn-color-border-strong: var(--vn-gray-300); /* Hovered inputs, strong dividers */
+  --vn-color-border-warm: var(--vn-sand-200); /* Borders on warm sections */
+  --vn-color-border-focus: var(--vn-blue-500); /* Keyboard focus ring */
+  --vn-color-action-primary: var(--vn-green-700); /* Main button: Add to cart, Order */
+  --vn-color-action-primary-hover: var(--vn-green-800); /* Main button hover */
+  --vn-color-action-primary-pressed: var(--vn-green-900); /* Main button pressed */
+  --vn-color-action-secondary: var(--vn-blue-700); /* Secondary button: Find the right filter, Learn more */
+  --vn-color-action-secondary-hover: var(--vn-blue-800); /* Secondary button hover */
+  --vn-color-action-secondary-pressed: var(--vn-blue-900); /* Secondary button pressed */
+  --vn-color-action-ghost-hover: var(--vn-gray-100); /* Hover fill for text or outline buttons */
+  --vn-color-action-disabled: var(--vn-gray-200); /* Disabled button fill */
+  --vn-color-accent-water: var(--vn-blue-500); /* Logo blue: icons, illustrations, decorative only (not for text) */
+  --vn-color-accent-natura: var(--vn-green-500); /* Logo green: icons, check marks, decorative */
+  --vn-color-accent-sand: var(--vn-sand-300); /* Warm tan accent shapes */
+  --vn-color-status-success: var(--vn-green-700); /* In stock, order confirmed */
+  --vn-color-status-success-bg: var(--vn-green-50); /* Success message background */
+  --vn-color-status-warning: var(--vn-amber-700); /* Low stock, waiting for partner */
+  --vn-color-status-warning-bg: var(--vn-amber-50); /* Warning message background */
+  --vn-color-status-error: var(--vn-red-600); /* Form errors, cancelled orders */
+  --vn-color-status-error-bg: var(--vn-red-50); /* Error message background */
+  --vn-color-status-info: var(--vn-blue-700); /* Information, order sent to partner */
+  --vn-color-status-info-bg: var(--vn-blue-50); /* Info message background */
+}

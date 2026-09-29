@@ -1,0 +1,23 @@
+/* Open Sans, self-hosted (SEO guide: no Google Fonts request, Latin + Latin Extended for č ć š ž đ).
+   Only the three weights the design system allows. */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/open-sans-regular-latin-ext.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/open-sans-semibold-latin-ext.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/open-sans-bold-latin-ext.woff2') format('woff2');
+}

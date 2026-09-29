@@ -1,0 +1,18 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--vn-control-sm);
+  padding: 0 14px;
+  border-radius: var(--vn-radius-pill);
+  background: var(--vn-color-surface-card);
+  color: var(--vn-color-text-primary);
+  font-size: var(--vn-text-body-sm-size);
+  font-weight: var(--vn-font-weight-semibold);
+  text-decoration: none;
+  transition: border-color var(--vn-duration-fast) var(--vn-ease);
+}
+.chip:hover { color: var(--vn-color-text-primary); text-decoration: none; }
+.sand { border: 1px solid var(--vn-color-accent-sand); }
+.sand:hover { border-color: var(--vn-sand-500); }
+.neutral { border: 1px solid var(--vn-color-border-default); }
+.neutral:hover { border-color: var(--vn-color-border-strong); }

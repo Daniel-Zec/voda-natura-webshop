@@ -1,0 +1,19 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vn-space-3);
+  padding: var(--vn-space-5);
+  border-radius: var(--vn-radius-lg);
+  background: var(--vn-color-surface-card);
+}
+.media { display: flex; align-items: center; justify-content: center; height: 120px; }
+.media img { height: 116px; width: auto; object-fit: contain; }
+.name { font-size: 18px; line-height: 24px; font-weight: var(--vn-font-weight-semibold); }
+.name a { color: var(--vn-color-text-primary); }
+.name a:hover { color: var(--vn-color-text-link-hover); }
+.description {
+  font-size: var(--vn-text-body-sm-size);
+  line-height: var(--vn-text-body-sm-line-height);
+  color: var(--vn-color-text-secondary);
+}
+.row { display: flex; align-items: center; justify-content: space-between; gap: var(--vn-space-2); }

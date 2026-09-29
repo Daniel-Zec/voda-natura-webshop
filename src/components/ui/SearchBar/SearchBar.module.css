@@ -1,0 +1,42 @@
+.form {
+  display: flex;
+  width: 100%;
+  border-radius: var(--vn-radius-sm);
+  overflow: hidden;
+}
+.form:focus-within { outline: 3px solid var(--vn-color-border-focus); outline-offset: 2px; }
+.md { height: var(--vn-control-md); }
+.lg { height: var(--vn-control-lg); }
+
+.muted { background: var(--vn-color-bg-muted); border: 1px solid var(--vn-color-border-default); }
+.warm { background: var(--vn-color-surface-card); border: 1px solid var(--vn-color-accent-sand); }
+
+.input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  padding: 0 var(--vn-space-4);
+  font-size: var(--vn-text-body-size); /* 16 px: iPhones don't zoom */
+  color: var(--vn-color-text-primary);
+  outline: none;
+}
+.input::placeholder { color: var(--vn-color-text-muted); }
+
+.submit {
+  flex-shrink: 0;
+  width: 56px;
+  border: 0;
+  background: var(--vn-color-action-primary);
+  color: var(--vn-color-text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.submit:hover { background: var(--vn-color-action-primary-hover); }
+.withText {
+  width: auto;
+  padding: 0 var(--vn-space-6);
+  font-size: var(--vn-text-body-size);
+  font-weight: var(--vn-font-weight-semibold);
+}

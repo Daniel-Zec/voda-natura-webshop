@@ -1,0 +1,13 @@
+.overline {
+  display: block;
+  margin: 0;
+  font-size: var(--vn-text-overline-size);
+  line-height: var(--vn-text-overline-line-height);
+  font-weight: var(--vn-text-overline-weight);
+  letter-spacing: var(--vn-letter-spacing-overline);
+  text-transform: uppercase;
+}
+.brand { color: var(--vn-color-text-brand); }
+.info { color: var(--vn-color-text-link); }
+.sand { color: var(--vn-sand-700); }
+.muted { color: var(--vn-color-text-secondary); }

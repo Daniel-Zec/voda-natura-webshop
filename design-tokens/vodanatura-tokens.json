@@ -1,0 +1,728 @@
+{
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "$value": [
+        "Open Sans",
+        "sans-serif"
+      ]
+    },
+    "weight": {
+      "regular": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "semibold": {
+        "$type": "fontWeight",
+        "$value": 600
+      },
+      "bold": {
+        "$type": "fontWeight",
+        "$value": 700
+      }
+    }
+  },
+  "primitive": {
+    "blue": {
+      "50": {
+        "$type": "color",
+        "$value": "#EAF8FE"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#CDEFFC"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#9EE0FA"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#66CEF6"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#2DBDF2"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#00AEEF"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#008FCC"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#0071A4"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#055A82"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#0B4461"
+      },
+      "950": {
+        "$type": "color",
+        "$value": "#082C40"
+      }
+    },
+    "green": {
+      "50": {
+        "$type": "color",
+        "$value": "#EFF9F1"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#D7F0DB"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#B4E3BA"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#8CD496"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#61C46E"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#39B54A"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#2A9239"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#1F752B"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#195D22"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#15471C"
+      },
+      "950": {
+        "$type": "color",
+        "$value": "#0D2B11"
+      }
+    },
+    "gray": {
+      "0": {
+        "$type": "color",
+        "$value": "#FFFFFF"
+      },
+      "50": {
+        "$type": "color",
+        "$value": "#F8F8F7"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#F0EFEE"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#E2E1DF"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#CBCAC8"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#A3A2A1"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#737273"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#5E5D5F"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#4F4E50"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#414042"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#2A292B"
+      },
+      "950": {
+        "$type": "color",
+        "$value": "#1A1A1B"
+      }
+    },
+    "sand": {
+      "50": {
+        "$type": "color",
+        "$value": "#FBF8F3"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#F5EFE5"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#EBE1D0"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#DCCBB0"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#C7AE88"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#AE916A"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#8F7453"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#6F5A41"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#534434"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#3A3026"
+      }
+    },
+    "red": {
+      "50": {
+        "$type": "color",
+        "$value": "#FDEEEE"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#FAD4D4"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#E04848"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#C93030"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#A82424"
+      }
+    },
+    "amber": {
+      "50": {
+        "$type": "color",
+        "$value": "#FEF6E4"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#FCE8B8"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#F2A516"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#C98200"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#9A6200"
+      }
+    }
+  },
+  "color": {
+    "bg": {
+      "page": {
+        "$type": "color",
+        "$value": "{primitive.gray.0}",
+        "$description": "Main page background"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "{primitive.sand.50}",
+        "$description": "Warm light sections (alternate bands, footer top)"
+      },
+      "warm": {
+        "$type": "color",
+        "$value": "{primitive.sand.100}",
+        "$description": "Warm tan cards and highlight sections"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{primitive.gray.50}",
+        "$description": "Neutral muted areas, table stripes, admin panel background"
+      },
+      "brand-soft": {
+        "$type": "color",
+        "$value": "{primitive.blue.50}",
+        "$description": "Soft water-blue background (info banners, hero tint)"
+      },
+      "eco-soft": {
+        "$type": "color",
+        "$value": "{primitive.green.50}",
+        "$description": "Soft green background (savings, eco messages)"
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{primitive.gray.900}",
+        "$description": "Dark sections, footer"
+      }
+    },
+    "surface": {
+      "card": {
+        "$type": "color",
+        "$value": "{primitive.gray.0}",
+        "$description": "Cards, modals, dropdowns"
+      },
+      "overlay": {
+        "$type": "color",
+        "$value": "{primitive.gray.950}",
+        "$description": "Modal backdrop (use at 50% opacity)"
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": "{primitive.gray.900}",
+        "$description": "Headings and body text"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{primitive.gray.600}",
+        "$description": "Supporting text, descriptions"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{primitive.gray.500}",
+        "$description": "Captions, placeholders, meta info"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{primitive.gray.400}",
+        "$description": "Disabled labels"
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{primitive.gray.0}",
+        "$description": "Text on dark or coloured backgrounds"
+      },
+      "brand": {
+        "$type": "color",
+        "$value": "{primitive.green.700}",
+        "$description": "Green brand text, highlighted prices"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{primitive.blue.700}",
+        "$description": "Links"
+      },
+      "link-hover": {
+        "$type": "color",
+        "$value": "{primitive.blue.800}",
+        "$description": "Links on hover"
+      }
+    },
+    "border": {
+      "subtle": {
+        "$type": "color",
+        "$value": "{primitive.gray.100}",
+        "$description": "Dividers inside cards"
+      },
+      "default": {
+        "$type": "color",
+        "$value": "{primitive.gray.200}",
+        "$description": "Card and input borders"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "{primitive.gray.300}",
+        "$description": "Hovered inputs, strong dividers"
+      },
+      "warm": {
+        "$type": "color",
+        "$value": "{primitive.sand.200}",
+        "$description": "Borders on warm sections"
+      },
+      "focus": {
+        "$type": "color",
+        "$value": "{primitive.blue.500}",
+        "$description": "Keyboard focus ring"
+      }
+    },
+    "action": {
+      "primary": {
+        "$type": "color",
+        "$value": "{primitive.green.700}",
+        "$description": "Main button: Add to cart, Order"
+      },
+      "primary-hover": {
+        "$type": "color",
+        "$value": "{primitive.green.800}",
+        "$description": "Main button hover"
+      },
+      "primary-pressed": {
+        "$type": "color",
+        "$value": "{primitive.green.900}",
+        "$description": "Main button pressed"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{primitive.blue.700}",
+        "$description": "Secondary button: Find the right filter, Learn more"
+      },
+      "secondary-hover": {
+        "$type": "color",
+        "$value": "{primitive.blue.800}",
+        "$description": "Secondary button hover"
+      },
+      "secondary-pressed": {
+        "$type": "color",
+        "$value": "{primitive.blue.900}",
+        "$description": "Secondary button pressed"
+      },
+      "ghost-hover": {
+        "$type": "color",
+        "$value": "{primitive.gray.100}",
+        "$description": "Hover fill for text or outline buttons"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{primitive.gray.200}",
+        "$description": "Disabled button fill"
+      }
+    },
+    "accent": {
+      "water": {
+        "$type": "color",
+        "$value": "{primitive.blue.500}",
+        "$description": "Logo blue: icons, illustrations, decorative only (not for text)"
+      },
+      "natura": {
+        "$type": "color",
+        "$value": "{primitive.green.500}",
+        "$description": "Logo green: icons, check marks, decorative"
+      },
+      "sand": {
+        "$type": "color",
+        "$value": "{primitive.sand.300}",
+        "$description": "Warm tan accent shapes"
+      }
+    },
+    "status": {
+      "success": {
+        "$type": "color",
+        "$value": "{primitive.green.700}",
+        "$description": "In stock, order confirmed"
+      },
+      "success-bg": {
+        "$type": "color",
+        "$value": "{primitive.green.50}",
+        "$description": "Success message background"
+      },
+      "warning": {
+        "$type": "color",
+        "$value": "{primitive.amber.700}",
+        "$description": "Low stock, waiting for partner"
+      },
+      "warning-bg": {
+        "$type": "color",
+        "$value": "{primitive.amber.50}",
+        "$description": "Warning message background"
+      },
+      "error": {
+        "$type": "color",
+        "$value": "{primitive.red.600}",
+        "$description": "Form errors, cancelled orders"
+      },
+      "error-bg": {
+        "$type": "color",
+        "$value": "{primitive.red.50}",
+        "$description": "Error message background"
+      },
+      "info": {
+        "$type": "color",
+        "$value": "{primitive.blue.700}",
+        "$description": "Information, order sent to partner"
+      },
+      "info-bg": {
+        "$type": "color",
+        "$value": "{primitive.blue.50}",
+        "$description": "Info message background"
+      }
+    }
+  },
+  "typography": {
+    "desktop": {
+      "hero": {
+        "$type": "typography",
+        "$description": "Homepage headline",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.bold}",
+          "fontSize": "48px",
+          "lineHeight": "56px",
+          "letterSpacing": "0px"
+        }
+      },
+      "h1": {
+        "$type": "typography",
+        "$description": "Page title, product name",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.bold}",
+          "fontSize": "36px",
+          "lineHeight": "44px",
+          "letterSpacing": "0px"
+        }
+      },
+      "h2": {
+        "$type": "typography",
+        "$description": "Section title",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.bold}",
+          "fontSize": "28px",
+          "lineHeight": "36px",
+          "letterSpacing": "0px"
+        }
+      },
+      "h3": {
+        "$type": "typography",
+        "$description": "Card title, subtitle",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.semibold}",
+          "fontSize": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "0px"
+        }
+      },
+      "h4": {
+        "$type": "typography",
+        "$description": "Small heading",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.semibold}",
+          "fontSize": "16px",
+          "lineHeight": "22px",
+          "letterSpacing": "0px"
+        }
+      },
+      "body-lg": {
+        "$type": "typography",
+        "$description": "Intro text",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.regular}",
+          "fontSize": "18px",
+          "lineHeight": "28px",
+          "letterSpacing": "0px"
+        }
+      },
+      "body": {
+        "$type": "typography",
+        "$description": "Shop default; form inputs",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.regular}",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "0px"
+        }
+      },
+      "body-sm": {
+        "$type": "typography",
+        "$description": "Admin default, tables, labels",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.regular}",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "letterSpacing": "0px"
+        }
+      },
+      "caption": {
+        "$type": "typography",
+        "$description": "Hints, meta (minimum size)",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.regular}",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "letterSpacing": "0px"
+        }
+      },
+      "overline": {
+        "$type": "typography",
+        "$description": "UPPERCASE labels only",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.semibold}",
+          "fontSize": "11px",
+          "lineHeight": "14px",
+          "letterSpacing": "0.6px"
+        }
+      },
+      "price": {
+        "$type": "typography",
+        "$description": "Price on product page",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.bold}",
+          "fontSize": "28px",
+          "lineHeight": "34px",
+          "letterSpacing": "0px"
+        }
+      }
+    },
+    "mobile": {
+      "hero": {
+        "$type": "typography",
+        "$description": "Homepage headline",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.bold}",
+          "fontSize": "32px",
+          "lineHeight": "40px",
+          "letterSpacing": "0px"
+        }
+      },
+      "h1": {
+        "$type": "typography",
+        "$description": "Page title, product name",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.bold}",
+          "fontSize": "28px",
+          "lineHeight": "34px",
+          "letterSpacing": "0px"
+        }
+      },
+      "h2": {
+        "$type": "typography",
+        "$description": "Section title",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.bold}",
+          "fontSize": "22px",
+          "lineHeight": "28px",
+          "letterSpacing": "0px"
+        }
+      },
+      "h3": {
+        "$type": "typography",
+        "$description": "Card title, subtitle",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.semibold}",
+          "fontSize": "18px",
+          "lineHeight": "24px",
+          "letterSpacing": "0px"
+        }
+      },
+      "h4": {
+        "$type": "typography",
+        "$description": "Small heading",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.semibold}",
+          "fontSize": "16px",
+          "lineHeight": "22px",
+          "letterSpacing": "0px"
+        }
+      },
+      "body-lg": {
+        "$type": "typography",
+        "$description": "Intro text",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.regular}",
+          "fontSize": "16px",
+          "lineHeight": "26px",
+          "letterSpacing": "0px"
+        }
+      },
+      "body": {
+        "$type": "typography",
+        "$description": "Shop default; form inputs",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.regular}",
+          "fontSize": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "0px"
+        }
+      },
+      "body-sm": {
+        "$type": "typography",
+        "$description": "Admin default, tables, labels",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.regular}",
+          "fontSize": "14px",
+          "lineHeight": "20px",
+          "letterSpacing": "0px"
+        }
+      },
+      "caption": {
+        "$type": "typography",
+        "$description": "Hints, meta (minimum size)",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.regular}",
+          "fontSize": "12px",
+          "lineHeight": "16px",
+          "letterSpacing": "0px"
+        }
+      },
+      "overline": {
+        "$type": "typography",
+        "$description": "UPPERCASE labels only",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.semibold}",
+          "fontSize": "11px",
+          "lineHeight": "14px",
+          "letterSpacing": "0.6px"
+        }
+      },
+      "price": {
+        "$type": "typography",
+        "$description": "Price on product page",
+        "$value": {
+          "fontFamily": "{font.family}",
+          "fontWeight": "{font.weight.bold}",
+          "fontSize": "24px",
+          "lineHeight": "30px",
+          "letterSpacing": "0px"
+        }
+      }
+    }
+  },
+  "$breakpoints": {
+    "mobile": "0–767px",
+    "desktop": "768px and up"
+  }
+}

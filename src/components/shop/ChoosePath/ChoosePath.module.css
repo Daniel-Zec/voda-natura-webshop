@@ -1,0 +1,72 @@
+.grid { display: grid; gap: var(--vn-space-3); }
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vn-space-3);
+  padding: var(--vn-space-5);
+  border-radius: var(--vn-radius-lg);
+}
+.quiz { background: var(--vn-color-bg-brand-soft); }
+.search { background: var(--vn-color-bg-warm); }
+
+.title {
+  font-size: var(--vn-text-h3-size);
+  line-height: var(--vn-text-h3-line-height);
+  font-weight: var(--vn-text-h3-weight);
+}
+
+.questions { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.question {
+  display: flex;
+  align-items: center;
+  gap: var(--vn-space-3);
+  padding: var(--vn-space-3) var(--vn-space-4);
+  border-radius: var(--vn-radius-md);
+  background: var(--vn-color-surface-card);
+  font-size: var(--vn-text-body-sm-size);
+}
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--vn-blue-100);
+  color: var(--vn-blue-800);
+  font-size: var(--vn-text-body-sm-size);
+  font-weight: var(--vn-font-weight-bold);
+}
+.numberActive { background: var(--vn-color-action-secondary); color: var(--vn-color-text-inverse); }
+
+.cta { display: flex; flex-direction: column; gap: var(--vn-space-2); }
+.ctaButton { width: 100%; }
+.ctaNote { font-size: var(--vn-text-body-sm-size); color: var(--vn-gray-700); text-align: center; }
+
+.chipsTitle {
+  margin-bottom: 10px;
+  font-size: var(--vn-text-body-sm-size);
+  font-weight: var(--vn-font-weight-semibold);
+  color: var(--vn-sand-800);
+}
+.chips { display: flex; flex-wrap: wrap; gap: var(--vn-space-2); }
+
+.desktopOnly { display: none; }
+
+@media (min-width: 900px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--vn-space-6); }
+  .panel { gap: var(--vn-space-5); padding: var(--vn-space-10); border-radius: var(--vn-radius-xl); }
+  .title {
+    font-size: var(--vn-text-h2-size);
+    line-height: var(--vn-text-h2-line-height);
+    font-weight: var(--vn-font-weight-bold);
+  }
+  .question { font-size: var(--vn-text-body-size); }
+  .cta { flex-direction: row; align-items: center; gap: var(--vn-space-4); margin-top: 4px; }
+  .ctaButton { width: auto; }
+  .ctaNote { text-align: left; }
+  .desktopOnly { display: inline; }
+  .mobileOnly { display: none; }
+}

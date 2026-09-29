@@ -1,0 +1,57 @@
+# Builds the shop (Astro) and the design system (Storybook) and publishes both to GitHub Pages:
+#   https://daniel-zec.github.io/voda-natura-webshop/            → shop (test, hidden from Google)
+#   https://daniel-zec.github.io/voda-natura-webshop/storybook/  → design system
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: https://daniel-zec.github.io
+      BASE_PATH: /voda-natura-webshop
+      PUBLIC_NOINDEX: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Type check
+        run: npx astro check
+      - name: Build shop
+        run: npm run build
+      - name: Build design system (Storybook)
+        run: npm run build-storybook
+        env:
+          STORYBOOK_BASE: /voda-natura-webshop/storybook/
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

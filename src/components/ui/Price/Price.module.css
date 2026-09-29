@@ -1,0 +1,13 @@
+.price {
+  margin: 0;
+  font-weight: var(--vn-font-weight-bold);
+  color: var(--vn-color-text-primary);
+  white-space: nowrap;
+}
+.sm { font-size: 20px; line-height: 26px; }
+.sm .currency { font-size: var(--vn-text-body-sm-size); }
+.md { font-size: 24px; line-height: 30px; }
+.md .currency { font-size: var(--vn-text-body-size); }
+.lg { font-size: var(--vn-text-price-size); line-height: var(--vn-text-price-line-height); }
+.lg .currency { font-size: var(--vn-text-body-lg-size); }
+.brand { color: var(--vn-color-text-brand); }

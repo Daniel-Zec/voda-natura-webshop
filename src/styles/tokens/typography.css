@@ -1,0 +1,119 @@
+/* VodaNatura typography tokens — from Figma “VodaNatura — Design System” (page 🔤 Typography).
+ * Mobile-first: mobile sizes by default, desktop sizes from 768px up.
+ * Use --vn-text-<style>-size / -line-height / -weight in components, or the .vn-<style> helper classes. */
+:root {
+  --vn-font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --vn-font-weight-regular: 400;
+  --vn-font-weight-semibold: 600;
+  --vn-font-weight-bold: 700;
+  --vn-letter-spacing-overline: 0.6px;
+
+  --vn-desktop-hero-size: 48px;  --vn-desktop-hero-line-height: 56px;
+  --vn-mobile-hero-size: 32px;  --vn-mobile-hero-line-height: 40px;
+  --vn-desktop-h1-size: 36px;  --vn-desktop-h1-line-height: 44px;
+  --vn-mobile-h1-size: 28px;  --vn-mobile-h1-line-height: 34px;
+  --vn-desktop-h2-size: 28px;  --vn-desktop-h2-line-height: 36px;
+  --vn-mobile-h2-size: 22px;  --vn-mobile-h2-line-height: 28px;
+  --vn-desktop-h3-size: 20px;  --vn-desktop-h3-line-height: 26px;
+  --vn-mobile-h3-size: 18px;  --vn-mobile-h3-line-height: 24px;
+  --vn-desktop-h4-size: 16px;  --vn-desktop-h4-line-height: 22px;
+  --vn-mobile-h4-size: 16px;  --vn-mobile-h4-line-height: 22px;
+  --vn-desktop-body-lg-size: 18px;  --vn-desktop-body-lg-line-height: 28px;
+  --vn-mobile-body-lg-size: 16px;  --vn-mobile-body-lg-line-height: 26px;
+  --vn-desktop-body-size: 16px;  --vn-desktop-body-line-height: 24px;
+  --vn-mobile-body-size: 16px;  --vn-mobile-body-line-height: 24px;
+  --vn-desktop-body-sm-size: 14px;  --vn-desktop-body-sm-line-height: 20px;
+  --vn-mobile-body-sm-size: 14px;  --vn-mobile-body-sm-line-height: 20px;
+  --vn-desktop-caption-size: 12px;  --vn-desktop-caption-line-height: 16px;
+  --vn-mobile-caption-size: 12px;  --vn-mobile-caption-line-height: 16px;
+  --vn-desktop-overline-size: 11px;  --vn-desktop-overline-line-height: 14px;
+  --vn-mobile-overline-size: 11px;  --vn-mobile-overline-line-height: 14px;
+  --vn-desktop-price-size: 28px;  --vn-desktop-price-line-height: 34px;
+  --vn-mobile-price-size: 24px;  --vn-mobile-price-line-height: 30px;
+
+  /* Homepage headline */
+  --vn-text-hero-size: var(--vn-mobile-hero-size);
+  --vn-text-hero-line-height: var(--vn-mobile-hero-line-height);
+  --vn-text-hero-weight: var(--vn-font-weight-bold);
+  /* Page title, product name */
+  --vn-text-h1-size: var(--vn-mobile-h1-size);
+  --vn-text-h1-line-height: var(--vn-mobile-h1-line-height);
+  --vn-text-h1-weight: var(--vn-font-weight-bold);
+  /* Section title */
+  --vn-text-h2-size: var(--vn-mobile-h2-size);
+  --vn-text-h2-line-height: var(--vn-mobile-h2-line-height);
+  --vn-text-h2-weight: var(--vn-font-weight-bold);
+  /* Card title, subtitle */
+  --vn-text-h3-size: var(--vn-mobile-h3-size);
+  --vn-text-h3-line-height: var(--vn-mobile-h3-line-height);
+  --vn-text-h3-weight: var(--vn-font-weight-semibold);
+  /* Small heading */
+  --vn-text-h4-size: var(--vn-mobile-h4-size);
+  --vn-text-h4-line-height: var(--vn-mobile-h4-line-height);
+  --vn-text-h4-weight: var(--vn-font-weight-semibold);
+  /* Intro text */
+  --vn-text-body-lg-size: var(--vn-mobile-body-lg-size);
+  --vn-text-body-lg-line-height: var(--vn-mobile-body-lg-line-height);
+  --vn-text-body-lg-weight: var(--vn-font-weight-regular);
+  /* Shop default; form inputs */
+  --vn-text-body-size: var(--vn-mobile-body-size);
+  --vn-text-body-line-height: var(--vn-mobile-body-line-height);
+  --vn-text-body-weight: var(--vn-font-weight-regular);
+  /* Admin default, tables, labels */
+  --vn-text-body-sm-size: var(--vn-mobile-body-sm-size);
+  --vn-text-body-sm-line-height: var(--vn-mobile-body-sm-line-height);
+  --vn-text-body-sm-weight: var(--vn-font-weight-regular);
+  /* Hints, meta (minimum size) */
+  --vn-text-caption-size: var(--vn-mobile-caption-size);
+  --vn-text-caption-line-height: var(--vn-mobile-caption-line-height);
+  --vn-text-caption-weight: var(--vn-font-weight-regular);
+  /* UPPERCASE labels only */
+  --vn-text-overline-size: var(--vn-mobile-overline-size);
+  --vn-text-overline-line-height: var(--vn-mobile-overline-line-height);
+  --vn-text-overline-weight: var(--vn-font-weight-semibold);
+  /* Price on product page */
+  --vn-text-price-size: var(--vn-mobile-price-size);
+  --vn-text-price-line-height: var(--vn-mobile-price-line-height);
+  --vn-text-price-weight: var(--vn-font-weight-bold);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --vn-text-hero-size: var(--vn-desktop-hero-size);
+    --vn-text-hero-line-height: var(--vn-desktop-hero-line-height);
+    --vn-text-h1-size: var(--vn-desktop-h1-size);
+    --vn-text-h1-line-height: var(--vn-desktop-h1-line-height);
+    --vn-text-h2-size: var(--vn-desktop-h2-size);
+    --vn-text-h2-line-height: var(--vn-desktop-h2-line-height);
+    --vn-text-h3-size: var(--vn-desktop-h3-size);
+    --vn-text-h3-line-height: var(--vn-desktop-h3-line-height);
+    --vn-text-h4-size: var(--vn-desktop-h4-size);
+    --vn-text-h4-line-height: var(--vn-desktop-h4-line-height);
+    --vn-text-body-lg-size: var(--vn-desktop-body-lg-size);
+    --vn-text-body-lg-line-height: var(--vn-desktop-body-lg-line-height);
+    --vn-text-body-size: var(--vn-desktop-body-size);
+    --vn-text-body-line-height: var(--vn-desktop-body-line-height);
+    --vn-text-body-sm-size: var(--vn-desktop-body-sm-size);
+    --vn-text-body-sm-line-height: var(--vn-desktop-body-sm-line-height);
+    --vn-text-caption-size: var(--vn-desktop-caption-size);
+    --vn-text-caption-line-height: var(--vn-desktop-caption-line-height);
+    --vn-text-overline-size: var(--vn-desktop-overline-size);
+    --vn-text-overline-line-height: var(--vn-desktop-overline-line-height);
+    --vn-text-price-size: var(--vn-desktop-price-size);
+    --vn-text-price-line-height: var(--vn-desktop-price-line-height);
+  }
+}
+
+body { font-family: var(--vn-font-family); }
+
+.vn-hero { font-size: var(--vn-text-hero-size); line-height: var(--vn-text-hero-line-height); font-weight: var(--vn-text-hero-weight); }
+.vn-h1 { font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+.vn-h2 { font-size: var(--vn-text-h2-size); line-height: var(--vn-text-h2-line-height); font-weight: var(--vn-text-h2-weight); }
+.vn-h3 { font-size: var(--vn-text-h3-size); line-height: var(--vn-text-h3-line-height); font-weight: var(--vn-text-h3-weight); }
+.vn-h4 { font-size: var(--vn-text-h4-size); line-height: var(--vn-text-h4-line-height); font-weight: var(--vn-text-h4-weight); }
+.vn-body-lg { font-size: var(--vn-text-body-lg-size); line-height: var(--vn-text-body-lg-line-height); font-weight: var(--vn-text-body-lg-weight); }
+.vn-body { font-size: var(--vn-text-body-size); line-height: var(--vn-text-body-line-height); font-weight: var(--vn-text-body-weight); }
+.vn-body-sm { font-size: var(--vn-text-body-sm-size); line-height: var(--vn-text-body-sm-line-height); font-weight: var(--vn-text-body-sm-weight); }
+.vn-caption { font-size: var(--vn-text-caption-size); line-height: var(--vn-text-caption-line-height); font-weight: var(--vn-text-caption-weight); }
+.vn-overline { font-size: var(--vn-text-overline-size); line-height: var(--vn-text-overline-line-height); font-weight: var(--vn-text-overline-weight); letter-spacing: var(--vn-letter-spacing-overline); text-transform: uppercase; }
+.vn-price { font-size: var(--vn-text-price-size); line-height: var(--vn-text-price-line-height); font-weight: var(--vn-text-price-weight); }

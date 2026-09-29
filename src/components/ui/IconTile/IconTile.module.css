@@ -1,0 +1,15 @@
+.tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.md { width: 48px; height: 48px; border-radius: var(--vn-radius-md); }
+.lg { width: 56px; height: 56px; border-radius: 14px; }
+
+/* Decorative logo colours on soft backgrounds (icons only, never text). */
+.natura { background: var(--vn-color-bg-eco-soft); color: var(--vn-color-accent-natura); }
+.water { background: var(--vn-color-bg-brand-soft); color: var(--vn-color-accent-water); }
+/* Darker action colours when the icon sits next to a heading in a card. */
+.info { background: var(--vn-color-bg-brand-soft); color: var(--vn-color-action-secondary); }
+.brand { background: var(--vn-color-bg-eco-soft); color: var(--vn-color-action-primary); }

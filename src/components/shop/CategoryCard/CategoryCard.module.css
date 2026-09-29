@@ -1,0 +1,50 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--vn-color-border-subtle);
+  background: var(--vn-color-surface-card);
+  color: var(--vn-color-text-primary);
+  text-decoration: none;
+  transition: border-color var(--vn-duration-fast) var(--vn-ease), box-shadow var(--vn-duration-fast) var(--vn-ease);
+}
+.card:hover { color: var(--vn-color-text-primary); text-decoration: none; border-color: var(--vn-color-border-default); box-shadow: var(--vn-shadow-md); }
+.card:hover .name { color: var(--vn-color-text-link-hover); }
+
+.media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  background: var(--vn-color-bg-muted);
+}
+.media img { height: 106px; width: auto; mix-blend-mode: multiply; object-fit: contain; }
+
+.body { display: flex; flex-direction: column; gap: 4px; padding: var(--vn-space-3); }
+.name { font-size: var(--vn-text-body-size); line-height: 22px; font-weight: var(--vn-font-weight-semibold); }
+.description {
+  font-size: var(--vn-text-body-sm-size);
+  line-height: var(--vn-text-body-sm-line-height);
+  color: var(--vn-color-text-secondary);
+}
+.compact .description { display: none; }
+.arrow { display: none; }
+
+/* Wide row on phones */
+@media (max-width: 767px) {
+  .wide { flex-direction: row; align-items: center; }
+  .wide .media { width: 88px; height: 72px; flex-shrink: 0; }
+  .wide .media img { height: 60px; }
+  .wide .body { flex-grow: 1; }
+  .wide .arrow { display: block; padding-right: var(--vn-space-4); color: var(--vn-color-text-link); font-weight: var(--vn-font-weight-semibold); }
+}
+
+@media (min-width: 768px) {
+  .card { border-radius: var(--vn-radius-lg); }
+  .media { height: 180px; }
+  .media img { height: 160px; }
+  .body { padding: var(--vn-space-4); }
+  .name { font-size: 18px; line-height: 24px; }
+  .compact .description { display: block; }
+}

@@ -1,0 +1,18 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: var(--vn-radius-pill);
+  font-size: var(--vn-text-caption-size);
+  line-height: 1;
+  font-weight: var(--vn-font-weight-semibold);
+  white-space: nowrap;
+}
+.info { background: var(--vn-color-action-secondary); color: var(--vn-color-text-inverse); }
+/* Logo green is light, so it carries the darkest green text (contrast 5.9:1). */
+.natura { background: var(--vn-color-accent-natura); color: var(--vn-green-950); font-weight: var(--vn-font-weight-bold); }
+.sand { background: var(--vn-color-bg-warm); color: var(--vn-sand-800); }
+.success { background: var(--vn-color-status-success-bg); color: var(--vn-color-status-success); }
+.warning { background: var(--vn-color-status-warning-bg); color: var(--vn-color-status-warning); }
+.neutral { background: var(--vn-color-bg-muted); color: var(--vn-color-text-secondary); }

@@ -1,0 +1,128 @@
+.card {
+  position: relative;
+  display: flex;
+  background: var(--vn-color-surface-card);
+  border: 1px solid var(--vn-color-border-default);
+  border-radius: var(--vn-radius-lg);
+  overflow: hidden;
+  transition: box-shadow var(--vn-duration-fast) var(--vn-ease), border-color var(--vn-duration-fast) var(--vn-ease);
+}
+.card:hover { box-shadow: var(--vn-shadow-md); border-color: var(--vn-color-border-strong); }
+
+.media {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--vn-color-bg-muted);
+}
+.media img { mix-blend-mode: multiply; object-fit: contain; }
+.badge { position: absolute; left: var(--vn-space-3); top: var(--vn-space-3); }
+
+.body { display: flex; flex-direction: column; gap: 10px; flex: 1 1 auto; min-width: 0; }
+
+.kicker {
+  font-size: var(--vn-text-caption-size);
+  line-height: var(--vn-text-caption-line-height);
+  font-weight: var(--vn-font-weight-semibold);
+  color: var(--vn-color-text-secondary);
+}
+.name {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: var(--vn-font-weight-semibold);
+}
+.name a { color: var(--vn-color-text-primary); }
+.name a:hover { color: var(--vn-color-text-link-hover); }
+.summary {
+  font-size: var(--vn-text-body-sm-size);
+  line-height: var(--vn-text-body-sm-line-height);
+  color: var(--vn-gray-700);
+}
+.spacer { flex-grow: 1; }
+.priceRow { display: flex; align-items: center; justify-content: space-between; gap: var(--vn-space-2); }
+.maintenance {
+  font-size: var(--vn-text-caption-size);
+  line-height: var(--vn-text-caption-line-height);
+  color: var(--vn-color-text-secondary);
+}
+.actions { display: flex; align-items: center; gap: var(--vn-space-2); }
+.cartButton { flex: 1 1 auto; min-width: 0; padding: 0 var(--vn-space-4); }
+.compare {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--vn-control-md);
+  flex-shrink: 0;
+  font-size: var(--vn-text-body-sm-size);
+  color: var(--vn-gray-700);
+  cursor: pointer;
+}
+.compare input { width: 18px; height: 18px; accent-color: var(--vn-color-action-primary); }
+
+/* ---------- Vertical (desktop card) ---------- */
+.vertical { flex-direction: column; }
+.vertical .media { height: 240px; }
+.vertical .media img { height: 210px; width: auto; }
+.vertical .body { padding: var(--vn-space-5); }
+.vertical .cartIconButton { display: none; }
+
+/* ---------- Horizontal (compact phone row) ---------- */
+.horizontal { flex-direction: row; gap: var(--vn-space-3); padding: var(--vn-space-3); }
+.horizontal .media { width: 112px; height: 136px; flex-shrink: 0; border-radius: var(--vn-radius-sm); }
+.horizontal .media img { max-height: 124px; width: auto; max-width: 100px; }
+.horizontal .badge,
+.horizontal .kicker,
+.horizontal .maintenance,
+.horizontal .actions { display: none; }
+.horizontal .body { gap: 4px; }
+.horizontal .name { font-size: var(--vn-text-h4-size); line-height: var(--vn-text-h4-line-height); }
+.horizontal .summary {
+  font-size: var(--vn-text-caption-size);
+  line-height: var(--vn-text-caption-line-height);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.horizontal .priceRow p { font-size: 20px; line-height: 26px; }
+
+/* ---------- Responsive: horizontal on phones, vertical from 768 px ---------- */
+.responsive { flex-direction: row; gap: var(--vn-space-3); padding: var(--vn-space-3); }
+.responsive .media { width: 112px; height: 136px; flex-shrink: 0; border-radius: var(--vn-radius-sm); }
+.responsive .media img { max-height: 124px; width: auto; max-width: 100px; }
+.responsive .badge,
+.responsive .kicker,
+.responsive .maintenance,
+.responsive .actions { display: none; }
+.responsive .body { gap: 4px; }
+.responsive .name { font-size: var(--vn-text-h4-size); line-height: var(--vn-text-h4-line-height); }
+.responsive .summary {
+  font-size: var(--vn-text-caption-size);
+  line-height: var(--vn-text-caption-line-height);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.responsive .priceRow p { font-size: 20px; line-height: 26px; }
+
+@media (min-width: 768px) {
+  .responsive { flex-direction: column; gap: 0; padding: 0; }
+  .responsive .media { width: auto; height: 240px; border-radius: 0; }
+  .responsive .media img { height: 210px; max-height: none; max-width: 90%; }
+  .responsive .badge,
+  .responsive .kicker,
+  .responsive .maintenance { display: block; }
+  .responsive .actions { display: flex; }
+  .responsive .cartIconButton { display: none; }
+  .responsive .body { gap: 10px; padding: var(--vn-space-5); }
+  .responsive .name { font-size: 18px; line-height: 24px; }
+  .responsive .summary {
+    font-size: var(--vn-text-body-sm-size);
+    line-height: var(--vn-text-body-sm-line-height);
+    display: block;
+    overflow: visible;
+  }
+  .responsive .priceRow p { font-size: 24px; line-height: 30px; }
+}

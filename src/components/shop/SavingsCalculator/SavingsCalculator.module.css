@@ -1,0 +1,47 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: var(--vn-space-5);
+  background: var(--vn-color-surface-card);
+  border-radius: var(--vn-radius-lg);
+  box-shadow: var(--vn-shadow-sm);
+}
+.row { display: flex; align-items: center; justify-content: space-between; gap: var(--vn-space-2); }
+.label { font-size: var(--vn-text-body-size); line-height: 22px; font-weight: var(--vn-font-weight-semibold); }
+.hint { font-size: var(--vn-text-caption-size); line-height: var(--vn-text-caption-line-height); color: var(--vn-color-text-secondary); }
+.divider { width: 100%; height: 1px; margin: 0; border: 0; background: var(--vn-color-border-subtle); }
+
+.results { margin: 0; display: flex; flex-direction: column; gap: var(--vn-space-3); }
+.result { display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: baseline; gap: var(--vn-space-2); }
+.resultValue { margin: 0; font-size: 22px; line-height: 28px; font-weight: var(--vn-font-weight-bold); color: var(--vn-color-text-brand); white-space: nowrap; }
+.resultLabel { font-size: var(--vn-text-body-sm-size); line-height: var(--vn-text-body-sm-line-height); color: var(--vn-color-text-secondary); }
+
+.comparison {
+  padding: 14px;
+  border-radius: var(--vn-radius-md);
+  background: var(--vn-color-bg-subtle);
+  font-size: var(--vn-text-body-sm-size);
+  line-height: var(--vn-text-body-sm-line-height);
+  color: var(--vn-gray-700);
+}
+.comparison strong { color: var(--vn-color-text-primary); }
+
+.cta { width: 100%; }
+.long { display: none; }
+
+@media (min-width: 768px) {
+  .long { display: inline; }
+  .short { display: none; }
+}
+
+@media (min-width: 768px) {
+  .card { gap: var(--vn-space-6); padding: var(--vn-space-8); border-radius: var(--vn-radius-xl); }
+  .row { gap: var(--vn-space-4); }
+  .hint { font-size: var(--vn-text-body-sm-size); line-height: var(--vn-text-body-sm-line-height); }
+  .results { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--vn-space-4); }
+  .result { flex-direction: column-reverse; justify-content: flex-start; align-items: flex-start; gap: 0; }
+  .resultValue { font-size: var(--vn-text-price-size); line-height: var(--vn-text-price-line-height); }
+  .comparison { padding: var(--vn-space-4); }
+  .cta { width: auto; align-self: flex-start; }
+}

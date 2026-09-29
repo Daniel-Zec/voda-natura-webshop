@@ -1,0 +1,65 @@
+/* VodaNatura layout tokens — spacing, radius, shadow, layout widths.
+ *
+ * NOT YET IN FIGMA. Colour and typography tokens come from the Figma file
+ * "VodaNatura — Design System" (see colors.css / typography.css, never edit those by hand).
+ * These values were measured from the homepage mock-ups (Claude Design canvas
+ * "VodaNatura Landing Page") so the build matches them. Next step: add them to Figma as
+ * variables and export them like the colours.
+ */
+:root {
+  /* Spacing — 4 px base */
+  --vn-space-1: 4px;
+  --vn-space-2: 8px;
+  --vn-space-3: 12px;
+  --vn-space-4: 16px;
+  --vn-space-5: 20px;
+  --vn-space-6: 24px;
+  --vn-space-8: 32px;
+  --vn-space-10: 40px;
+  --vn-space-12: 48px;
+  --vn-space-16: 64px;
+  --vn-space-20: 80px;
+  --vn-space-24: 96px;
+
+  /* Corner radius */
+  --vn-radius-sm: 10px;   /* buttons, inputs */
+  --vn-radius-md: 12px;   /* icon tiles, small cards */
+  --vn-radius-lg: 16px;   /* cards */
+  --vn-radius-xl: 20px;   /* feature panels */
+  --vn-radius-2xl: 24px;  /* hero, large bands */
+  --vn-radius-pill: 999px;
+
+  /* Elevation */
+  --vn-shadow-sm: 0 1px 2px rgba(21, 71, 28, 0.06);
+  --vn-shadow-md: 0 4px 16px rgba(42, 41, 43, 0.08);
+
+  /* Control sizes (touch targets ≥ 44 px) */
+  --vn-control-sm: 36px;
+  --vn-control-md: 48px;
+  --vn-control-lg: 52px;
+  --vn-touch-min: 44px;
+
+  /* Layout */
+  --vn-container-max: 1200px;       /* 1440 artboard − 2 × 120 px gutters */
+  --vn-gutter: 16px;                /* mobile */
+  --vn-section-gap: 48px;           /* mobile */
+  --vn-reading-width: 680px;        /* 60–75 characters */
+
+  /* Motion */
+  --vn-duration-fast: 120ms;
+  --vn-ease: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --vn-gutter: 32px;
+    --vn-section-gap: 72px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --vn-gutter: 40px;
+    --vn-section-gap: 96px;
+  }
+}
