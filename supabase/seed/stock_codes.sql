@@ -1,0 +1,15 @@
+update public.product_internal pi set stock_codes = v.codes from (values ('CW929', array['CW929W']),
+('CW929-WL-C', array['CW929WATERLEVERCOLD']),
+('CW929-WL-C-1', array['CW929WATERLEVERROOM']),
+('CW929-WL-H', array['CW929WATERLEVERHOT']),
+('DW8', array['DW8CRYSTAL']),
+('RO6-MP', array['RO612MP']),
+('ROTP12', array['ROT12']),
+('ROTP19', array['ROT19']),
+('TLC100', array['TLC100V']),
+('TLC75', array['TLC75ECO']),
+('W UN 1', array['RUN1']),
+('WFSH-LEMON-1', array['WFSHFREESIA']),
+('WFU10', array['WFU']),
+('WS-20', array['WS20PRIMO'])) v(sku, codes) join public.products p on p.sku = v.sku where pi.product_id = p.id;
+update public.product_internal pi set data_notes = concat_ws(E'\n', nullif(pi.data_notes,''), 'Zalihe: kod TLC 75 ECO (USTM) predložen 30.9. – potvrditi sa DA da li prodajemo ECO ili Vontron (TLC75V).') from public.products p where p.id = pi.product_id and p.sku = 'TLC75';

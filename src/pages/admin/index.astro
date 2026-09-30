@@ -1,0 +1,25 @@
+---
+/**
+ * Admin panel: one static page, the React app handles login (password + authenticator code)
+ * and all screens. Data access is protected by Supabase row-level security, not by this page.
+ * Never linked from the shop and never indexed.
+ */
+import '../../styles/global.css';
+import AdminApp from '../../admin/AdminApp';
+import { url } from '../../lib/url';
+---
+<!doctype html>
+<html lang="sr-Latn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Admin · VodaNatura</title>
+    <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
+  </head>
+  <body>
+    <AdminApp client:only="react" />
+    <noscript>Admin panel zahteva JavaScript.</noscript>
+  </body>
+</html>

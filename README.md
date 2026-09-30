@@ -42,7 +42,8 @@ src/
   data/                 homepage content (temporary, moves to Supabase)
   lib/                  price formatting, links that work with the base path
   scripts/cart.ts       add-to-cart and compare on static pages
-  pages/                one file per URL
+  pages/                one file per URL (pages/admin/ = admin panel)
+  admin/                admin panel app: screens/, components/, lib/ (data layer, stock import)
   stories/              Storybook intro and Foundations pages
 design-tokens/          full token JSON from Figma
 docs/                   decisions and notes
@@ -55,7 +56,16 @@ docs/                   decisions and notes
 3. Astro builds one page per category (`/{slug}/`) and product (`/proizvod/{slug}/`) from that file.
 4. If Supabase can't be reached, the last committed `catalog.json` is used, so the site still builds.
 
-A change in Supabase shows on the site after the next build (any push, or **Actions → Deploy to GitHub Pages → Run workflow**). An automatic rebuild after admin changes comes with the admin panel.
+A change in Supabase shows on the site after the next build (any push, **Actions → Deploy to GitHub Pages → Run workflow**, or the **Objavi** button in the admin panel once its GitHub token is set).
+
+## Admin panel
+
+`/admin/` (test: https://daniel-zec.github.io/voda-natura-webshop/admin/): orders, customers, products, stock import, prices, commission, marketing, emails, settings. Login with password + authenticator code. Details and one-time setup: `docs/admin-panel.md`.
+
+```bash
+PUBLIC_ADMIN_DEMO=true npm run dev   # admin with sample data, no login (never deploy this)
+npm run test:stock                   # stock import tests
+```
 
 First import from the Decor Ambient feed: `docs/catalog-import.md`.
 

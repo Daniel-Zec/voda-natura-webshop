@@ -1,0 +1,11 @@
+.wrap { position: relative; width: 100%; }
+.svg { display: block; width: 100%; overflow: visible; }
+.grid { stroke: var(--vn-color-border-subtle); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.axis { font-size: 10px; fill: var(--vn-color-text-muted); font-variant-numeric: tabular-nums; }
+.bar { fill: var(--vn-green-600); }
+.barHover { fill: var(--vn-green-800); }
+.tip {
+  position: absolute; top: 0; transform: translate(-50%, -100%); pointer-events: none; white-space: nowrap;
+  padding: 6px 10px; border-radius: 8px; background: var(--vn-color-bg-inverse); color: var(--vn-color-text-inverse);
+  font-size: 12px; box-shadow: var(--vn-shadow-md);
+}

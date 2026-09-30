@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "VodaNatura \u2014 webshop za filtere vode (Astro + React + Supabase)",
+  "description": "VodaNatura — webshop za filtere vode (Astro + React + Supabase)",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -12,16 +12,21 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o dist/storybook",
     "catalog": "node scripts/fetch-catalog.mjs",
-    "prebuild": "node scripts/fetch-catalog.mjs"
+    "prebuild": "node scripts/fetch-catalog.mjs",
+    "test:stock": "node --experimental-strip-types --no-warnings scripts/test-stock-import.mts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/react": "^7.0.0",
+    "@supabase/supabase-js": "^2.117.2",
+    "@types/qrcode": "^1.5.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "astro": "^7.3.5",
+    "qrcode": "^1.5.4",
     "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "react-dom": "^19.3.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@storybook/addon-a11y": "^10.6.0",

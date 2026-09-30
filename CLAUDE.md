@@ -15,3 +15,5 @@ Astro 7 (static) + React 19 components with CSS modules, Storybook 10 for the de
 - Catalogue: Supabase → `scripts/fetch-catalog.mjs` (prebuild) → `src/data/catalog.json` → pages via `src/lib/catalog.ts`. The sandbox can't reach Supabase, so local builds use the committed snapshot; use the Supabase MCP tools for database work and commit migrations to `supabase/migrations/`.
 - Internal data (partner texts, data notes, commission rules) lives in admin-only tables (`product_internal`, `commission_rules`); never add it to public tables.
 - Run `npx astro check` and `npm run build` before committing.
+- Admin panel: `src/admin/` (React app on `/admin/`, hash routes). Data only through `src/admin/lib/api.ts`; screenshots/tests use `PUBLIC_ADMIN_DEMO=true` (demoApi), which must never reach the live build. Admin RLS requires `admin_users` + `aal2` (two-step login). See `docs/admin-panel.md`.
+- Run `npm run test:stock` after touching the stock import.
