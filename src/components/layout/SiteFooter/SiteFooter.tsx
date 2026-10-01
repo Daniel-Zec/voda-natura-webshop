@@ -13,7 +13,7 @@ export interface SiteFooterProps {
   logoSrc: string;
   about: string;
   groups: LinkGroup[];
-  contact: { phone: string; phoneHref?: string; email: string; hours: string };
+  contact: { phone: string; phoneHref?: string; email: string; hours: string; /** Street and city, one line each */ address?: string[] };
   legal: Link[];
   year?: number;
 }
@@ -48,6 +48,15 @@ export function SiteFooter({ logoSrc, about, groups, contact, legal, year = new 
                 <a href={`mailto:${contact.email}`}>{contact.email}</a>
               </li>
               <li className={styles.muted}>{contact.hours}</li>
+              {contact.address && (
+                <li>
+                  <address className={styles.address}>
+                    {contact.address.map((line) => (
+                      <span key={line}>{line}</span>
+                    ))}
+                  </address>
+                </li>
+              )}
             </ul>
           </div>
         </div>

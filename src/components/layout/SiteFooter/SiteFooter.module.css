@@ -50,3 +50,5 @@
   .brand img { width: 200px; }
   .bottom { margin-top: var(--vn-space-12); flex-direction: row; justify-content: space-between; }
 }
+
+.address { display: flex; flex-direction: column; font-style: normal; }

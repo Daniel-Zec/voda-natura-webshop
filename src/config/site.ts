@@ -18,6 +18,8 @@ export const site = {
     phoneHref: '+381632922219',
     email: 'info@vodanatura.com',
     hours: 'Radnim danima [RADNO VREME]',
+    /** Decor Ambient's address (the seller), from decorambient.com/kontakt */
+    address: { street: 'Filipa Kljajića 22', postalCode: '24000', city: 'Subotica', country: 'RS' },
   },
 
   partner: {

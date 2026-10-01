@@ -41,6 +41,14 @@ const organization = {
   url: site.url,
   logo: new URL(url('images/brand/vodanatura-logo.png'), Astro.site).toString(),
   email: site.contact.email,
+  telephone: site.contact.phoneHref || undefined,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.contact.address.street,
+    postalCode: site.contact.address.postalCode,
+    addressLocality: site.contact.address.city,
+    addressCountry: site.contact.address.country,
+  },
 };
 const website = {
   '@context': 'https://schema.org',
@@ -116,6 +124,7 @@ const announcement = [
         phoneHref: site.contact.phoneHref ? `tel:${site.contact.phoneHref}` : undefined,
         email: site.contact.email,
         hours: site.contact.hours,
+        address: [site.contact.address.street, `${site.contact.address.postalCode} ${site.contact.address.city}`],
       }}
       legal={footerNav.legal}
     />

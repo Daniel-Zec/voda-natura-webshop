@@ -10,7 +10,7 @@ const meta = {
     logoSrc: 'images/brand/vodanatura-logo-inverse.svg',
     about: 'Filteri vode za vaš dom. VodaNatura radi u saradnji sa kompanijom Decor Ambient d.o.o. iz Subotice, koja pakuje i šalje porudžbine.',
     groups: [footerNav.shop, footerNav.buying, footerNav.about],
-    contact: { phone: '[TELEFON]', email: 'info@vodanatura.com', hours: 'Radnim danima [RADNO VREME]' },
+    contact: { phone: '+381 63 29 22 19', email: 'info@vodanatura.com', hours: 'Radnim danima [RADNO VREME]', address: ['Filipa Kljajića 22', '24000 Subotica'] },
     legal: footerNav.legal,
     year: 2026,
   },
