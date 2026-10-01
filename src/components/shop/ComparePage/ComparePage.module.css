@@ -22,8 +22,15 @@
 .diff th { box-shadow: inset 3px 0 0 var(--vn-color-border-focus); }
 .corner { position: sticky; left: 0; z-index: 2; background: var(--vn-color-surface-card); }
 
-.productCell { font-weight: var(--vn-font-weight-regular); }
-.productCell > * + * { margin-top: var(--vn-space-2); }
+.productCell { font-weight: var(--vn-font-weight-regular); height: 1px; /* lets .productInner fill the cell */ }
+.productInner { display: flex; flex-direction: column; gap: var(--vn-space-2); height: 100%; }
+/* Names take two lines in every column, so prices line up; the button sits at the bottom */
+.productInner .name {
+  min-height: calc(2 * var(--vn-text-body-line-height));
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.priceBlock { display: flex; flex-direction: column; gap: 2px; }
+.buy { margin-top: auto; }
 .mediaWrap { position: relative; }
 .remove {
   position: absolute; top: 6px; right: 6px;

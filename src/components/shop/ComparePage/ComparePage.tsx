@@ -150,6 +150,7 @@ export function ComparePage({ products, browse, initialSkus }: ComparePageProps)
               </th>
               {chosen.map((p) => (
                 <th scope="col" key={p.product.sku} className={styles.productCell}>
+                  <div className={styles.productInner}>
                   <div className={styles.mediaWrap}>
                     <a href={p.href} className={styles.media} tabIndex={-1} aria-hidden="true">
                       <img src={p.product.image.src} alt="" width={240} height={240} loading="lazy" decoding="async" />
@@ -158,12 +159,15 @@ export function ComparePage({ products, browse, initialSkus }: ComparePageProps)
                       <Icon name="close" size={16} />
                     </button>
                   </div>
-                  <a href={p.href} className={styles.name}>
+                  <a href={p.href} className={styles.name} title={p.product.name}>
                     {p.product.name}
                   </a>
-                  <Price amount={p.product.price} size="sm" />
-                  <StockStatus state={p.product.stock} size="sm" />
+                  <div className={styles.priceBlock}>
+                    <Price amount={p.product.price} size="sm" />
+                    <StockStatus state={p.product.stock} size="sm" />
+                  </div>
                   <Button
+                    className={styles.buy}
                     variant="primary"
                     icon="cart"
                     fullWidth
@@ -174,6 +178,7 @@ export function ComparePage({ products, browse, initialSkus }: ComparePageProps)
                   >
                     Dodaj u korpu
                   </Button>
+                  </div>
                 </th>
               ))}
               {chosen.length < MAX && (
