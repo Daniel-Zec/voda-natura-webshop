@@ -1,0 +1,40 @@
+---
+/**
+ * Search results (/pretraga/?q=…). The header search and "Znam šta tražim" submit here.
+ * All visible products are embedded and filtered in the browser (catalogue is small);
+ * noindex per the SEO guide.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Breadcrumbs } from '../components/ui/Breadcrumbs/Breadcrumbs';
+import { SearchResults, type SearchProduct } from '../components/shop/SearchResults/SearchResults';
+import { getCategory, products, toSummary } from '../lib/catalog';
+import { getGuides } from '../lib/guides';
+import { routes } from '../lib/url';
+
+const items: SearchProduct[] = products.map((p) => ({
+  product: toSummary(p),
+  href: routes.product(p.slug),
+  category: (p.categorySlug && getCategory(p.categorySlug)?.name) || '',
+}));
+const guides = (await getGuides()).map((g) => ({ title: g.data.title, description: g.data.description, href: routes.guide(g.id) }));
+const suggestions = [
+  { label: 'Ulošci', href: routes.category('ulosci') },
+  { label: 'Reverzna osmoza', href: routes.category('reverzna-osmoza') },
+  { label: 'Voda za piće', href: routes.category('filteri-za-pijacu-vodu') },
+  { label: 'Cela kuća', href: routes.category('filteri-za-celu-kucu') },
+  { label: 'Pronađi pravi filter', href: routes.finder() },
+];
+---
+
+<BaseLayout title="Pretraga proizvoda | VodaNatura" description="Pretražite filtere, uloške i delove po nazivu ili šifri." noindex>
+  <div class="vn-container">
+    <Breadcrumbs items={[{ label: 'Početna', href: routes.home() }, { label: 'Pretraga' }]} />
+    <h1 class="title">Pretraga</h1>
+    <SearchResults client:load products={items} guides={guides} suggestions={suggestions} contactHref={routes.page('kontakt')} />
+    <noscript><p>Pretraga radi uz JavaScript. Proizvode možete pronaći i preko menija kategorija.</p></noscript>
+  </div>
+</BaseLayout>
+
+<style>
+  .title { margin: var(--vn-space-6) 0 var(--vn-space-5); font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+</style>
