@@ -1,0 +1,43 @@
+---
+/**
+ * Uporedi (/uporedi/): compare up to 3 products ticked with "Uporedi" on product cards.
+ * The choice is saved in the visitor's browser, so the table is built there; noindex.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Breadcrumbs } from '../components/ui/Breadcrumbs/Breadcrumbs';
+import { ComparePage, type CompareProduct } from '../components/shop/ComparePage/ComparePage';
+import { getCategory, products, toSummary } from '../lib/catalog';
+import { routes } from '../lib/url';
+
+const items: CompareProduct[] = products.map((p) => ({
+  product: toSummary(p),
+  href: routes.product(p.slug),
+  category: (p.categorySlug && getCategory(p.categorySlug)?.name) || '',
+  specs: (p.specs ?? []).map((s) => ({ label: s.label, value: s.value })),
+}));
+const browse = [
+  { label: 'Voda za piće', href: routes.category('filteri-za-pijacu-vodu') },
+  { label: 'Reverzna osmoza', href: routes.category('reverzna-osmoza') },
+  { label: 'Cela kuća', href: routes.category('filteri-za-celu-kucu') },
+  { label: 'Omekšivači', href: routes.category('omeksivaci-vode') },
+  { label: 'Ulošci', href: routes.category('ulosci') },
+];
+---
+
+<BaseLayout title="Uporedi proizvode | VodaNatura" description="Uporedite do 3 filtera za vodu: cena, održavanje i tehnički podaci jedan pored drugog." noindex currentHref={routes.compare()}>
+  <div class="vn-container">
+    <Breadcrumbs items={[{ label: 'Početna', href: routes.home() }, { label: 'Uporedi' }]} />
+    <header class="head">
+      <h1 class="title">Uporedi proizvode</h1>
+      <p class="lead">Do 3 proizvoda jedan pored drugog: cena, održavanje i tehnički podaci.</p>
+    </header>
+    <ComparePage client:load products={items} browse={browse} />
+    <noscript><p>Poređenje radi uz JavaScript.</p></noscript>
+  </div>
+</BaseLayout>
+
+<style>
+  .head { display: flex; flex-direction: column; gap: var(--vn-space-2); margin: var(--vn-space-6) 0 var(--vn-space-6); }
+  .title { font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+  .lead { color: var(--vn-gray-700); font-size: var(--vn-text-body-lg-size); line-height: var(--vn-text-body-lg-line-height); }
+</style>
