@@ -29,7 +29,7 @@ export const site = {
     city: 'Subotica',
     /** Installation in Subotica is booked by calling Decor Ambient (VODANATURA-75, q. 10). */
     installationPhone: '+381 63 29 22 19',
-    installationPrice: '[CENA UGRADNJE]',
+    /** No fixed installation price: it depends on the system, the place it goes and the distance, so it is agreed by phone (decided 1 Oct 2026). */
   },
 
   delivery: {
