@@ -1,0 +1,120 @@
+---
+/**
+ * Kontakt (/kontakt/): the contact form (saved to Supabase, read in the admin panel → Poruke)
+ * next to the direct ways to reach us: phone, email, hours and address.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Breadcrumbs } from '../components/ui/Breadcrumbs/Breadcrumbs';
+import { Overline } from '../components/ui/Overline/Overline';
+import { Icon } from '../components/ui/Icon/Icon';
+import { ContactForm } from '../components/shop/ContactForm/ContactForm';
+import { site } from '../config/site';
+import { SUPABASE_PUBLISHABLE_KEY, SUPABASE_URL } from '../config/supabase';
+import { routes } from '../lib/url';
+
+const crumbs = [{ label: 'Početna', href: routes.home() }, { label: 'Kontakt' }];
+const title = 'Kontakt – pitanja o filterima za vodu | VodaNatura';
+const description =
+  'Pišite nam ili pozovite: pomoć pri izboru filtera, ugradnja, porudžbine i reklamacije. Radnim danima 8–16 h, Subotica.';
+const { address } = site.contact;
+const mapQuery = encodeURIComponent(`${site.partner.name}, ${address.street}, ${address.postalCode} ${address.city}`);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Početna', item: new URL(routes.home(), Astro.site).toString() }, { '@type': 'ListItem', position: 2, name: 'Kontakt' }],
+  },
+  { '@context': 'https://schema.org', '@type': 'ContactPage', name: 'Kontakt', description },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} currentHref={routes.page('kontakt')}>
+  <div class="vn-container">
+    <Breadcrumbs items={crumbs} />
+
+    <header class="head">
+      <Overline>Kontakt</Overline>
+      <h1 class="title">Pišite nam ili pozovite</h1>
+      <p class="lead">Pomažemo pri izboru filtera, oko ugradnje, porudžbina i reklamacija. Na poruke odgovaramo radnim danima.</p>
+    </header>
+
+    <div class="layout">
+      <section class="form-card" aria-labelledby="forma-title">
+        <h2 id="forma-title" class="card-title">Pošaljite poruku</h2>
+        <ContactForm
+          client:visible
+          endpoint={`${SUPABASE_URL}/rest/v1/contact_messages`}
+          apiKey={SUPABASE_PUBLISHABLE_KEY}
+          fallbackPhone={site.contact.phone}
+        />
+        <noscript>
+          <p class="noscript">Za slanje poruke potreban je JavaScript. Možete nas i pozvati na {site.contact.phone} ili pisati na {site.contact.email}.</p>
+        </noscript>
+      </section>
+
+      <aside class="direct" aria-label="Drugi načini kontakta">
+        <ul role="list" class="ways">
+          <li>
+            <span class="way-icon" aria-hidden="true"><Icon name="phone" size={22} /></span>
+            <span class="way-text">
+              <span class="way-label">Telefon</span>
+              <a class="way-value" href={`tel:${site.contact.phoneHref}`}>{site.contact.phone}</a>
+              <span class="way-note">{site.contact.hours}</span>
+            </span>
+          </li>
+          <li>
+            <span class="way-icon" aria-hidden="true"><Icon name="mail" size={22} /></span>
+            <span class="way-text">
+              <span class="way-label">Email</span>
+              <a class="way-value" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+            </span>
+          </li>
+          <li>
+            <span class="way-icon" aria-hidden="true"><Icon name="pin" size={22} /></span>
+            <span class="way-text">
+              <span class="way-label">Adresa</span>
+              <address class="way-value">{site.partner.name}<br />{address.street}<br />{address.postalCode} {address.city}</address>
+              <a class="way-note" href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`} target="_blank" rel="noopener">Otvori u Google mapama</a>
+            </span>
+          </li>
+        </ul>
+        <p class="partner">
+          VodaNatura radi u saradnji sa kompanijom {site.partner.name} iz Subotice, koja pakuje i šalje porudžbine i rešava reklamacije.
+        </p>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .head { display: flex; flex-direction: column; gap: var(--vn-space-3); padding-top: var(--vn-space-6); max-width: 720px; }
+  .title { font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+  .lead { font-size: var(--vn-text-body-lg-size); line-height: var(--vn-text-body-lg-line-height); color: var(--vn-gray-700); }
+
+  .layout { margin-top: var(--vn-space-8); display: grid; gap: var(--vn-space-8); align-items: start; }
+  .form-card { padding: var(--vn-space-6); border: 1px solid var(--vn-color-border-default); border-radius: var(--vn-radius-xl); background: var(--vn-color-surface-card); }
+  .card-title { margin-bottom: var(--vn-space-5); font-size: var(--vn-text-h3-size); line-height: var(--vn-text-h3-line-height); font-weight: var(--vn-text-h3-weight); }
+  .noscript { margin-top: var(--vn-space-4); color: var(--vn-color-text-secondary); }
+
+  .direct { display: flex; flex-direction: column; gap: var(--vn-space-6); padding: var(--vn-space-6); border-radius: var(--vn-radius-xl); background: var(--vn-color-bg-subtle); border: 1px solid var(--vn-color-border-warm); }
+  .ways { display: flex; flex-direction: column; gap: var(--vn-space-5); }
+  .ways li { display: flex; gap: var(--vn-space-4); align-items: flex-start; }
+  .way-icon {
+    width: 44px; height: 44px; flex-shrink: 0; border-radius: var(--vn-radius-md);
+    display: flex; align-items: center; justify-content: center;
+    background: var(--vn-color-surface-card); color: var(--vn-color-text-link);
+  }
+  .way-text { display: flex; flex-direction: column; gap: 2px; }
+  .way-label { font-size: var(--vn-text-caption-size); line-height: var(--vn-text-caption-line-height); color: var(--vn-color-text-secondary); text-transform: uppercase; letter-spacing: var(--vn-letter-spacing-overline); font-weight: var(--vn-font-weight-semibold); }
+  .way-value { font-size: 18px; line-height: 26px; font-weight: var(--vn-font-weight-semibold); font-style: normal; color: var(--vn-color-text-primary); }
+  a.way-value { color: var(--vn-color-text-link); }
+  .way-note { font-size: var(--vn-text-body-sm-size); line-height: var(--vn-text-body-sm-line-height); color: var(--vn-color-text-secondary); }
+  a.way-note { color: var(--vn-color-text-link); }
+  .partner { font-size: var(--vn-text-body-sm-size); line-height: var(--vn-text-body-sm-line-height); color: var(--vn-color-text-secondary); }
+
+  @media (min-width: 1000px) {
+    .layout { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--vn-space-10); }
+    .form-card { padding: var(--vn-space-8); }
+  }
+</style>

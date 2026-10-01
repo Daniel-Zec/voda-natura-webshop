@@ -1,5 +1,5 @@
 import { formatNumber } from '../../lib/format';
-import type { Catalog, Category, OrderStatus, PriceMode, Product, StockState } from './types';
+import type { Catalog, Category, ContactStatus, ContactTopic, OrderStatus, PriceMode, Product, StockState } from './types';
 
 export type Tone = 'info' | 'success' | 'warning' | 'error' | 'neutral' | 'brand';
 
@@ -136,3 +136,13 @@ export function downloadCsv(filename: string, rows: (string | number | null | un
   a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
+
+export const contactTopicLabel: Record<ContactTopic, string> = {
+  izbor: 'Izbor filtera',
+  ugradnja: 'Ugradnja',
+  porudzbina: 'Porudžbina',
+  reklamacija: 'Reklamacija',
+  drugo: 'Drugo',
+};
+export const contactStatusLabel: Record<ContactStatus, string> = { new: 'Nova', answered: 'Odgovoreno', forwarded: 'Prosleđeno', spam: 'Spam' };
+export const contactStatusTone: Record<ContactStatus, Tone> = { new: 'brand', answered: 'success', forwarded: 'info', spam: 'neutral' };

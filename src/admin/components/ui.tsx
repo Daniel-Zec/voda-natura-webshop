@@ -1,4 +1,5 @@
 import {
+  type MouseEventHandler,
   createContext,
   useCallback,
   useContext,
@@ -40,7 +41,15 @@ export function Btn({ variant = 'outline', size = 'md', icon, iconOnly, busy, ch
   );
   if (href)
     return (
-      <a className={cls} href={href} title={rest.title} aria-label={rest['aria-label']} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer">
+      <a
+        className={cls}
+        href={href}
+        title={rest.title}
+        aria-label={rest['aria-label']}
+        target={href.startsWith('http') ? '_blank' : undefined}
+        rel="noreferrer"
+        onClick={rest.onClick as unknown as MouseEventHandler<HTMLAnchorElement> | undefined}
+      >
         {inner}
       </a>
     );

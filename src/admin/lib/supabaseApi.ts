@@ -245,6 +245,16 @@ export const supabaseApi: AdminApi = {
     return check(await sb.from('email_log').select('*').order('created_at', { ascending: false }).limit(500));
   },
 
+  async listMessages() {
+    return check(await sb.from('contact_messages').select('*').order('created_at', { ascending: false }).limit(1000));
+  },
+  async setMessageStatus(ids, status) {
+    check(await sb.from('contact_messages').update({ status }).in('id', ids));
+  },
+  async deleteMessage(id) {
+    check(await sb.from('contact_messages').delete().eq('id', id));
+  },
+
   async listBanners() {
     return check(await sb.from('banners').select('*').order('placement').order('sort_order'));
   },

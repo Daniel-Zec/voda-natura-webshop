@@ -158,7 +158,7 @@ const ro = featuredProducts.find((p) => p.sku === 'RO6') ?? featuredProducts[0];
       </div>
       <div class="info-grid">
         <InfoCard icon="wrench" tone="info" title="Ugradnja" link={{ href: routes.page('ugradnja'), label: 'Kako teče ugradnja' }}>
-          U Subotici i okolini ugradnju radi serviser našeg partnera – kontaktirajte nas. Cenu ugradnje dogovaramo sa vama, jer zavisi od sistema, mesta ugradnje i udaljenosti. Za ostale gradove, vaš vodoinstalater dobija uputstvo i pomoć telefonom.
+          U Subotici i okolini ugradnju radi serviser našeg partnera – <a href={`${routes.page('kontakt')}?tema=ugradnja`}>kontaktirajte nas</a>. Cenu ugradnje dogovaramo sa vama, jer zavisi od sistema, mesta ugradnje i udaljenosti. Za ostale gradove, vaš vodoinstalater dobija uputstvo i pomoć telefonom.
         </InfoCard>
         <InfoCard icon="flask" tone="brand" title="Niste sigurni kakvu vodu imate?" link={{ href: routes.guide('analiza-vode'), label: 'Kako do analize vode' }}>
           Uradite analizu u najbližem zavodu za javno zdravlje i pošaljite nam rezultate. Naš tehnolog besplatno predlaže sistem.

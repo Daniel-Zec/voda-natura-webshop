@@ -10,6 +10,7 @@ const nav: { id: string; label: string; icon: AdminIconName; to: string }[] = [
   { id: '', label: 'Kontrolna tabla', icon: 'dashboard', to: href() },
   { id: 'porudzbine', label: 'Porudžbine', icon: 'orders', to: href('porudzbine') },
   { id: 'kupci', label: 'Kupci', icon: 'users', to: href('kupci') },
+  { id: 'poruke', label: 'Poruke', icon: 'inbox', to: href('poruke') },
   { id: 'proizvodi', label: 'Proizvodi', icon: 'box', to: href('proizvodi') },
   { id: 'provizija', label: 'Provizija', icon: 'percent', to: href('provizija') },
   { id: 'marketing', label: 'Marketing', icon: 'megaphone', to: href('marketing') },
@@ -21,6 +22,7 @@ export function Shell({ section, children, onSignOut }: { section: string; child
   const { api, email, unpublished, markPublished } = useAdmin();
   const [open, setOpen] = useState(false);
   const [newOrders, setNewOrders] = useState(0);
+  const [newMessages, setNewMessages] = useState(0);
   const toast = useToast();
   const { busy, run } = useAction();
 
@@ -32,8 +34,17 @@ export function Shell({ section, children, onSignOut }: { section: string; child
         .listOrders()
         .then((o) => alive && setNewOrders(o.filter((x) => x.status === 'new').length))
         .catch(() => {});
+    const loadMessages = () =>
+      api
+        .listMessages()
+        .then((m) => alive && setNewMessages(m.filter((x) => x.status === 'new').length))
+        .catch(() => {});
     load();
-    const t = setInterval(load, 120000);
+    loadMessages();
+    const t = setInterval(() => {
+      load();
+      loadMessages();
+    }, 120000);
     return () => {
       alive = false;
       clearInterval(t);
@@ -71,6 +82,7 @@ export function Shell({ section, children, onSignOut }: { section: string; child
                   <AdminIcon name={n.icon} size={19} />
                   <span>{n.label}</span>
                   {n.id === 'porudzbine' && newOrders > 0 && <span className={s.badge} aria-label={`${newOrders} novih`}>{newOrders}</span>}
+                  {n.id === 'poruke' && newMessages > 0 && <span className={s.badge} aria-label={`${newMessages} novih poruka`}>{newMessages}</span>}
                 </a>
               </li>
             ))}

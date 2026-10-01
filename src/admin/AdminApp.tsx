@@ -22,6 +22,7 @@ import { CommissionRates } from './screens/CommissionRates';
 import { Marketing } from './screens/Marketing';
 import { Emails } from './screens/Emails';
 import { Settings } from './screens/Settings';
+import { Messages } from './screens/Messages';
 
 /** Entry point of the admin panel (mounted by src/pages/admin/index.astro). */
 export default function AdminApp() {
@@ -124,6 +125,9 @@ function Routes({ onSignOut }: { onSignOut: () => void }) {
       break;
     case 'emailovi':
       screen = <Emails tab={sub ?? 'sabloni'} />;
+      break;
+    case 'poruke':
+      screen = <Messages status={sub ?? ''} />;
       break;
     case 'podesavanja':
       screen = <Settings />;

@@ -41,6 +41,8 @@ const paths = {
   phone: <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />,
   drop: <path d="M12 2.5c3.5 4.2 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 2.5-6.8 6-11z" />,
   send: <><path d="M21 3 10 14" /><path d="m21 3-7 18-4-7-7-4z" /></>,
+  inbox: <><path d="M3 13h5l1.5 3h5L16 13h5" /><path d="M5.5 5h13L21 13v6H3v-6z" /></>,
+  forward: <><path d="m15 5 6 6-6 6" /><path d="M21 11H9a6 6 0 0 0-6 6v2" /></>,
 } as const;
 
 export type AdminIconName = keyof typeof paths;

@@ -8,6 +8,8 @@ import type {
   AuthStep,
   Banner,
   Catalog,
+  ContactMessage,
+  ContactStatus,
   CommissionLine,
   CommissionRule,
   Customer,
@@ -92,6 +94,10 @@ export interface AdminApi {
   listTemplates(): Promise<EmailTemplate[]>;
   saveTemplate(key: string, patch: Partial<Pick<EmailTemplate, 'subject' | 'body' | 'is_active'>>): Promise<void>;
   listEmailLog(): Promise<EmailLogRow[]>;
+
+  listMessages(): Promise<ContactMessage[]>;
+  setMessageStatus(ids: string[], status: ContactStatus): Promise<void>;
+  deleteMessage(id: string): Promise<void>;
 
   listBanners(): Promise<Banner[]>;
   saveBanner(banner: Omit<Banner, 'id'> & { id?: number }): Promise<void>;

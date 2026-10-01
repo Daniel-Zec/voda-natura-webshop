@@ -81,6 +81,18 @@ const paths = {
   arrowRight: <path d="M5 12h14M13 6l6 6-6 6" />,
   chevronDown: <path d="M6 9l6 6 6-6" />,
   arrowLeft: <path d="M19 12H5M11 6l-6 6 6 6" />,
+  mail: (
+    <>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3.5 6.5 8.5 7 8.5-7" />
+    </>
+  ),
+  pin: (
+    <>
+      <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" />
+      <circle cx="12" cy="10" r="2.3" />
+    </>
+  ),
   clock: (
     <>
       <circle cx="12" cy="12" r="9" />

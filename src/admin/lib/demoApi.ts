@@ -6,6 +6,7 @@
 import catalogJson from '../../data/catalog.json';
 import type { AdminApi } from './api';
 import type {
+  ContactMessage,
   AuthStep,
   Banner,
   Category,
@@ -304,6 +305,13 @@ const templates: EmailTemplate[] = [
 ];
 
 let bannerId = 3;
+let messages: ContactMessage[] = [
+  { id: 'm1', created_at: daysAgo(0, 2), name: 'Jelena Petrović', email: 'jelena.p@example.com', phone: '064 123 4567', topic: 'izbor', message: 'Dobar dan, živimo u stanu u Novom Sadu, četvoro nas je. Da li nam je bolja reverzna osmoza ili filter na slavinu? Smeta nam ukus hlora.', page: '/vodic/hlor-u-vodi/', status: 'new' },
+  { id: 'm2', created_at: daysAgo(1, 5), name: 'Marko Ilić', email: 'marko.ilic@example.com', phone: null, topic: 'ugradnja', message: 'Imam kuću kod Subotice, bunar. Koliko bi koštala ugradnja sistema za celu kuću? Mogu da pošaljem analizu vode.', page: '/filteri-za-celu-kucu/', status: 'new' },
+  { id: 'm3', created_at: daysAgo(3), name: 'Ana Jovanović', email: 'ana.j@example.com', phone: '063 555 222', topic: 'porudzbina', message: 'Poručila sam STO 10 uložak pre 5 dana, kada stiže?', page: '/kontakt/', status: 'forwarded' },
+  { id: 'm4', created_at: daysAgo(6), name: 'Petar Nikolić', email: 'petar.n@example.com', phone: null, topic: 'drugo', message: 'Da li prodajete i filtere za akvarijum?', page: '/', status: 'answered' },
+];
+
 let banners: Banner[] = [
   { id: 1, placement: 'hero', title: 'Čista voda iz slavine, bez nošenja flaša', body: 'Filteri za vodu za stan i kuću. Plaćate tek kad stigne.', button_label: 'Pronađi pravi filter', button_url: '/izbor-filtera/', image_desktop: 'images/hero/filtrirana-voda-iz-slavine-1680.webp', image_mobile: null, starts_at: null, ends_at: null, is_draft: false, sort_order: 0 },
   { id: 2, placement: 'promo', title: 'Vreme je za nove uloške', body: 'Menjajte uloške na 6 meseci za ukusnu vodu.', button_label: 'Pogledaj uloške', button_url: '/ulosci/', image_desktop: null, image_mobile: null, starts_at: daysAgo(-3), ends_at: daysAgo(-30), is_draft: false, sort_order: 0 },
@@ -544,6 +552,17 @@ export const demoApi: AdminApi = {
   },
   async listEmailLog() {
     return [...emails].sort((a, b) => b.created_at.localeCompare(a.created_at));
+  },
+
+  async listMessages() {
+    return [...messages].sort((a, b) => b.created_at.localeCompare(a.created_at));
+  },
+  async setMessageStatus(ids, status) {
+    await wait();
+    for (const m of messages) if (ids.includes(m.id)) m.status = status;
+  },
+  async deleteMessage(id) {
+    messages = messages.filter((m) => m.id !== id);
   },
 
   async listBanners() {

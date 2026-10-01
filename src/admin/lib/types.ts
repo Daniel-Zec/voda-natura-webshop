@@ -256,3 +256,20 @@ export type AuthStep =
   | { step: 'ready'; email: string };
 
 export type RepublishResult = { ok: true } | { ok: false; reason: 'not_configured' | 'error'; detail?: string };
+
+export type ContactTopic = 'izbor' | 'ugradnja' | 'porudzbina' | 'reklamacija' | 'drugo';
+export type ContactStatus = 'new' | 'answered' | 'forwarded' | 'spam';
+
+/** A message from the contact form on /kontakt/ (table contact_messages). */
+export interface ContactMessage {
+  id: string;
+  created_at: string;
+  name: string;
+  email: string;
+  phone: string | null;
+  topic: ContactTopic;
+  message: string;
+  /** Page the visitor came from */
+  page: string | null;
+  status: ContactStatus;
+}

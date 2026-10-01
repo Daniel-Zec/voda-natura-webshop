@@ -21,6 +21,7 @@ UI language: Serbian Latin; admin body text 14 px; only `--vn-*` tokens.
 | `#/` | Dashboard: period picker with comparison, 6 key numbers (visitors wait for the analytics tool), orders per day, top 5/10 products by units, "Treba pažnje" list |
 | `#/porudzbine`, `#/porudzbine/:id` | Orders: search, status/date filters, DA email status, CSV; detail with items and commission at order time, allowed status changes with a note, tracking code, internal note, email log |
 | `#/kupci`, `#/kupci/:email` | Customers built from orders (view `admin_customers`), CSV, data export and erase of personal data (`admin_anonymize_customer`) |
+| `#/poruke` (+ `/new`, `/answered`, `/forwarded`, `/spam`) | Messages from the contact form on `/kontakt/` (table `contact_messages`): search, status tabs, unread count in the menu; a message opens with Odgovori (mail app, pre-filled), Prosledi (forward, e.g. to DA), call, Spam, delete. Nothing is emailed: messages are read here |
 | `#/proizvodi` | Product table with filters, bulk: commission %, price correction, reset to Auto, show/hide, category |
 | `#/proizvodi/galerija` | Image grid; marks products with no photo or only one |
 | `#/proizvodi/zalihe` | Stock import from DA's file: preview, failed rows, apply, history, undo of the last import |
@@ -57,7 +58,8 @@ codes), price + commission + price history, SEO, internal notes.
 3. First login asks to set up the authenticator app (QR code). After that every login needs the 6-digit code.
 4. **Auth redirect:** Supabase → Authentication → URL Configuration → add the admin address to redirect URLs
    (for password reset links).
-5. **Publishing button:** Supabase → Edge Functions → Secrets → `GITHUB_TOKEN` = fine-grained GitHub token for this
+5. **Contact form table:** run `supabase/migrations/20261001120000_contact_messages.sql` once (Supabase → SQL Editor → paste → Run) if Claude could not apply it. Until then the form on `/kontakt/` shows an error with the phone number, and Poruke shows a notice.
+6. **Publishing button:** Supabase → Edge Functions → Secrets → `GITHUB_TOKEN` = fine-grained GitHub token for this
    repository with *Actions: read and write*. The `republish` function starts the deploy workflow.
 
 ## Not built yet (and why)
