@@ -114,6 +114,7 @@ export function ComparePage({ products, browse, initialSkus }: ComparePageProps)
       </div>
     );
 
+  const slots = Math.min(MAX, chosen.length + 1);
   const visibleRows = onlyDiff && chosen.length > 1 ? rows.filter((r) => r.differs) : rows;
   return (
     <div className={styles.wrap}>
@@ -135,7 +136,13 @@ export function ComparePage({ products, browse, initialSkus }: ComparePageProps)
       </div>
 
       <div className={styles.scroller} role="region" aria-label="Tabela poređenja" tabIndex={0}>
-        <table className={styles.table} style={{ ['--cols' as string]: chosen.length }}>
+        <table className={styles.table} style={{ ['--cols' as string]: slots }}>
+          <colgroup>
+            <col className={styles.labelCol} />
+            {Array.from({ length: slots }, (_, i) => (
+              <col key={i} />
+            ))}
+          </colgroup>
           <thead>
             <tr>
               <th scope="col" className={styles.corner}>
@@ -143,12 +150,14 @@ export function ComparePage({ products, browse, initialSkus }: ComparePageProps)
               </th>
               {chosen.map((p) => (
                 <th scope="col" key={p.product.sku} className={styles.productCell}>
-                  <button type="button" className={styles.remove} onClick={() => remove(p.product.sku)} aria-label={`Ukloni ${p.product.name} iz poređenja`}>
-                    <Icon name="close" size={18} />
-                  </button>
-                  <a href={p.href} className={styles.media} tabIndex={-1} aria-hidden="true">
-                    <img src={p.product.image.src} alt="" width={240} height={240} loading="lazy" decoding="async" />
-                  </a>
+                  <div className={styles.mediaWrap}>
+                    <a href={p.href} className={styles.media} tabIndex={-1} aria-hidden="true">
+                      <img src={p.product.image.src} alt="" width={240} height={240} loading="lazy" decoding="async" />
+                    </a>
+                    <button type="button" className={styles.remove} onClick={() => remove(p.product.sku)} aria-label={`Ukloni ${p.product.name} iz poređenja`} title="Ukloni iz poređenja">
+                      <Icon name="close" size={16} />
+                    </button>
+                  </div>
                   <a href={p.href} className={styles.name}>
                     {p.product.name}
                   </a>
@@ -170,23 +179,30 @@ export function ComparePage({ products, browse, initialSkus }: ComparePageProps)
               {chosen.length < MAX && (
                 <th scope="col" className={styles.addCell}>
                   <a href={browse[0]?.href} className={styles.addMore}>
-                    <Icon name="plus" size={22} />
-                    Dodaj proizvod
+                    <span className={styles.addIcon} aria-hidden="true">
+                      <Icon name="plus" size={22} />
+                    </span>
+                    <span>Dodaj proizvod</span>
+                    <span className={styles.addHint}>Označite „Uporedi“ na kartici proizvoda</span>
                   </a>
                 </th>
               )}
             </tr>
           </thead>
           <tbody>
-            {visibleRows.map((r) => (
+            {visibleRows.map((r) => [
+              // Phones: the row name sits on its own line above the values.
+              <tr key={`${r.label}-m`} className={styles.labelRow} aria-hidden="true">
+                <td colSpan={slots + 1}>{r.label}</td>
+              </tr>,
               <tr key={r.label} className={r.differs && chosen.length > 1 ? styles.diff : undefined}>
                 <th scope="row">{r.label}</th>
                 {r.values.map((v, i) => (
                   <td key={chosen[i].product.sku}>{v}</td>
                 ))}
-                {chosen.length < MAX && <td aria-hidden="true" />}
-              </tr>
-            ))}
+                {chosen.length < MAX && <td className={styles.emptyCell} aria-hidden="true" />}
+              </tr>,
+            ])}
           </tbody>
         </table>
       </div>
