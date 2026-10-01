@@ -12,10 +12,10 @@ export const site = {
   locale: 'sr-Latn',
 
   contact: {
-    /** Public phone for help choosing and installing. */
-    phone: '[TELEFON]',
+    /** Public phone for help choosing and installing: Decor Ambient's sales line (VodaNatura operates under DA). */
+    phone: '+381 63 29 22 19',
     /** Tel link, set together with phone, e.g. '+381641234567'. Empty = no link. */
-    phoneHref: '',
+    phoneHref: '+381632922219',
     email: 'info@vodanatura.com',
     hours: 'Radnim danima [RADNO VREME]',
   },
@@ -24,7 +24,7 @@ export const site = {
     name: 'Decor Ambient d.o.o.',
     city: 'Subotica',
     /** Installation in Subotica is booked by calling Decor Ambient (VODANATURA-75, q. 10). */
-    installationPhone: '[TELEFON DECOR AMBIENT]',
+    installationPhone: '+381 63 29 22 19',
     installationPrice: '[CENA UGRADNJE]',
   },
 
