@@ -17,5 +17,5 @@ const meta = {
 export default meta;
 export const Default: StoryObj<typeof meta> = {};
 export const Installation: StoryObj<typeof meta> = {
-  args: { icon: 'wrench', tone: 'info', title: 'Ugradnja', children: 'U Subotici i okolini ugradnju radi serviser našeg partnera – zakazujete je telefonom.', link: { href: '#', label: 'Kako teče ugradnja' } },
+  args: { icon: 'wrench', tone: 'info', title: 'Ugradnja', children: 'U Subotici i okolini ugradnju radi serviser našeg partnera – kontaktirajte nas.', link: { href: '#', label: 'Kako teče ugradnja' } },
 };
