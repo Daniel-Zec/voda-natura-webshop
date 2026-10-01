@@ -7,7 +7,7 @@ export const mainNav = [
   { label: 'Omekšivači', href: routes.category('omeksivaci-vode') },
   { label: 'Tuš i aparati', href: routes.category('tus-i-kucni-aparati') },
   { label: 'Ulošci', href: routes.category('ulosci') },
-  { label: 'Saveti o vodi', href: routes.guide('') },
+  { label: 'Saveti o vodi', href: routes.guides() },
 ];
 
 export const finderLink = { label: 'Pronađi pravi filter', href: routes.finder() };
@@ -35,7 +35,7 @@ export const footerNav = {
   about: {
     title: 'VodaNatura',
     links: [
-      { label: 'Vodiči', href: routes.guide('') },
+      { label: 'Vodiči', href: routes.guides() },
       { label: 'O nama', href: routes.page('o-nama') },
       { label: 'Kontakt', href: routes.page('kontakt') },
     ],

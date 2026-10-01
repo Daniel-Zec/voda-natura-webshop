@@ -1,0 +1,142 @@
+---
+/**
+ * "Saveti o vodi" — the guides hub (/vodic/). Featured guide first, then the rest in a grid,
+ * then the two next steps (product finder, water analysis). Layout follows the Claude Design
+ * canvas "VodaNatura Saveti o vodi".
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Breadcrumbs } from '../../components/ui/Breadcrumbs/Breadcrumbs';
+import { Overline } from '../../components/ui/Overline/Overline';
+import { GuideCard } from '../../components/shop/GuideCard/GuideCard';
+import { InfoCard } from '../../components/shop/InfoCard/InfoCard';
+import { getGuides, toGuideSummary, formatDateSr } from '../../lib/guides';
+import { routes, url } from '../../lib/url';
+
+const guides = await getGuides();
+const [featured, ...rest] = guides;
+const lastUpdate = new Date(Math.max(...guides.map((g) => g.data.dateModified.getTime())));
+
+const crumbs = [{ label: 'Početna', href: routes.home() }, { label: 'Saveti o vodi' }];
+const title = 'Saveti o vodi: vodiči o vodi iz slavine i filterima | VodaNatura';
+const description =
+  'Šta je u vodi iz vaše slavine, kako da je proverite i kada filter ima smisla. Vodiči uz izvore: Institut Batut, WHO i zavodi za javno zdravlje.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Početna', item: new URL(routes.home(), Astro.site).toString() }, { '@type': 'ListItem', position: 2, name: 'Saveti o vodi' }],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Saveti o vodi',
+    description,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: guides.map((g, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(routes.guide(g.id), Astro.site).toString(), name: g.data.title })),
+    },
+  },
+];
+---
+
+<BaseLayout title={title} description={description} ogImage="images/vodic/saveti-o-vodi-hero.webp" jsonLd={jsonLd} currentHref={routes.guides()}>
+  <div class="vn-container">
+    <Breadcrumbs items={crumbs} />
+
+    <section class="hero" aria-labelledby="vodic-title">
+      <img
+        class="hero-img"
+        src={url('images/vodic/saveti-o-vodi-hero.webp')}
+        alt="Čaša se puni vodom iz kuhinjske slavine pored prozora i bilja"
+        width="1600"
+        height="807"
+        fetchpriority="high"
+      />
+      <div class="hero-text">
+        <Overline>Vodiči VodaNatura</Overline>
+        <h1 id="vodic-title" class="hero-title">Saveti o vodi</h1>
+        <p class="hero-lead">
+          Šta je u vodi iz vaše slavine, kako da je proverite i kada filter ima smisla. Kratko, jasno i uz izvore: Institut „Batut", WHO i zavodi za javno zdravlje.
+        </p>
+      </div>
+    </section>
+
+    {featured && (
+      <section class="featured" aria-label="Izdvojeni vodič">
+        <GuideCard guide={toGuideSummary(featured)} variant="featured" headingLevel={2} />
+      </section>
+    )}
+
+    <section class="all" aria-labelledby="svi-title">
+      <div class="all-head">
+        <h2 id="svi-title" class="section-title">Svi vodiči</h2>
+        <p class="all-meta">{guides.length} vodiča · ažurirano {formatDateSr(lastUpdate)}</p>
+      </div>
+      <ul role="list" class="grid">
+        {rest.map((g) => (
+          <li><GuideCard guide={toGuideSummary(g)} /></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="next" aria-label="Sledeći korak">
+      <InfoCard icon="drop" tone="info" title="Ne znate koji filter vam treba?" link={{ href: routes.finder(), label: 'Pronađi pravi filter' }}>
+        Odgovorite na 5 pitanja o vašoj vodi i domu i dobićete 2–3 predloga.
+      </InfoCard>
+      <InfoCard icon="flask" tone="brand" title="Imate analizu vode?" link={{ href: routes.guide('analiza-vode'), label: 'Kako do analize vode' }}>
+        Pošaljite rezultate i tehnolog našeg partnera besplatno će vam preporučiti sistem.
+      </InfoCard>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    margin-top: var(--vn-space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--vn-space-4);
+  }
+  .hero-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: 78% 60%;
+    border-radius: var(--vn-radius-xl);
+    background: var(--vn-color-bg-brand-soft);
+  }
+  .hero-text { display: flex; flex-direction: column; gap: var(--vn-space-3); }
+  .hero-title { font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+  .hero-lead { max-width: 640px; font-size: var(--vn-text-body-lg-size); line-height: var(--vn-text-body-lg-line-height); color: var(--vn-gray-700); }
+
+  .featured { margin-top: var(--vn-space-8); }
+
+  .all { margin-top: var(--vn-section-gap); display: flex; flex-direction: column; gap: var(--vn-space-6); }
+  .all-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--vn-space-2); }
+  .section-title { font-size: var(--vn-text-h2-size); line-height: var(--vn-text-h2-line-height); font-weight: var(--vn-text-h2-weight); }
+  .all-meta { font-size: var(--vn-text-body-sm-size); color: var(--vn-color-text-secondary); }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--vn-space-4); }
+  .grid > li { display: flex; }
+  .grid > li > :global(*) { flex: 1 1 auto; }
+
+  .next { margin-top: var(--vn-section-gap); display: grid; gap: var(--vn-space-4); }
+
+  @media (min-width: 768px) {
+    .hero { display: block; height: 400px; border-radius: var(--vn-radius-2xl); overflow: hidden; background: var(--vn-color-bg-brand-soft); }
+    .hero-img { position: absolute; inset: 0; height: 100%; border-radius: 0; object-position: 100% 60%; }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0 38% 0 0;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.75) 60%, rgba(255, 255, 255, 0) 100%);
+    }
+    .hero-text { position: absolute; z-index: 1; inset: 0 auto 0 0; width: min(640px, 70%); padding: 0 var(--vn-space-16); justify-content: center; gap: var(--vn-space-4); }
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--vn-space-6); }
+    .next { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--vn-space-6); }
+  }
+  @media (min-width: 1100px) {
+    .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+</style>

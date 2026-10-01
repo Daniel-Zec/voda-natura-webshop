@@ -80,6 +80,13 @@ const paths = {
   close: <path d="M6 6l12 12M18 6L6 18" />,
   arrowRight: <path d="M5 12h14M13 6l6 6-6 6" />,
   chevronDown: <path d="M6 9l6 6 6-6" />,
+  arrowLeft: <path d="M19 12H5M11 6l-6 6 6 6" />,
+  clock: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </>
+  ),
 } as const;
 
 export type IconName = keyof typeof paths;

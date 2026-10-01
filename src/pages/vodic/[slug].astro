@@ -1,0 +1,256 @@
+---
+/**
+ * One "Saveti o vodi" guide: /vodic/{slug}/. Header, image, short answer, Markdown body with a
+ * table of contents and products in the sidebar, sources (end of the Markdown), more guides.
+ */
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Breadcrumbs } from '../../components/ui/Breadcrumbs/Breadcrumbs';
+import { Overline } from '../../components/ui/Overline/Overline';
+import { Icon } from '../../components/ui/Icon/Icon';
+import { ArrowLink } from '../../components/ui/ArrowLink/ArrowLink';
+import { GuideCard } from '../../components/shop/GuideCard/GuideCard';
+import { CartridgeCard } from '../../components/shop/CartridgeCard/CartridgeCard';
+import { getGuides, readingMinutes, toGuideSummary, formatDateSr, type Guide } from '../../lib/guides';
+import { getProduct, toCartridge } from '../../lib/catalog';
+import { routes, url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const guides = await getGuides();
+  return guides.map((guide) => ({ params: { slug: guide.id }, props: { guide, all: guides } }));
+}
+
+interface Props {
+  guide: Guide;
+  all: Guide[];
+}
+const { guide, all } = Astro.props;
+const { data } = guide;
+const { Content, headings } = await render(guide);
+
+const toc = headings.filter((h) => h.depth === 2);
+const minutes = readingMinutes(guide);
+const products = data.products.map((slug) => getProduct(slug)).filter((p) => p !== undefined);
+const more = all.filter((g) => g.id !== guide.id).slice(0, 3);
+const initials = data.author.split(' ').map((w) => w[0]).join('');
+
+const crumbs = [
+  { label: 'Početna', href: routes.home() },
+  { label: 'Saveti o vodi', href: routes.guides() },
+  { label: data.title },
+];
+const imageUrl = new URL(url(data.image.src), Astro.site).toString();
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.label, ...(c.href ? { item: new URL(c.href, Astro.site).toString() } : {}) })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: data.title,
+    description: data.description,
+    image: imageUrl,
+    inLanguage: 'sr-Latn',
+    author: { '@type': 'Person', name: data.author },
+    publisher: { '@type': 'Organization', name: 'VodaNatura' },
+    datePublished: data.datePublished.toISOString().slice(0, 10),
+    dateModified: data.dateModified.toISOString().slice(0, 10),
+    mainEntityOfPage: new URL(routes.guide(guide.id), Astro.site).toString(),
+  },
+];
+---
+
+<BaseLayout title={data.seoTitle} description={data.description} ogImage={data.image.src} jsonLd={jsonLd} currentHref={routes.guides()}>
+  <div class="vn-container">
+    <Breadcrumbs items={crumbs} />
+
+    <header class="head">
+      <div class="meta-row">
+        <Overline as="span">Vodič · {data.topic}</Overline>
+        <span class="time"><Icon name="clock" size={16} />{minutes} min čitanja</span>
+      </div>
+      <h1 class="title">{data.title}</h1>
+      <div class="byline">
+        <span class="avatar" aria-hidden="true">{initials}</span>
+        <span class="byline-text">
+          <span class="author">{data.author}</span>
+          <span>
+            Objavljeno <time datetime={data.datePublished.toISOString().slice(0, 10)}>{formatDateSr(data.datePublished)}</time>
+            {data.dateModified.getTime() !== data.datePublished.getTime() && (
+              <> · Ažurirano <time datetime={data.dateModified.toISOString().slice(0, 10)}>{formatDateSr(data.dateModified)}</time></>
+            )}
+          </span>
+        </span>
+      </div>
+    </header>
+
+    <img class="cover" src={url(data.image.src)} alt={data.image.alt} width="1600" height="900" fetchpriority="high" />
+
+    <div class="layout">
+      <article class="article">
+        <aside class="answer" aria-label="Kratak odgovor">
+          <Overline>Kratak odgovor</Overline>
+          <p>{data.answer}</p>
+        </aside>
+
+        {toc.length > 0 && (
+          <details class="toc-mobile">
+            <summary>U ovom vodiču ({toc.length})</summary>
+            <ol role="list">{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+          </details>
+        )}
+
+        <div class="prose">
+          <Content />
+        </div>
+      </article>
+
+      <aside class="side" aria-label="Uz vodič">
+        {toc.length > 0 && (
+          <nav class="toc" aria-label="Sadržaj vodiča">
+            <p class="side-label">U ovom vodiču</p>
+            <ol role="list">{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+          </nav>
+        )}
+        {products.length > 0 && (
+          <section class="products" aria-labelledby="proizvodi-title">
+            <p id="proizvodi-title" class="side-label">Proizvodi iz vodiča</p>
+            <ul role="list" class="product-list">
+              {products.map((p) => (
+                <li><CartridgeCard cartridge={toCartridge(p, p.kicker ?? undefined)} href={routes.product(p.slug)} /></li>
+              ))}
+            </ul>
+            <p class="side-note">Plaćate pouzećem, tek kada paket stigne.</p>
+          </section>
+        )}
+        <a class="finder" href={routes.finder()}>
+          <span class="finder-title">Pronađi pravi filter</span>
+          <span class="finder-text">5 pitanja o vašoj vodi i domu, 2–3 predloga.</span>
+          <span class="finder-go">Počni <Icon name="arrowRight" size={18} /></span>
+        </a>
+      </aside>
+    </div>
+
+    {more.length > 0 && (
+      <section class="more" aria-labelledby="jos-title">
+        <div class="more-head">
+          <h2 id="jos-title" class="more-title">Pročitajte još</h2>
+          <ArrowLink href={routes.guides()}>Svi saveti o vodi</ArrowLink>
+        </div>
+        <ul role="list" class="more-grid">
+          {more.map((g) => (
+            <li><GuideCard guide={toGuideSummary(g)} /></li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .head { display: flex; flex-direction: column; gap: var(--vn-space-3); padding-top: var(--vn-space-6); max-width: 960px; }
+  .meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--vn-space-4); }
+  .time { display: inline-flex; align-items: center; gap: 6px; font-size: var(--vn-text-body-sm-size); color: var(--vn-color-text-secondary); }
+  .title { font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+  .byline { display: flex; align-items: center; gap: var(--vn-space-3); font-size: var(--vn-text-body-sm-size); line-height: var(--vn-text-body-sm-line-height); color: var(--vn-color-text-secondary); }
+  .avatar {
+    width: 40px; height: 40px; flex-shrink: 0; border-radius: var(--vn-radius-pill);
+    display: flex; align-items: center; justify-content: center;
+    background: var(--vn-color-bg-eco-soft); color: var(--vn-color-text-brand); font-weight: var(--vn-font-weight-bold);
+  }
+  .byline-text { display: flex; flex-direction: column; }
+  .author { color: var(--vn-color-text-primary); font-weight: var(--vn-font-weight-semibold); }
+
+  .cover {
+    margin-top: var(--vn-space-6);
+    width: 100%; height: auto; aspect-ratio: 16 / 9; max-height: 520px;
+    object-fit: cover; border-radius: var(--vn-radius-xl); background: var(--vn-color-bg-brand-soft);
+  }
+
+  .layout { margin-top: var(--vn-space-8); display: grid; gap: var(--vn-space-10); }
+  .article { min-width: 0; max-width: 720px; }
+
+  .answer {
+    display: flex; flex-direction: column; gap: var(--vn-space-2);
+    padding: var(--vn-space-5) var(--vn-space-6); border-radius: var(--vn-radius-lg); background: var(--vn-color-bg-eco-soft);
+  }
+  .answer p { font-size: var(--vn-text-body-lg-size); line-height: var(--vn-text-body-lg-line-height); }
+
+  .toc-mobile { margin-top: var(--vn-space-4); border: 1px solid var(--vn-color-border-default); border-radius: var(--vn-radius-md); padding: 0 var(--vn-space-4); }
+  .toc-mobile summary { min-height: var(--vn-touch-min); display: flex; align-items: center; font-weight: var(--vn-font-weight-semibold); cursor: pointer; }
+  .toc-mobile ol { display: flex; flex-direction: column; padding-bottom: var(--vn-space-3); }
+  .toc-mobile a { display: block; padding: var(--vn-space-2) 0; color: var(--vn-color-text-primary); }
+
+  /* Article body (Markdown) */
+  .prose { font-size: 17px; line-height: 28px; }
+  .prose :global(h2) {
+    margin-top: var(--vn-space-12);
+    font-size: var(--vn-text-h2-size); line-height: var(--vn-text-h2-line-height); font-weight: var(--vn-text-h2-weight);
+    scroll-margin-top: var(--vn-space-6);
+  }
+  .prose :global(p), .prose :global(ul), .prose :global(ol) { margin-top: var(--vn-space-4); }
+  .prose :global(ul), .prose :global(ol) { padding-left: var(--vn-space-6); display: flex; flex-direction: column; gap: var(--vn-space-2); }
+  .prose :global(strong) { font-weight: var(--vn-font-weight-bold); }
+  .prose :global(a) { text-decoration: underline; text-underline-offset: 3px; }
+  .prose :global(table) {
+    display: block; overflow-x: auto; margin-top: var(--vn-space-6); width: 100%;
+    border-collapse: collapse; font-size: var(--vn-text-body-sm-size); line-height: var(--vn-text-body-sm-line-height);
+    border: 1px solid var(--vn-color-border-default); border-radius: var(--vn-radius-md);
+  }
+  .prose :global(thead) { background: var(--vn-color-bg-muted); }
+  .prose :global(th) { text-align: left; padding: var(--vn-space-3) var(--vn-space-4); font-weight: var(--vn-font-weight-semibold); color: var(--vn-gray-700); border-bottom: 1px solid var(--vn-color-border-default); }
+  .prose :global(td) { padding: var(--vn-space-3) var(--vn-space-4); border-bottom: 1px solid var(--vn-color-border-subtle); vertical-align: top; }
+  .prose :global(tr:last-child td) { border-bottom: 0; }
+  /* Sources: everything after the horizontal rule */
+  .prose :global(hr) { margin: var(--vn-space-12) 0 0; border: 0; border-top: 1px solid var(--vn-color-border-default); }
+  .prose :global(hr ~ *) { font-size: var(--vn-text-body-sm-size); line-height: var(--vn-text-body-sm-line-height); color: var(--vn-color-text-secondary); }
+  .prose :global(hr ~ ul) { gap: var(--vn-space-1); }
+
+  .side { display: flex; flex-direction: column; gap: var(--vn-space-8); }
+  .toc { display: none; }
+  .side-label {
+    margin-bottom: var(--vn-space-3);
+    font-size: var(--vn-text-overline-size); line-height: var(--vn-text-overline-line-height);
+    font-weight: var(--vn-text-overline-weight); letter-spacing: var(--vn-letter-spacing-overline);
+    text-transform: uppercase; color: var(--vn-color-text-secondary);
+  }
+  .product-list { display: grid; gap: var(--vn-space-3); }
+  .product-list > li > :global(*) { border: 1px solid var(--vn-color-border-default); }
+  .side-note { margin-top: var(--vn-space-3); font-size: var(--vn-text-caption-size); line-height: var(--vn-text-caption-line-height); color: var(--vn-color-text-secondary); }
+  .finder {
+    display: flex; flex-direction: column; gap: var(--vn-space-2);
+    padding: var(--vn-space-5); border-radius: var(--vn-radius-lg);
+    background: var(--vn-color-action-secondary); color: var(--vn-color-text-inverse);
+  }
+  .finder:hover { color: var(--vn-color-text-inverse); text-decoration: none; background: var(--vn-blue-800); }
+  .finder-title { font-size: 18px; line-height: 24px; font-weight: var(--vn-font-weight-bold); }
+  .finder-text { font-size: var(--vn-text-body-sm-size); line-height: var(--vn-text-body-sm-line-height); color: var(--vn-blue-50); }
+  .finder-go { display: inline-flex; align-items: center; gap: var(--vn-space-2); font-weight: var(--vn-font-weight-semibold); }
+
+  .more { margin-top: var(--vn-section-gap); display: flex; flex-direction: column; gap: var(--vn-space-6); }
+  .more-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--vn-space-2); }
+  .more-title { font-size: var(--vn-text-h2-size); line-height: var(--vn-text-h2-line-height); font-weight: var(--vn-text-h2-weight); }
+  .more-grid { display: grid; gap: var(--vn-space-4); }
+  .more-grid > li { display: flex; }
+  .more-grid > li > :global(*) { flex: 1 1 auto; }
+
+  @media (min-width: 768px) {
+    .prose { font-size: 18px; line-height: 30px; }
+    .product-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .more-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--vn-space-6); }
+  }
+  @media (min-width: 1000px) {
+    .layout { grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: var(--vn-space-12); align-items: start; }
+    .toc { display: block; }
+    .toc ol { display: flex; flex-direction: column; }
+    .toc a {
+      display: block; padding: 6px 0 6px var(--vn-space-3); border-left: 2px solid var(--vn-color-border-default);
+      font-size: var(--vn-text-body-sm-size); line-height: var(--vn-text-body-sm-line-height); color: var(--vn-color-text-primary);
+    }
+    .toc a:hover { border-left-color: var(--vn-color-action-primary); color: var(--vn-color-text-brand); text-decoration: none; }
+    .toc-mobile { display: none; }
+    .product-list { grid-template-columns: 1fr; }
+  }
+</style>

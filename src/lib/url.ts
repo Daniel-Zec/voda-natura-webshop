@@ -17,6 +17,7 @@ export const routes = {
   home: () => url(''),
   category: (slug: string) => url(`${slug}/`),
   product: (slug: string) => url(`proizvod/${slug}/`),
+  guides: () => url('vodic/'),
   guide: (slug: string) => url(`vodic/${slug}/`),
   page: (slug: string) => url(`${slug}/`),
   search: (q?: string) => url(`pretraga/${q ? `?q=${encodeURIComponent(q)}` : ''}`),
