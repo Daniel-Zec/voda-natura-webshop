@@ -42,6 +42,7 @@ const organization = {
   logo: new URL(url('images/brand/vodanatura-logo.png'), Astro.site).toString(),
   email: site.contact.email,
   telephone: site.contact.phoneHref || undefined,
+  openingHours: site.contact.openingHours,
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.contact.address.street,

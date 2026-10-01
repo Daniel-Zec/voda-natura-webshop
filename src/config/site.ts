@@ -17,7 +17,9 @@ export const site = {
     /** Tel link, set together with phone, e.g. '+381641234567'. Empty = no link. */
     phoneHref: '+381632922219',
     email: 'info@vodanatura.com',
-    hours: 'Radnim danima [RADNO VREME]',
+    /** Decor Ambient's hours: Mon–Fri 8–16, closed on weekends */
+    hours: 'Ponedeljak–petak, 8–16 h',
+    openingHours: 'Mo-Fr 08:00-16:00',
     /** Decor Ambient's address (the seller), from decorambient.com/kontakt */
     address: { street: 'Filipa Kljajića 22', postalCode: '24000', city: 'Subotica', country: 'RS' },
   },

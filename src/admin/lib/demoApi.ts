@@ -138,7 +138,7 @@ const settings: Settings = {
   admin_notify_email: 'daniel.zec@vodanatura.com',
   price_rounding_rsd: 10,
   shop_phone: '[TELEFON]',
-  shop_hours: 'Radnim danima [RADNO VREME]',
+  shop_hours: 'Ponedeljak–petak, 8–16 h',
   delivery_estimate: 'oko 4 radna dana',
   installation_phone: '[TELEFON DECOR AMBIENT]',
   installation_price: '[CENA UGRADNJE]',
