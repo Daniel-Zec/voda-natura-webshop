@@ -26,10 +26,10 @@ export const footerNav = {
   buying: {
     title: 'Kupovina',
     links: [
-      { label: 'Dostava i plaćanje', href: routes.page('isporuka-i-placanje') },
-      { label: 'Reklamacije i povraćaj', href: routes.page('reklamacije-i-povracaj') },
-      { label: 'Garancija', href: routes.page('garancija') },
-      { label: 'Ugradnja', href: routes.page('ugradnja') },
+      { label: 'Dostava i plaćanje', href: routes.support('dostava-i-placanje') },
+      { label: 'Reklamacije i povraćaj', href: routes.support('reklamacije-i-povracaj') },
+      { label: 'Garancija', href: routes.support('garancija') },
+      { label: 'Ugradnja', href: routes.support('ugradnja') },
     ],
   },
   about: {

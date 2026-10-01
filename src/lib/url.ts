@@ -20,6 +20,8 @@ export const routes = {
   guides: () => url('vodic/'),
   guide: (slug: string) => url(`vodic/${slug}/`),
   page: (slug: string) => url(`${slug}/`),
+  /** Kupovina i podrška page, optionally at a section: dostava-i-placanje, reklamacije-i-povracaj, garancija, ugradnja */
+  support: (section?: string) => url(`kupovina/${section ? `#${section}` : ''}`),
   search: (q?: string) => url(`pretraga/${q ? `?q=${encodeURIComponent(q)}` : ''}`),
   cart: () => url('korpa/'),
   finder: () => url('izbor-filtera/'),

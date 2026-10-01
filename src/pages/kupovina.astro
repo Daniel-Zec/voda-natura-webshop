@@ -1,0 +1,272 @@
+---
+/**
+ * Kupovina i podrška (/kupovina/): delivery and payment, returns and complaints, warranty and
+ * installation on one page. Footer links and info cards jump to the sections by their #id.
+ * Facts come from the Knowledge Base (Decor Ambient meeting 23 Sep, decisions 29 Sep and 1 Oct 2026)
+ * and the Serbian Consumer Protection Act (Zakon o zaštiti potrošača).
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Breadcrumbs } from '../components/ui/Breadcrumbs/Breadcrumbs';
+import { Overline } from '../components/ui/Overline/Overline';
+import { Icon, type IconName } from '../components/ui/Icon/Icon';
+import { StepList } from '../components/shop/StepList/StepList';
+import { site } from '../config/site';
+import { routes, url } from '../lib/url';
+
+const contact = routes.page('kontakt');
+const sections: { id: string; title: string; short: string; icon: IconName; image: string; alt: string }[] = [
+  { id: 'dostava-i-placanje', title: 'Dostava i plaćanje', short: 'Pouzećem, BEX, oko 4 radna dana', icon: 'truck', image: 'images/kupovina/dostava-i-placanje.webp', alt: 'Ilustracija: kombi za dostavu, paket i novčanica' },
+  { id: 'reklamacije-i-povracaj', title: 'Reklamacije i povraćaj', short: '14 dana za odustanak', icon: 'arrowLeft', image: 'images/kupovina/reklamacije-i-povracaj.webp', alt: 'Ilustracija: kalendar sa 14 dana, paket i strelica za povraćaj' },
+  { id: 'garancija', title: 'Garancija', short: '2 godine na uređaje i kućišta', icon: 'shield', image: 'images/kupovina/garancija.webp', alt: 'Ilustracija: štit sa kvačicom, kućište filtera i sertifikat' },
+  { id: 'ugradnja', title: 'Ugradnja', short: 'Subotica ili vaš vodoinstalater', icon: 'wrench', image: 'images/kupovina/ugradnja.webp', alt: 'Ilustracija: sistem reverzne osmoze ugrađen ispod sudopere' },
+];
+const img = Object.fromEntries(sections.map((s) => [s.id, s]));
+
+const orderSteps = [
+  { title: 'Poručite bez registracije', text: 'Izaberete proizvode, upišete ime, adresu i telefon. Nalog nije potreban.' },
+  { title: 'Stiže potvrda emailom', text: 'Odmah dobijate email sa brojem porudžbine i spiskom proizvoda.' },
+  { title: 'Paket šalje BEX', text: 'Decor Ambient pakuje i šalje porudžbinu. Dostava traje oko 4 radna dana.' },
+  { title: 'Plaćate kuriru', text: 'Gotovinom, tek kada paket stigne. Uz to plaćate i troškove dostave.' },
+];
+
+const title = 'Dostava, plaćanje, reklamacije, garancija i ugradnja | VodaNatura';
+const description =
+  'Plaćanje pouzećem, BEX dostava za oko 4 radna dana, 14 dana za odustanak od kupovine, garancija 2 godine i ugradnja u Subotici. Sve o kupovini na jednom mestu.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Početna', item: new URL(routes.home(), Astro.site).toString() }, { '@type': 'ListItem', position: 2, name: 'Kupovina i podrška' }],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} ogImage="images/kupovina/dostava-i-placanje.webp" jsonLd={jsonLd}>
+  <div class="vn-container">
+    <Breadcrumbs items={[{ label: 'Početna', href: routes.home() }, { label: 'Kupovina i podrška' }]} />
+
+    <header class="head">
+      <Overline>Kupovina i podrška</Overline>
+      <h1 class="title">Kako kupujete kod nas</h1>
+      <p class="lead">
+        Plaćate tek kada paket stigne, dostava traje oko 4 radna dana, a uređaji imaju garanciju 2 godine. Ovde je sve o dostavi, povraćaju, garanciji i ugradnji na jednom mestu.
+      </p>
+    </header>
+
+    <nav class="jump" aria-label="Na ovoj stranici">
+      <ul role="list">
+        {sections.map((s) => (
+          <li>
+            <a href={`#${s.id}`} class="jump-card">
+              <span class="jump-icon" aria-hidden="true"><Icon name={s.icon} size={22} /></span>
+              <span class="jump-text">
+                <span class="jump-title">{s.title}</span>
+                <span class="jump-short">{s.short}</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Dostava i plaćanje -->
+    <section id="dostava-i-placanje" class="section" aria-labelledby="dostava-title">
+      <div class="section-head">
+        <div class="section-text">
+          <Overline>Dostava i plaćanje</Overline>
+          <h2 id="dostava-title" class="section-title">Plaćate tek kada paket stigne</h2>
+          <p class="section-lead">Porudžbinu plaćate gotovinom kuriru, pouzećem. Nema plaćanja karticom ni uplate unapred.</p>
+        </div>
+        <img class="section-img" src={url(img['dostava-i-placanje'].image)} alt={img['dostava-i-placanje'].alt} width="1600" height="900" loading="lazy" decoding="async" />
+      </div>
+
+      <StepList steps={orderSteps} />
+
+      <div class="prose">
+        <h3>Plaćanje</h3>
+        <ul>
+          <li><strong>Pouzećem:</strong> plaćate gotovinom kuriru u trenutku preuzimanja paketa.</li>
+          <li><strong>Cene su sa PDV-om.</strong> Račun izdaje naš partner {site.partner.name} iz Subotice, koji je prodavac.</li>
+          <li>Za skuplje proizvode koji se naručuju posebno (nisu na stanju) može biti potreban avans. To se uvek dogovara telefonom, pre porudžbine.</li>
+        </ul>
+
+        <h3>Dostava</h3>
+        <ul>
+          <li><strong>Kurirska služba {site.delivery.courier}</strong>, na adresu bilo gde u Srbiji.</li>
+          <li><strong>Rok:</strong> {site.delivery.estimate} od potvrde porudžbine, za proizvode koji su na stanju.</li>
+          <li>Proizvodi označeni sa <strong>„Po porudžbini, 3–4 meseca“</strong> stižu sa sledećom nabavkom od proizvođača. Pre slanja vas obaveštavamo.</li>
+        </ul>
+
+        <h3>Koliko košta dostava?</h3>
+        <p>
+          {site.delivery.note} Cena zavisi od težine i veličine paketa i određuje je kurirska služba, pa je ne prikazujemo na sajtu da ne bismo naveli pogrešan iznos. Za tačnu procenu za vašu porudžbinu,
+          <a href={`${contact}?tema=porudzbina`}>pitajte nas</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Reklamacije i povraćaj -->
+    <section id="reklamacije-i-povracaj" class="section" aria-labelledby="reklamacije-title">
+      <div class="section-head">
+        <div class="section-text">
+          <Overline>Reklamacije i povraćaj</Overline>
+          <h2 id="reklamacije-title" class="section-title">14 dana da se predomislite</h2>
+          <p class="section-lead">
+            Kod kupovine preko interneta imate pravo da odustanete od kupovine u roku od 14 dana od prijema paketa, bez navođenja razloga. Tako propisuje Zakon o zaštiti potrošača.
+          </p>
+        </div>
+        <img class="section-img" src={url(img['reklamacije-i-povracaj'].image)} alt={img['reklamacije-i-povracaj'].alt} width="1600" height="900" loading="lazy" decoding="async" />
+      </div>
+
+      <div class="prose">
+        <h3>Odustanak od kupovine (povraćaj)</h3>
+        <ol>
+          <li>U roku od 14 dana od prijema javite nam da odustajete: preko <a href={`${contact}?tema=reklamacija`}>kontakt forme</a> (tema „Reklamacija“), emailom na <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a> ili telefonom {site.contact.phone}. Navedite ime i broj porudžbine.</li>
+          <li>Pošaljite proizvod nazad. Troškove vraćanja snosi kupac, osim ako se drugačije ne dogovorimo.</li>
+          <li>Novac vraćamo najkasnije u roku od 14 dana od kada primimo vašu izjavu. Možemo sačekati da proizvod stigne nazad ili da nam pošaljete dokaz da je poslat.</li>
+        </ol>
+        <p>
+          Proizvod možete otvoriti i pregledati kao u prodavnici. Ako je korišćen više od toga (na primer ugrađen i pušten u rad), možemo umanjiti iznos koji vraćamo za smanjenu vrednost.
+        </p>
+
+        <h3>Reklamacija: kada proizvod ima nedostatak</h3>
+        <ul>
+          <li>Javite nam se sa brojem porudžbine, kratkim opisom i, ako možete, fotografijom. Dovoljna je i email potvrda porudžbine, fiskalni račun nije obavezan.</li>
+          <li>Odgovor dobijate najkasnije u roku od <strong>8 dana</strong>, a reklamacija se rešava u roku od <strong>15 dana</strong> (30 dana za tehničku robu).</li>
+          <li>Troškove opravdane reklamacije, uključujući slanje, snosi prodavac. Za opravdanu reklamaciju dobijate popravku, zamenu ili <strong>100% povraćaj novca</strong>.</li>
+          <li>Reklamacije rešava naš partner {site.partner.name}, koji je prodavac na računu.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Garancija -->
+    <section id="garancija" class="section" aria-labelledby="garancija-title">
+      <div class="section-head">
+        <div class="section-text">
+          <Overline>Garancija</Overline>
+          <h2 id="garancija-title" class="section-title">Garancija {site.warrantyYears} godine</h2>
+          <p class="section-lead">Na uređaje i kućišta filtera važi garancija 2 godine od dana isporuke, uz stručnu ugradnju.</p>
+        </div>
+        <img class="section-img" src={url(img.garancija.image)} alt={img.garancija.alt} width="1600" height="900" loading="lazy" decoding="async" />
+      </div>
+
+      <div class="prose">
+        <ul>
+          <li><strong>Uređaji i kućišta:</strong> sistemi reverzne osmoze, filteri za celu kuću, omekšivači, kuhinjski i filteri za tuš, kućišta filtera: garancija {site.warrantyYears} godine.</li>
+          <li><strong>Ulošci i membrane</strong> su potrošni delovi: menjaju se redovno (najčešće na 6 meseci, membrana na 2–3 godine), pa garancija ne pokriva njihovo trošenje, već samo greške u izradi.</li>
+          <li><strong>Garancija važi uz stručnu ugradnju.</strong> Ako je kvar nastao zbog nestručne ugradnje, garancija ne važi. Ako niste sigurni, <a href="#ugradnja">pogledajte uputstvo za ugradnju</a> ili nas pozovite pre ugradnje.</li>
+          <li><strong>Sertifikati:</strong> kućišta imaju EU sertifikat i atest Instituta za javno zdravlje „Dr Milan Jovanović Batut“.</li>
+          <li>Pored garancije, po zakonu prodavac odgovara za nesaobraznost proizvoda 2 godine od isporuke.</li>
+          <li>Sačuvajte email potvrdu porudžbine ili račun: to je dokaz kupovine za garanciju i reklamaciju.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Ugradnja -->
+    <section id="ugradnja" class="section" aria-labelledby="ugradnja-title">
+      <div class="section-head">
+        <div class="section-text">
+          <Overline>Ugradnja</Overline>
+          <h2 id="ugradnja-title" class="section-title">Ko ugrađuje filter</h2>
+          <p class="section-lead">U Subotici i okolini ugradnju radi serviser našeg partnera. U ostalim gradovima ugrađuje vaš vodoinstalater, a mi pomažemo telefonom.</p>
+        </div>
+        <img class="section-img" src={url(img.ugradnja.image)} alt={img.ugradnja.alt} width="1600" height="900" loading="lazy" decoding="async" />
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Subotica i okolina</h3>
+          <p>Ugradnju i puštanje u rad radi serviser kompanije {site.partner.name}. <a href={`${contact}?tema=ugradnja`}>Kontaktirajte nas</a> da dogovorimo termin.</p>
+          <p>Cenu dogovaramo sa vama, jer zavisi od sistema, mesta ugradnje (da li treba prilagoditi instalaciju) i udaljenosti.</p>
+        </div>
+        <div class="card">
+          <h3>Ostali gradovi</h3>
+          <p>Filter ugrađuje vaš vodoinstalater. Uz proizvod dobija uputstvo, a za tehnička pitanja vama i majstoru pomažemo telefonom ({site.contact.phone}, {site.contact.hours.toLowerCase()}).</p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <h3>Pre ugradnje proverite</h3>
+        <ul>
+          <li><strong>Mesto:</strong> sistem reverzne osmoze staje ispod sudopere (oko 47 × 43 × 14 cm, plus rezervoar). Filter za celu kuću ide na glavni ulaz vode, na mesto gde se lako menjaju ulošci.</li>
+          <li><strong>Pritisak vode:</strong> reverzna osmoza radi od 2,8 do 6 bara. Ako je pritisak niži, izaberite <a href={routes.product('ro-6-mp-sistem-reverzne-osmoze-sa-boost-er-pumpom')}>RO 6 MP sa pumpom</a>.</li>
+          <li><strong>Odvod:</strong> reverznoj osmozi treba priključak na odvod sudopere.</li>
+          <li><strong>Struja:</strong> pumpa, omekšivač i UV lampa traže utičnicu od 230 V u blizini.</li>
+          <li><strong>Garancija</strong> važi uz stručnu ugradnju, zato ugradnju prepustite majstoru ako niste sigurni.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="help" aria-labelledby="pitanja-title">
+      <div>
+        <h2 id="pitanja-title" class="help-title">Imate još pitanja?</h2>
+        <p>Pišite nam ili pozovite {site.contact.phone}, {site.contact.hours.toLowerCase()}.</p>
+      </div>
+      <a class="help-btn" href={contact}>Kontaktirajte nas <Icon name="arrowRight" size={18} /></a>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .head { display: flex; flex-direction: column; gap: var(--vn-space-3); padding-top: var(--vn-space-6); max-width: 760px; }
+  .title { font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+  .lead { font-size: var(--vn-text-body-lg-size); line-height: var(--vn-text-body-lg-line-height); color: var(--vn-gray-700); }
+
+  .jump { margin-top: var(--vn-space-8); }
+  .jump ul { display: grid; gap: var(--vn-space-3); }
+  .jump-card {
+    display: flex; align-items: center; gap: var(--vn-space-3); height: 100%;
+    padding: var(--vn-space-4); border: 1px solid var(--vn-color-border-warm); border-radius: var(--vn-radius-lg);
+    background: var(--vn-color-bg-subtle); color: var(--vn-color-text-primary);
+  }
+  .jump-card:hover { text-decoration: none; color: var(--vn-color-text-primary); border-color: var(--vn-sand-300); box-shadow: var(--vn-shadow-md); }
+  .jump-icon {
+    width: 44px; height: 44px; flex-shrink: 0; border-radius: var(--vn-radius-md);
+    display: flex; align-items: center; justify-content: center;
+    background: var(--vn-color-surface-card); color: var(--vn-color-text-brand);
+  }
+  .jump-text { display: flex; flex-direction: column; }
+  .jump-title { font-weight: var(--vn-font-weight-semibold); }
+  .jump-short { font-size: var(--vn-text-body-sm-size); line-height: var(--vn-text-body-sm-line-height); color: var(--vn-color-text-secondary); }
+
+  .section { margin-top: var(--vn-space-12); padding-top: var(--vn-space-12); border-top: 1px solid var(--vn-color-border-subtle); display: flex; flex-direction: column; gap: var(--vn-space-8); scroll-margin-top: var(--vn-space-4); }
+  .section-head { display: grid; gap: var(--vn-space-6); align-items: center; }
+  .section-text { display: flex; flex-direction: column; gap: var(--vn-space-3); }
+  .section-title { font-size: var(--vn-text-h2-size); line-height: var(--vn-text-h2-line-height); font-weight: var(--vn-text-h2-weight); }
+  .section-lead { font-size: var(--vn-text-body-lg-size); line-height: var(--vn-text-body-lg-line-height); color: var(--vn-gray-700); }
+  .section-img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--vn-radius-xl); background: var(--vn-color-bg-brand-soft); }
+
+  .prose { max-width: 760px; font-size: 17px; line-height: 28px; }
+  .prose h3 { margin-top: var(--vn-space-8); font-size: var(--vn-text-h3-size); line-height: var(--vn-text-h3-line-height); font-weight: var(--vn-text-h3-weight); }
+  .prose h3:first-child { margin-top: 0; }
+  .prose p, .prose ul, .prose ol { margin-top: var(--vn-space-3); }
+  .prose ul, .prose ol { padding-left: var(--vn-space-6); display: flex; flex-direction: column; gap: var(--vn-space-2); }
+  .prose a, .card a { text-decoration: underline; text-underline-offset: 3px; }
+
+  .cards { display: grid; gap: var(--vn-space-4); }
+  .card { padding: var(--vn-space-6); border: 1px solid var(--vn-color-border-default); border-radius: var(--vn-radius-lg); display: flex; flex-direction: column; gap: var(--vn-space-3); }
+  .card h3 { font-size: var(--vn-text-h3-size); line-height: var(--vn-text-h3-line-height); font-weight: var(--vn-text-h3-weight); }
+
+  .help {
+    margin-top: var(--vn-section-gap); padding: var(--vn-space-6); border-radius: var(--vn-radius-xl);
+    background: var(--vn-color-bg-brand-soft); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--vn-space-4);
+  }
+  .help-title { font-size: var(--vn-text-h3-size); line-height: var(--vn-text-h3-line-height); font-weight: var(--vn-font-weight-bold); }
+  .help-btn {
+    display: inline-flex; align-items: center; gap: var(--vn-space-2); min-height: var(--vn-control-md); padding: 0 var(--vn-space-6);
+    border-radius: var(--vn-radius-sm); background: var(--vn-color-action-secondary); color: var(--vn-color-text-inverse); font-weight: var(--vn-font-weight-semibold);
+  }
+  .help-btn:hover { color: var(--vn-color-text-inverse); text-decoration: none; background: var(--vn-blue-800); }
+
+  @media (min-width: 640px) {
+    .jump ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 1000px) {
+    .jump ul { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .section-head { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--vn-space-12); }
+    .section:nth-of-type(even) .section-head .section-img { order: -1; }
+    .help { padding: var(--vn-space-8) var(--vn-space-10); }
+  }
+</style>
