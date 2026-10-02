@@ -40,4 +40,4 @@ Before going live:
 
 ## Permissions
 
-`service_role` gets only `select` on `settings` and `email_templates`, `insert` on `email_log`, and `select/update (status)` on `orders`. That is migration `20261002122000_create_order_grants.sql`. Orders themselves are created only through `place_order()`.
+`service_role` gets only `select` on `settings` and `email_templates` and `insert` on `email_log`. Orders are created only through `place_order()` and marked as sent only through `mark_order_sent_to_partner()`, both security definer functions.

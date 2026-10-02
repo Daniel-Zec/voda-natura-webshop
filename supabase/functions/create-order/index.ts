@@ -174,9 +174,16 @@ async function sendEmails(admin: ReturnType<typeof createClient>, placed: Placed
     const { error: logError } = await admin.from('email_log').insert({ order_id: placed.order_id, template: m.template, recipient: to ?? '—', subject, status, error });
     if (logError) console.error('email_log insert failed', logError.message);
   }
-  if (client) await client.close().catch(() => {});
+  // denomailer's close() may return nothing, so don't chain .catch() on it.
+  if (client) {
+    try {
+      await client.close();
+    } catch {
+      /* connection already closed */
+    }
+  }
   if (partnerSent) {
-    const { error: upError } = await admin.from('orders').update({ status: 'sent_to_partner' }).eq('id', placed.order_id).eq('status', 'new');
+    const { error: upError } = await admin.rpc('mark_order_sent_to_partner', { p_order_id: placed.order_id });
     if (upError) console.error('status update failed', upError.message);
   }
 }
