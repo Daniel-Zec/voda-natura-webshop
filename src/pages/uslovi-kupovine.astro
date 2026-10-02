@@ -1,0 +1,108 @@
+---
+/**
+ * Uslovi kupovine (terms of purchase). Kept short and generic on purpose (Daniel, 2 Oct 2026):
+ * only what the Zakon o zaštiti potrošača and Zakon o elektronskoj trgovini require.
+ * VodaNatura operates under Decorambient d.o.o., which is the seller on the invoice.
+ * Delivery, returns, complaints and warranty are explained in more detail on /kupovina/.
+ */
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { site } from '../config/site';
+import { routes } from '../lib/url';
+
+const p = site.partner;
+const a = site.contact.address;
+const seller = `VodaNatura (${p.shortLegalName})`;
+const support = routes.page('kupovina');
+---
+
+<LegalLayout
+  title="Uslovi kupovine | VodaNatura"
+  heading="Uslovi kupovine"
+  description={`Uslovi kupovine u internet prodavnici VodaNatura (${p.shortLegalName}, Subotica): porudžbina, cene, plaćanje pouzećem, dostava, odustanak od kupovine i reklamacije.`}
+  updated="2. oktobar 2026."
+>
+  <h2 id="prodavac">1. Prodavac</h2>
+  <p>
+    Internet prodavnica VodaNatura ({site.url.replace('https://', '')}) posluje u okviru privrednog društva {p.shortLegalName}, koje je prodavac
+    i izdaje račun za svaku porudžbinu.
+  </p>
+  <dl>
+    <dt>Naziv</dt><dd>{p.legalName}</dd>
+    <dt>Adresa</dt><dd>{a.street}, {a.postalCode} {a.city}, Srbija</dd>
+    <dt>Matični broj</dt><dd>{p.registrationNumber}</dd>
+    <dt>PIB</dt><dd>{p.taxId}</dd>
+    <dt>Telefon</dt><dd>{site.contact.phone} ({site.contact.hours.toLowerCase()})</dd>
+    <dt>Email</dt><dd><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></dd>
+  </dl>
+
+  <h2 id="opste">2. Opšte odredbe</h2>
+  <p>
+    Ovi uslovi važe za svaku kupovinu na sajtu VodaNatura. Slanjem porudžbine potvrđujete da ste ih pročitali i da ih prihvatate.
+    Ugovor se zaključuje na srpskom jeziku, a smatra se zaključenim kada primite email potvrdu porudžbine.
+  </p>
+
+  <h2 id="cene">3. Proizvodi i cene</h2>
+  <ul>
+    <li>Sve cene su u dinarima (RSD) i uključuju PDV.</li>
+    <li>Cena dostave nije uračunata u cenu proizvoda. Dostavu plaćate kuriru prilikom preuzimanja, po cenovniku kurirske službe.</li>
+    <li>Fotografije su ilustrativne. Trudimo se da opisi i cene budu tačni; ako dođe do očigledne greške, javićemo vam se pre slanja i možete odustati od porudžbine.</li>
+  </ul>
+
+  <h2 id="porudzbina">4. Porudžbina</h2>
+  <ul>
+    <li>Poručujete bez registracije: izaberete proizvode, upišete ime, adresu, telefon i email i potvrdite porudžbinu.</li>
+    <li>Odmah nakon porudžbine dobijate email sa brojem porudžbine i spiskom proizvoda.</li>
+    <li>Ako neki proizvod u međuvremenu nije dostupan ili se isporučuje po porudžbini, kontaktiraćemo vas telefonom i dogovoriti dalje (deo porudžbine, zasebno slanje ili otkazivanje).</li>
+  </ul>
+
+  <h2 id="placanje">5. Plaćanje</h2>
+  <p>Plaćanje je isključivo pouzećem: gotovinom kuriru, u trenutku preuzimanja paketa. Račun izdaje {p.shortLegalName} iz Subotice.</p>
+
+  <h2 id="dostava">6. Dostava</h2>
+  <p>
+    Porudžbine šaljemo kurirskom službom {site.delivery.courier} na adrese u Srbiji. Rok isporuke za proizvode na stanju je {site.delivery.estimate},
+    a najkasnije 30 dana od porudžbine. Proizvodi označeni kao „Po porudžbini“ isporučuju se u roku navedenom na stranici proizvoda.
+    Više o dostavi: <a href={`${support}#dostava-i-placanje`}>Dostava i plaćanje</a>.
+  </p>
+
+  <h2 id="odustanak">7. Odustanak od kupovine</h2>
+  <ul>
+    <li>Imate pravo da odustanete od kupovine u roku od 14 dana od dana prijema proizvoda, bez navođenja razloga.</li>
+    <li>Odustanak nam javljate pisanim putem (email ili pošta) ili popunjavanjem obrasca ispod.</li>
+    <li>Proizvod vraćate u roku od 14 dana od odustanka. Troškove vraćanja snosite vi.</li>
+    <li>Novac vraćamo najkasnije 14 dana od prijema izjave o odustanku, a možemo sačekati da proizvod stigne ili da dobijemo dokaz da je poslat.</li>
+    <li>Odgovarate za umanjenu vrednost proizvoda ako je nastala zbog rukovanja koje nije neophodno da se proveri njegova priroda i funkcija (na primer ugradnja i korišćenje).</li>
+    <li>Pravo na odustanak nemate za zapečaćene proizvode koji se iz higijenskih razloga ne mogu vratiti kada se otvore (na primer raspakovani ulošci i membrane).</li>
+  </ul>
+  <div class="box" id="obrazac">
+    <p><strong>Obrazac za odustanak od ugovora</strong></p>
+    <p>
+      Prima: {p.shortLegalName}, {a.street}, {a.postalCode} {a.city}, {site.contact.email}<br />
+      Ovim obaveštavam da odustajem od ugovora o kupovini sledećih proizvoda: ______________________<br />
+      Broj porudžbine: ____________ &nbsp; Datum prijema: ____________<br />
+      Ime i prezime: ______________________<br />
+      Adresa: ______________________<br />
+      Potpis (samo ako se obrazac šalje u papirnom obliku) i datum: ____________
+    </p>
+  </div>
+
+  <h2 id="reklamacije">8. Reklamacije</h2>
+  <p>
+    Prodavac odgovara za saobraznost proizvoda ugovoru 2 godine od isporuke. Reklamaciju možete izjaviti emailom, telefonom ili poštom, uz broj
+    porudžbine ili račun. Odgovor dobijate u roku od 8 dana, a reklamacija se rešava u roku od 15 dana (za tehničku robu najkasnije 30 dana).
+    Više o tome: <a href={`${support}#reklamacije-i-povracaj`}>Reklamacije i povraćaj</a> i <a href={`${support}#garancija`}>Garancija</a>.
+  </p>
+
+  <h2 id="sporovi">9. Vansudsko rešavanje sporova</h2>
+  <p>
+    Ako spor ne rešimo dogovorom, možete pokrenuti postupak vansudskog rešavanja potrošačkog spora. Postupak je za potrošača besplatan, a prodavac
+    je dužan da u njemu učestvuje. Spisak tela za vansudsko rešavanje potrošačkih sporova objavljuje ministarstvo nadležno za trgovinu. Prigovor
+    možete podneti i preko Nacionalnog registra potrošačkih prigovora.
+  </p>
+
+  <h2 id="zavrsne">10. Završne odredbe</h2>
+  <p>
+    Na ove uslove primenjuju se propisi Republike Srbije. Zadržavamo pravo izmene uslova; za svaku porudžbinu važe uslovi objavljeni u trenutku
+    poručivanja. Obrada vaših podataka opisana je u <a href={routes.page('politika-privatnosti')}>Politici privatnosti</a>.
+  </p>
+</LegalLayout>

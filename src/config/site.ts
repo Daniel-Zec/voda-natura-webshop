@@ -27,6 +27,11 @@ export const site = {
   partner: {
     name: 'Decor Ambient d.o.o.',
     city: 'Subotica',
+    /** Legal details for the legal pages (Agencija za privredne registre, via decorambient.ls.rs, checked 2 Oct 2026). */
+    legalName: 'Decorambient d.o.o. za unutrašnju i spoljnu trgovinu, Subotica',
+    shortLegalName: 'Decorambient d.o.o.',
+    registrationNumber: '20771097',
+    taxId: '107266559',
     /** Installation in Subotica is booked by calling Decor Ambient (VODANATURA-75, q. 10). */
     installationPhone: '+381 63 29 22 19',
     /** No fixed installation price: it depends on the system, the place it goes and the distance, so it is agreed by phone (decided 1 Oct 2026). */

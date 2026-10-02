@@ -1,0 +1,60 @@
+---
+/**
+ * Politika privatnosti (privacy policy) under the Zakon o zaštiti podataka o ličnosti.
+ * Short and generic on purpose (Daniel, 2 Oct 2026). Decorambient d.o.o. is the data controller,
+ * because VodaNatura operates under it. Update this page when analytics or a new service is added.
+ */
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { site } from '../config/site';
+import { routes } from '../lib/url';
+
+const p = site.partner;
+const a = site.contact.address;
+---
+
+<LegalLayout
+  title="Politika privatnosti | VodaNatura"
+  heading="Politika privatnosti"
+  description={`Koje podatke prikuplja internet prodavnica VodaNatura (${p.shortLegalName}), zašto, koliko ih čuva i koja su vaša prava.`}
+  updated="2. oktobar 2026."
+>
+  <h2 id="rukovalac">1. Ko obrađuje vaše podatke</h2>
+  <p>
+    Rukovalac podacima je {p.legalName}, {a.street}, {a.postalCode} {a.city}, MB {p.registrationNumber}, PIB {p.taxId}, u okviru kojeg posluje
+    internet prodavnica VodaNatura. Za sva pitanja o podacima pišite na <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+  </p>
+
+  <h2 id="podaci">2. Koje podatke prikupljamo i zašto</h2>
+  <ul>
+    <li><strong>Porudžbina:</strong> ime, prezime, adresa, telefon, email i napomena. Potrebni su da isporučimo porudžbinu, izdamo račun i rešimo eventualnu reklamaciju (izvršenje ugovora i zakonska obaveza).</li>
+    <li><strong>Kontakt forma:</strong> ime, email, telefon (ako ga upišete) i poruka. Koristimo ih samo da odgovorimo na vaše pitanje.</li>
+    <li><strong>Tehnički podaci:</strong> serveri na kojima radi sajt automatski beleže osnovne podatke o pristupu (na primer IP adresu), radi bezbednosti i ispravnog rada.</li>
+  </ul>
+  <p>Ne prodajemo vaše podatke i ne šaljemo vam reklamne poruke bez vašeg pristanka.</p>
+
+  <h2 id="primaoci">3. Kome dostavljamo podatke</h2>
+  <ul>
+    <li>Kurirskoj službi {site.delivery.courier}: ime, adresa i telefon, radi dostave.</li>
+    <li>Pružaocima usluga koji za nas čuvaju podatke i šalju email poruke (hosting, baza podataka i email), samo u meri potrebnoj za rad prodavnice i uz obavezu čuvanja poverljivosti. Podaci se čuvaju na serverima u Evropskoj uniji.</li>
+    <li>Državnim organima, samo kada to propis nalaže.</li>
+  </ul>
+
+  <h2 id="cuvanje">4. Koliko dugo čuvamo podatke</h2>
+  <p>
+    Podatke o porudžbini čuvamo dok traju garancija i rok za reklamacije, a račune onoliko koliko propisi o računovodstvu zahtevaju. Poruke iz
+    kontakt forme čuvamo dok je potrebno da odgovorimo, najduže godinu dana. Nakon toga podatke brišemo.
+  </p>
+
+  <h2 id="prava">5. Vaša prava</h2>
+  <p>
+    Imate pravo da zatražite pristup svojim podacima, ispravku, brisanje, ograničenje obrade i prenos podataka, kao i da uložite prigovor na
+    obradu. Zahtev pošaljite na <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>; odgovaramo u roku od 30 dana. Ako smatrate da
+    su vaša prava povređena, možete podneti pritužbu Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti.
+  </p>
+
+  <h2 id="kolacici">6. Kolačići</h2>
+  <p>O kolačićima i lokalnom skladištu pregledača pročitajte na stranici <a href={routes.page('kolacici')}>Kolačići</a>.</p>
+
+  <h2 id="izmene">7. Izmene</h2>
+  <p>Ovu politiku možemo povremeno izmeniti. Važeća verzija je uvek objavljena na ovoj stranici, sa datumom poslednje izmene.</p>
+</LegalLayout>

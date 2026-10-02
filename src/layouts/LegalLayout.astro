@@ -1,0 +1,67 @@
+---
+/**
+ * Layout for the legal pages (uslovi kupovine, politika privatnosti, kolačići).
+ * Plain text in one readable column: breadcrumbs, H1, "last updated" line, then the page
+ * content as prose. VodaNatura operates under Decorambient d.o.o., which is the seller and
+ * the data controller, so every page names both (decided 2 Oct 2026).
+ */
+import BaseLayout from './BaseLayout.astro';
+import { Breadcrumbs } from '../components/ui/Breadcrumbs/Breadcrumbs';
+import { routes } from '../lib/url';
+
+interface Props {
+  title: string;
+  heading: string;
+  description: string;
+  updated: string;
+}
+
+const { title, heading, description, updated } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="vn-container">
+    <Breadcrumbs items={[{ label: 'Početna', href: routes.home() }, { label: heading }]} />
+    <article class="legal">
+      <header class="head">
+        <h1 class="title">{heading}</h1>
+        <p class="updated">Poslednja izmena: {updated}</p>
+      </header>
+      <div class="prose">
+        <slot />
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .legal { max-width: 760px; padding-bottom: var(--vn-space-16); }
+  .head { display: flex; flex-direction: column; gap: var(--vn-space-2); padding-top: var(--vn-space-6); }
+  .title { font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+  .updated { font-size: var(--vn-text-body-sm-size); line-height: var(--vn-text-body-sm-line-height); color: var(--vn-color-text-secondary); }
+
+  .prose { margin-top: var(--vn-space-8); font-size: 17px; line-height: 28px; }
+  .prose :global(h2) {
+    margin-top: var(--vn-space-10);
+    font-size: var(--vn-text-h3-size); line-height: var(--vn-text-h3-line-height); font-weight: var(--vn-text-h3-weight);
+    scroll-margin-top: var(--vn-space-4);
+  }
+  .prose :global(h2:first-child) { margin-top: 0; }
+  .prose :global(p), .prose :global(ul), .prose :global(ol), .prose :global(dl), .prose :global(.box) { margin-top: var(--vn-space-3); }
+  .prose :global(ul), .prose :global(ol) { padding-left: var(--vn-space-6); display: flex; flex-direction: column; gap: var(--vn-space-2); }
+  .prose :global(ul) { list-style: disc; }
+  .prose :global(ol) { list-style: decimal; }
+  .prose :global(a) { text-decoration: underline; text-underline-offset: 3px; }
+  .prose :global(dl) { display: grid; grid-template-columns: max-content 1fr; gap: var(--vn-space-1) var(--vn-space-4); }
+  .prose :global(dt) { font-weight: var(--vn-font-weight-semibold); }
+  .prose :global(.box) {
+    padding: var(--vn-space-5); border: 1px solid var(--vn-color-border-warm); border-radius: var(--vn-radius-lg);
+    background: var(--vn-color-bg-subtle);
+  }
+  .prose :global(.box p:first-child) { margin-top: 0; }
+
+  @media (max-width: 767px) {
+    .prose :global(dl) { grid-template-columns: 1fr; }
+    .prose :global(dd) { margin-bottom: var(--vn-space-2); }
+  }
+</style>

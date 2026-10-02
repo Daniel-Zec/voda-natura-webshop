@@ -1,0 +1,39 @@
+---
+/**
+ * Kolačići (cookies). The shop sets no tracking or advertising cookies: fonts are self-hosted and there
+ * is no analytics yet (VODANATURA-63). The cart and compare lists live in the browser's localStorage.
+ * If analytics or ads are added, update this page (and add consent if the tool needs it).
+ */
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { site } from '../config/site';
+import { routes } from '../lib/url';
+---
+
+<LegalLayout
+  title="Kolačići | VodaNatura"
+  heading="Kolačići"
+  description="Internet prodavnica VodaNatura ne koristi kolačiće za praćenje ni reklame. Korpa se pamti samo u vašem pregledaču."
+  updated="2. oktobar 2026."
+>
+  <h2 id="ukratko">Ukratko</h2>
+  <p>Sajt VodaNatura ne koristi kolačiće za praćenje posetilaca ni za reklame, i ne učitava sadržaj sa drugih sajtova koji bi vas pratio.</p>
+
+  <h2 id="skladiste">Šta sajt pamti u vašem pregledaču</h2>
+  <ul>
+    <li><strong>Korpa:</strong> proizvodi koje ste dodali u korpu, da ostanu tu kada pređete na drugu stranicu ili se vratite kasnije.</li>
+    <li><strong>Poređenje:</strong> proizvodi koje ste izabrali za poređenje.</li>
+  </ul>
+  <p>
+    Ovi podaci se čuvaju samo na vašem uređaju (lokalno skladište pregledača) i ne šalju se nama dok ne pošaljete porudžbinu. Neophodni su da korpa
+    radi, pa za njih nije potreban pristanak.
+  </p>
+
+  <h2 id="brisanje">Kako da ih obrišete</h2>
+  <p>Možete isprazniti korpu na sajtu ili obrisati podatke sajta u podešavanjima pregledača. Sajt i dalje radi, samo se korpa neće pamtiti.</p>
+
+  <h2 id="izmene">Izmene</h2>
+  <p>
+    Ako kasnije uvedemo alat za merenje posećenosti ili slične usluge, ova stranica će biti ažurirana, a gde je potrebno tražićemo vaš pristanak.
+    Više o obradi podataka: <a href={routes.page('politika-privatnosti')}>Politika privatnosti</a>. Pitanja: <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+  </p>
+</LegalLayout>
