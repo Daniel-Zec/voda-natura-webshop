@@ -20,6 +20,7 @@
 // "queued" so nothing is lost.
 import { createClient } from 'npm:@supabase/supabase-js@2';
 import { SMTPClient } from 'https://deno.land/x/denomailer@1.6.0/mod.ts';
+import { renderEmailHtml } from './email-html.ts';
 
 declare const EdgeRuntime: { waitUntil(p: Promise<unknown>): void } | undefined;
 
@@ -136,13 +137,22 @@ async function sendEmails(admin: ReturnType<typeof createClient>, placed: Placed
       : '',
   };
 
-  type Mail = { template: string; to: string | null; subject: string; body: string };
+  type Mail = { template: string; to: string | null; subject: string; body: string; html: string };
   const mails: Mail[] = [];
   const partner = tpl('order_to_partner');
   const customer = tpl('order_confirmation');
-  if (partner) mails.push({ template: 'order_to_partner', to: partnerEmail, subject: fill(partner.subject, vars), body: fill(partner.body, vars) });
-  if (customer) mails.push({ template: 'order_confirmation', to: v.email, subject: fill(customer.subject, vars), body: fill(customer.body, vars).replace(/\n{3,}/g, '\n\n') });
-  if (partner && !testMode) mails.push({ template: 'order_admin_copy', to: adminEmail, subject: `Kopija: ${fill(partner.subject, vars)}`, body: fill(partner.body, vars) });
+  // Plain text (fallback) and HTML (what most people see) from the same template.
+  const keepMarkers = { ...vars, items: '{items}', address: '{address}', made_to_order_note: '{made_to_order_note}' };
+  const html = (body: string, preheader: string) =>
+    renderEmailHtml({ text: fill(body, keepMarkers), items: placed.items, address: vars.address, madeToOrderNote: vars.made_to_order_note, preheader });
+  const text = (body: string) => fill(body, vars).replace(/\n{3,}/g, '\n\n');
+  if (partner) {
+    const subject = fill(partner.subject, vars);
+    mails.push({ template: 'order_to_partner', to: partnerEmail, subject, body: text(partner.body), html: html(partner.body, `Nova porudžbina ${placed.order_number}`) });
+    if (!testMode) mails.push({ template: 'order_admin_copy', to: adminEmail, subject: `Kopija: ${subject}`, body: text(partner.body), html: html(partner.body, `Kopija porudžbine ${placed.order_number}`) });
+  }
+  if (customer)
+    mails.push({ template: 'order_confirmation', to: v.email, subject: fill(customer.subject, vars), body: text(customer.body), html: html(customer.body, `Potvrda porudžbine ${placed.order_number}`) });
 
   const user = Deno.env.get('GMAIL_SMTP_USER');
   const pass = Deno.env.get('GMAIL_SMTP_PASSWORD');
@@ -163,7 +173,7 @@ async function sendEmails(admin: ReturnType<typeof createClient>, placed: Placed
       error = 'Slanje nije podešeno: nedostaje Gmail lozinka za aplikaciju (GMAIL_SMTP_USER / GMAIL_SMTP_PASSWORD).';
     } else {
       try {
-        await client.send({ from: `VodaNatura <${sender}>`, replyTo: sender, to, subject, content: m.body });
+        await client.send({ from: `VodaNatura <${sender}>`, replyTo: sender, to, subject, content: m.body, html: m.html });
         status = 'sent';
         if (m.template === 'order_to_partner' && !testMode) partnerSent = true;
       } catch (e) {

@@ -18,7 +18,7 @@ Built 2 Oct 2026. Pages: `/korpa/` (cart), `/porudzbina/` (checkout), `/porudzbi
    - the confirmation to the customer
    - a copy to Daniel (`admin_notify_email`)
 
-   Templates come from `email_templates`, and every email is written to `email_log`. **Test mode** (`email_test_mode = true`) sends everything to Daniel, with the real recipient in the subject. When the DA email is sent outside test mode, the order moves to `sent_to_partner`.
+   Templates come from `email_templates` (plain text, editable in the admin panel). Each email goes out as HTML (`email-html.ts`: branded header, bold labels, product table, highlighted total) with the plain text as a fallback. Every email is written to `email_log`. **Test mode** (`email_test_mode = true`) sends everything to Daniel, with the real recipient in the subject. When the DA email is sent outside test mode, the order moves to `sent_to_partner`.
 6. **Thank-you page.** It shows the order number from `?broj=`, plus the email address and the made-to-order note from `sessionStorage`.
 
 Shipping is not in the order total. Customers pay it to the courier, and every page says so.
