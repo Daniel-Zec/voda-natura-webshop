@@ -6,7 +6,8 @@ import raw from '../data/catalog.json';
 import type { StockState } from '../components/ui/StockStatus/StockStatus';
 import type { BadgeTone } from '../components/ui/Badge/Badge';
 import type { CartridgeSummary, CategorySummary, ProductSummary } from '../data/types';
-import { url } from './url';
+import { routes, url } from './url';
+import type { CartProduct } from './cartStore';
 
 export interface CatalogCategory {
   slug: string;
@@ -127,3 +128,13 @@ export function categoryImage(slug: string): CategorySummary['image'] {
 }
 
 export const setting = <T = string>(key: string, fallback: T): T => (catalog.settings[key] as T) ?? fallback;
+
+/** Every visible product by SKU, for the cart and checkout islands (current price and stock at publish time). */
+export function cartCatalog(): Record<string, CartProduct> {
+  return Object.fromEntries(
+    products.map((p) => {
+      const s = toSummary(p);
+      return [p.sku, { sku: p.sku, name: p.name, href: routes.product(p.slug), image: s.image, price: p.price, stock: s.stock }];
+    }),
+  );
+}

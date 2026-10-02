@@ -1,24 +1,18 @@
 /**
- * Minimal cart + compare store for the static shop pages.
+ * Cart + compare store for the static shop pages.
  *
  * Any element with `data-add-to-cart="<sku>" data-name data-price` adds one unit;
  * any checkbox with `data-compare="<sku>"` toggles compare (max 3). Header counters
  * use `data-cart-total`, `data-cart-count` and `data-compare-count`.
  *
- * Stored in localStorage only as a per-browser convenience; the order itself is
- * saved in Supabase at checkout (next milestone).
+ * The cart itself is in src/lib/cartStore.ts (shared with the cart and checkout pages);
+ * the order is saved in Supabase at checkout by the `create-order` function.
  */
+import { CART_EVENT, MAX_QTY, readCart, writeCart } from '../lib/cartStore';
 
-export interface CartLine {
-  sku: string;
-  name: string;
-  price: number;
-  qty: number;
-}
-
-const CART_KEY = 'vn-cart-v1';
 const COMPARE_KEY = 'vn-compare-v1';
 const COMPARE_MAX = 3;
+const SOURCE_KEY = 'vn-source';
 
 function read<T>(key: string, fallback: T): T {
   try {
@@ -33,12 +27,29 @@ function write(key: string, value: unknown) {
   try {
     localStorage.setItem(key, JSON.stringify(value));
   } catch {
-    /* private mode or storage blocked: the page still works, the cart just isn't remembered */
+    /* private mode or storage blocked: the page still works, the list just isn't remembered */
   }
 }
 
-export const getCart = () => read<CartLine[]>(CART_KEY, []);
+export const getCart = readCart;
 export const getCompare = () => read<{ sku: string; name: string }[]>(COMPARE_KEY, []);
+
+/** Where this visit came from (first page of the session), saved with the order: utm_source/medium/campaign or the referring site. */
+function rememberSource() {
+  try {
+    if (sessionStorage.getItem(SOURCE_KEY)) return;
+    const q = new URLSearchParams(window.location.search);
+    const utm = ['utm_source', 'utm_medium', 'utm_campaign'].map((k) => q.get(k)).filter(Boolean).join(' / ');
+    let ref = '';
+    if (document.referrer) {
+      const host = new URL(document.referrer).host;
+      if (host !== window.location.host) ref = host;
+    }
+    sessionStorage.setItem(SOURCE_KEY, utm || ref || 'direct');
+  } catch {
+    /* storage blocked */
+  }
+}
 
 function formatRSD(n: number) {
   return `${Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} RSD`;
@@ -71,12 +82,11 @@ function toast(message: string) {
 }
 
 function addToCart(sku: string, name: string, price: number) {
-  const cart = getCart();
+  const cart = readCart();
   const line = cart.find((l) => l.sku === sku);
-  if (line) line.qty += 1;
+  if (line) line.qty = Math.min(MAX_QTY, line.qty + 1);
   else cart.push({ sku, name, price, qty: 1 });
-  write(CART_KEY, cart);
-  render();
+  writeCart(cart);
   toast(`Dodato u korpu: ${name}`);
 }
 
@@ -110,4 +120,6 @@ document.addEventListener('change', (event) => {
 });
 
 window.addEventListener('storage', render);
+window.addEventListener(CART_EVENT, render);
+rememberSource();
 render();

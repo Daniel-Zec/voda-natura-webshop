@@ -6,7 +6,7 @@ import type { EmailTemplate } from '../lib/types';
 import { href } from '../router';
 import s from './screens.module.css';
 
-const templateLabel: Record<string, string> = { order_to_partner: 'Porudžbina za DA', order_confirmation: 'Potvrda kupcu' };
+const templateLabel: Record<string, string> = { order_to_partner: 'Porudžbina za DA', order_confirmation: 'Potvrda kupcu', order_admin_copy: 'Kopija meni' };
 const vars = ['order_number', 'order_date', 'first_name', 'last_name', 'street', 'house_number', 'apartment', 'city', 'postal_code', 'phone', 'email', 'items', 'total', 'address', 'customer_note', 'delivery_estimate'];
 
 export function Emails({ tab }: { tab: string }) {

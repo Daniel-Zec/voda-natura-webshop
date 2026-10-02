@@ -6,7 +6,7 @@ import type { OrderStatus } from '../lib/types';
 import { href } from '../router';
 import s from './screens.module.css';
 
-const templateLabel: Record<string, string> = { order_to_partner: 'Porudžbina za DA', order_confirmation: 'Potvrda kupcu' };
+const templateLabel: Record<string, string> = { order_to_partner: 'Porudžbina za DA', order_confirmation: 'Potvrda kupcu', order_admin_copy: 'Kopija meni' };
 
 export function OrderDetail({ id }: { id: number }) {
   const { api, openProduct } = useAdmin();

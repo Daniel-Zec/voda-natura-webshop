@@ -1,0 +1,84 @@
+---
+/**
+ * Hvala (/porudzbina/hvala/?broj=VN-2026-0001): shown after a successful order. The order number
+ * comes from the address; the email and the made-to-order note from sessionStorage (set by checkout).
+ * Works without JavaScript apart from those details. noindex.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Icon } from '../../components/ui/Icon/Icon';
+import { Button } from '../../components/ui/Button/Button';
+import { StepList } from '../../components/shop/StepList/StepList';
+import { site } from '../../config/site';
+import { routes } from '../../lib/url';
+
+const steps = [
+  { title: 'Potvrda emailom', text: 'Na vaš email stiže potvrda sa brojem porudžbine i spiskom proizvoda.' },
+  { title: 'Pakovanje', text: `${site.partner.shortLegalName} iz Subotice pakuje porudžbinu i izdaje račun.` },
+  { title: `Dostava ${site.delivery.courier}`, text: `Paket stiže za ${site.delivery.estimate}. Ako nešto nije dostupno, pozvaćemo vas.` },
+  { title: 'Plaćanje kuriru', text: 'Gotovinom, kada paket stigne. Uz to plaćate i troškove dostave.' },
+];
+---
+
+<BaseLayout title="Hvala na porudžbini | VodaNatura" description="Vaša porudžbina je primljena." noindex>
+  <div class="vn-container">
+    <section class="done" aria-labelledby="done-title">
+      <span class="icon" aria-hidden="true"><Icon name="check" size={32} /></span>
+      <h1 id="done-title" class="title">Hvala! Porudžbina je primljena.</h1>
+      <p class="number" data-order-wrap hidden>Broj porudžbine: <strong data-order-number></strong></p>
+      <p class="lead">
+        <span data-order-email-wrap hidden>Potvrdu šaljemo na <strong data-order-email></strong>. </span>
+        Ako je ne vidite za nekoliko minuta, proverite i folder za neželjenu poštu.
+      </p>
+      <p class="note" data-order-mto hidden>
+        Neki proizvodi iz porudžbine se isporučuju po porudžbini (3–4 meseca). Decor Ambient će vas pozvati da dogovorite da li šaljemo sve zajedno ili odvojeno.
+      </p>
+    </section>
+
+    <section class="next" aria-labelledby="next-title">
+      <h2 id="next-title" class="next-title">Šta sledi</h2>
+      <StepList steps={steps} />
+    </section>
+
+    <div class="actions">
+      <Button href={routes.home()} variant="primary">Nazad na početnu</Button>
+      <Button href={routes.support()} variant="outline">Dostava, povraćaj i garancija</Button>
+    </div>
+    <p class="help">Pitanja o porudžbini: {site.contact.phone} ({site.contact.hours.toLowerCase()}) ili <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.</p>
+  </div>
+</BaseLayout>
+
+<script>
+  const number = new URLSearchParams(window.location.search).get('broj');
+  let last: { number?: string; email?: string; madeToOrder?: boolean } = {};
+  try {
+    last = JSON.parse(sessionStorage.getItem('vn-last-order') ?? '{}');
+  } catch {
+    /* storage blocked */
+  }
+  const show = (sel: string) => document.querySelector<HTMLElement>(sel)?.removeAttribute('hidden');
+  const orderNumber = number && /^VN-\d{4}-\d+$/.test(number) ? number : last.number;
+  if (orderNumber) {
+    document.querySelector('[data-order-number]')!.textContent = orderNumber;
+    show('[data-order-wrap]');
+  }
+  if (last.email && (!number || last.number === number)) {
+    document.querySelector('[data-order-email]')!.textContent = last.email;
+    show('[data-order-email-wrap]');
+    if (last.madeToOrder) show('[data-order-mto]');
+  }
+</script>
+
+<style>
+  .done { display: flex; flex-direction: column; align-items: flex-start; gap: var(--vn-space-4); max-width: 720px; padding: var(--vn-space-10) 0 var(--vn-space-8); }
+  .icon { width: 64px; height: 64px; border-radius: var(--vn-radius-pill); display: flex; align-items: center; justify-content: center; background: var(--vn-color-bg-eco-soft); color: var(--vn-color-text-brand); }
+  .title { font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+  .number { font-size: var(--vn-text-body-lg-size); line-height: var(--vn-text-body-lg-line-height); padding: var(--vn-space-3) var(--vn-space-4); border-radius: var(--vn-radius-md); background: var(--vn-color-bg-subtle); border: 1px solid var(--vn-color-border-warm); }
+  .number[hidden], .note[hidden] { display: none; }
+  .lead { color: var(--vn-gray-700); font-size: var(--vn-text-body-lg-size); line-height: var(--vn-text-body-lg-line-height); }
+  .note { padding: var(--vn-space-3) var(--vn-space-4); border-radius: var(--vn-radius-sm); background: var(--vn-color-status-warning-bg); color: var(--vn-amber-700); }
+  .next { padding: var(--vn-space-8) 0; border-top: 1px solid var(--vn-color-border-subtle); }
+  .next-title { margin-bottom: var(--vn-space-6); font-size: var(--vn-text-h2-size); line-height: var(--vn-text-h2-line-height); font-weight: var(--vn-text-h2-weight); }
+  .actions { display: flex; flex-wrap: wrap; gap: var(--vn-space-3); }
+  .help { margin: var(--vn-space-6) 0 var(--vn-space-16); color: var(--vn-color-text-secondary); }
+  .help a { text-decoration: underline; text-underline-offset: 3px; }
+</style>

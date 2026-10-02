@@ -1,0 +1,33 @@
+---
+/**
+ * Korpa (/korpa/): the cart is saved in the visitor's browser, so the list is built there from
+ * the catalogue below (price and stock at publish time; the order function re-prices). noindex.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Breadcrumbs } from '../components/ui/Breadcrumbs/Breadcrumbs';
+import { CartPage } from '../components/shop/CartPage/CartPage';
+import { cartCatalog } from '../lib/catalog';
+import { site } from '../config/site';
+import { routes } from '../lib/url';
+---
+
+<BaseLayout title="Korpa | VodaNatura" description="Proizvodi u vašoj korpi. Plaćanje pouzećem, BEX dostava." noindex currentHref={routes.cart()}>
+  <div class="vn-container">
+    <Breadcrumbs items={[{ label: 'Početna', href: routes.home() }, { label: 'Korpa' }]} />
+    <h1 class="title">Korpa</h1>
+    <CartPage
+      client:load
+      catalog={cartCatalog()}
+      checkoutHref={routes.checkout()}
+      shopHref={routes.page('proizvodi')}
+      cartridgesHref={routes.category('ulosci')}
+      deliveryEstimate={site.delivery.estimate}
+      shippingNote={site.delivery.note}
+    />
+    <noscript><p>Korpa radi uz JavaScript. Ako je isključen, poručite telefonom: {site.contact.phone}.</p></noscript>
+  </div>
+</BaseLayout>
+
+<style>
+  .title { margin: var(--vn-space-6) 0 var(--vn-space-6); font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+</style>

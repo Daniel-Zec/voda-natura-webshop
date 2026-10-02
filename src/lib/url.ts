@@ -24,6 +24,8 @@ export const routes = {
   support: (section?: string) => url(`kupovina/${section ? `#${section}` : ''}`),
   search: (q?: string) => url(`pretraga/${q ? `?q=${encodeURIComponent(q)}` : ''}`),
   cart: () => url('korpa/'),
+  checkout: () => url('porudzbina/'),
+  orderThanks: (orderNumber?: string) => url(`porudzbina/hvala/${orderNumber ? `?broj=${encodeURIComponent(orderNumber)}` : ''}`),
   finder: () => url('izbor-filtera/'),
   compare: () => url('uporedi/'),
 } as const;

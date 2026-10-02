@@ -1,0 +1,44 @@
+---
+/**
+ * Poručivanje (/porudzbina/): guest checkout. The cart comes from the visitor's browser; the order
+ * goes to the Supabase Edge Function `create-order`, which saves it and emails Decor Ambient and
+ * the customer. noindex.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { Breadcrumbs } from '../../components/ui/Breadcrumbs/Breadcrumbs';
+import { CheckoutForm } from '../../components/shop/CheckoutForm/CheckoutForm';
+import { cartCatalog } from '../../lib/catalog';
+import { site } from '../../config/site';
+import { SUPABASE_URL } from '../../config/supabase';
+import { routes } from '../../lib/url';
+---
+
+<BaseLayout title="Poručivanje | VodaNatura" description="Unesite podatke za dostavu. Plaćanje pouzećem, bez registracije." noindex>
+  <div class="vn-container">
+    <Breadcrumbs items={[{ label: 'Početna', href: routes.home() }, { label: 'Korpa', href: routes.cart() }, { label: 'Poručivanje' }]} />
+    <header class="head">
+      <h1 class="title">Poručivanje</h1>
+      <p class="lead">Bez registracije. Plaćate gotovinom kuriru, tek kada paket stigne.</p>
+    </header>
+    <CheckoutForm
+      client:load
+      catalog={cartCatalog()}
+      endpoint={`${SUPABASE_URL}/functions/v1/create-order`}
+      thanksHref={routes.orderThanks()}
+      cartHref={routes.cart()}
+      termsHref={routes.page('uslovi-kupovine')}
+      privacyHref={routes.page('politika-privatnosti')}
+      phone={site.contact.phone}
+      deliveryEstimate={site.delivery.estimate}
+      shippingNote={site.delivery.note}
+      seller={`${site.partner.shortLegalName}, ${site.partner.city}`}
+    />
+    <noscript><p>Poručivanje radi uz JavaScript. Ako je isključen, poručite telefonom: {site.contact.phone}.</p></noscript>
+  </div>
+</BaseLayout>
+
+<style>
+  .head { display: flex; flex-direction: column; gap: var(--vn-space-2); margin: var(--vn-space-6) 0 var(--vn-space-8); }
+  .title { font-size: var(--vn-text-h1-size); line-height: var(--vn-text-h1-line-height); font-weight: var(--vn-text-h1-weight); }
+  .lead { color: var(--vn-gray-700); font-size: var(--vn-text-body-lg-size); line-height: var(--vn-text-body-lg-line-height); }
+</style>

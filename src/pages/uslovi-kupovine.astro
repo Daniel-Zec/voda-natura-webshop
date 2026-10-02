@@ -11,7 +11,6 @@ import { routes } from '../lib/url';
 
 const p = site.partner;
 const a = site.contact.address;
-const seller = `VodaNatura (${p.shortLegalName})`;
 const support = routes.page('kupovina');
 ---
 
@@ -27,7 +26,8 @@ const support = routes.page('kupovina');
     i izdaje račun za svaku porudžbinu.
   </p>
   <dl>
-    <dt>Naziv</dt><dd>{p.legalName}</dd>
+    <dt>Prodavac</dt><dd>VodaNatura ({p.shortLegalName})</dd>
+    <dt>Pun naziv</dt><dd>{p.legalName}</dd>
     <dt>Adresa</dt><dd>{a.street}, {a.postalCode} {a.city}, Srbija</dd>
     <dt>Matični broj</dt><dd>{p.registrationNumber}</dd>
     <dt>PIB</dt><dd>{p.taxId}</dd>
