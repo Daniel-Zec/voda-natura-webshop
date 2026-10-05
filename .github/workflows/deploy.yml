@@ -97,9 +97,20 @@ jobs:
         env:
           STORYBOOK_BASE: /storybook/
       - name: Deploy to Cloudflare
+        id: wrangler
         if: steps.gate.outputs.run == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
+          wranglerVersion: '4'
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy
+      # Show Wrangler's error as an annotation on the run page, so it can be read without the full log.
+      - name: Report Cloudflare error
+        if: failure() && steps.wrangler.outcome == 'failure'
+        env:
+          ERR: ${{ steps.wrangler.outputs.command-stderr }}
+          OUT: ${{ steps.wrangler.outputs.command-output }}
+        run: |
+          msg=$(printf '%s\n%s' "$ERR" "$OUT" | grep -v '^\s*$' | tail -25 | tr '\n' ' ' | cut -c1-3000)
+          echo "::error title=Cloudflare deploy::$msg"
