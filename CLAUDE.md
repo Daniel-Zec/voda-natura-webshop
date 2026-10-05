@@ -3,7 +3,7 @@
 Home water-filter shop for Serbia. Owner: Daniel Zec. Partner Decor Ambient (DA) ships and collects cash on delivery; VodaNatura earns commission. Planning lives in Jira (project VODANATURA, key decisions in VODANATURA-75) and the claude.ai project docs (Admin Panel Guide, SEO Build Guide, Knowledge Base, design tokens).
 
 ## Stack
-Astro 7 (static) + React 19 components with CSS modules, Storybook 10 for the design system, Supabase project `vodanatura` (ref `cgaoexscwzjgznphhpzw`, eu-central-1) for data/auth/email/cron. Test hosting: GitHub Pages under `/voda-natura-webshop/`.
+Astro 7 (static) + React 19 components with CSS modules, Storybook 10 for the design system, Supabase project `vodanatura` (ref `cgaoexscwzjgznphhpzw`, eu-central-1) for data/auth/email/cron. Hosting: Cloudflare Workers static assets (`wrangler.jsonc`, worker `vodanatura`) on https://vodanatura.com and www (built with `BASE_PATH=/`); backup address vodanatura.daniel-zec.workers.dev. GitHub Pages under `/voda-natura-webshop/` still publishes in parallel. Both deploy from `.github/workflows/deploy.yml`; still `noindex` until launch.
 
 ## Conventions
 - Components only use `--vn-*` tokens. `colors.css` and `typography.css` come from the Figma export and are not edited by hand; `layout.css` holds spacing/radius measured from the mock-ups.
