@@ -1,0 +1,13 @@
+// Cloudflare Workers hosting for the shop (static files only, no server code).
+// Deployed by the "cloudflare" job in .github/workflows/deploy.yml.
+// The build for Cloudflare uses BASE_PATH=/ (the site lives at the root, not under /voda-natura-webshop/).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vodanatura",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
