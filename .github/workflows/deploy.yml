@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      SITE_URL: ${{ vars.CLOUDFLARE_SITE_URL || 'https://vodanatura.workers.dev' }}
+      SITE_URL: ${{ vars.CLOUDFLARE_SITE_URL || 'https://vodanatura.daniel-zec.workers.dev' }}
       BASE_PATH: /
       PUBLIC_NOINDEX: 'true'
     steps:
