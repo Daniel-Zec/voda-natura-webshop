@@ -1,4 +1,12 @@
 import styles from './SiteFooter.module.css';
+import { Icon } from '../../ui/Icon/Icon';
+
+interface SocialLink {
+  network: 'instagram' | 'facebook';
+  label: string;
+  /** Profile URL. Empty = shown dimmed, not clickable, until the link exists. */
+  href: string;
+}
 
 interface Link {
   label: string;
@@ -15,11 +23,13 @@ export interface SiteFooterProps {
   groups: LinkGroup[];
   contact: { phone: string; phoneHref?: string; email: string; hours: string; /** Street and city, one line each */ address?: string[] };
   legal: Link[];
+  /** Social profile icons under the brand text */
+  social?: SocialLink[];
   year?: number;
 }
 
-/** Dark footer: brand and partner note, link groups, contact, legal links. */
-export function SiteFooter({ logoSrc, about, groups, contact, legal, year = new Date().getFullYear() }: SiteFooterProps) {
+/** Dark footer: brand and partner note, social icons, link groups, contact, legal links. */
+export function SiteFooter({ logoSrc, about, groups, contact, legal, social = [], year = new Date().getFullYear() }: SiteFooterProps) {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -27,6 +37,23 @@ export function SiteFooter({ logoSrc, about, groups, contact, legal, year = new 
           <div className={styles.brand}>
             <img src={logoSrc} alt="VodaNatura" width={200} height={38} loading="lazy" />
             <p className={styles.about}>{about}</p>
+            {social.length > 0 && (
+              <ul role="list" className={styles.social} aria-label="Društvene mreže">
+                {social.map((s) => (
+                  <li key={s.network}>
+                    {s.href ? (
+                      <a href={s.href} target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                        <Icon name={s.network} size={20} label={`VodaNatura na mreži ${s.label}`} />
+                      </a>
+                    ) : (
+                      <span className={`${styles.socialLink} ${styles.socialPending}`} title={`${s.label} – uskoro`}>
+                        <Icon name={s.network} size={20} label={`${s.label} – uskoro`} />
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
           {groups.map((group) => (
             <nav key={group.title} aria-label={group.title} className={styles.group}>

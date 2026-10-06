@@ -34,6 +34,7 @@ const robots = noindex || siteNoindex ? 'noindex, nofollow' : 'index, follow';
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const ogImageUrl = new URL(url(ogImage), Astro.site).toString();
 
+const socialUrls = site.social.map((s) => s.url as string).filter(Boolean);
 const organization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -43,6 +44,7 @@ const organization = {
   email: site.contact.email,
   telephone: site.contact.phoneHref || undefined,
   openingHours: site.contact.openingHours,
+  sameAs: socialUrls.length ? socialUrls : undefined,
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.contact.address.street,
@@ -128,6 +130,7 @@ const announcement = [
         address: [site.contact.address.street, `${site.contact.address.postalCode} ${site.contact.address.city}`],
       }}
       legal={footerNav.legal}
+      social={site.social.map((s) => ({ network: s.network, label: s.label, href: s.url }))}
     />
 
     <div class="vn-toast" data-toast role="status" aria-live="polite" hidden></div>

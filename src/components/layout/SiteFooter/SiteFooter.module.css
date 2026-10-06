@@ -52,3 +52,19 @@
 }
 
 .address { display: flex; flex-direction: column; font-style: normal; }
+
+.social { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--vn-space-3); }
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--vn-space-10);
+  height: var(--vn-space-10);
+  border: 1px solid var(--vn-gray-500);
+  border-radius: 50%;
+  color: var(--vn-color-text-inverse);
+  transition: color 0.15s, border-color 0.15s;
+}
+a.socialLink:hover { color: var(--vn-blue-200); border-color: var(--vn-blue-200); }
+a.socialLink:focus-visible { outline: 2px solid var(--vn-blue-200); outline-offset: 2px; }
+.socialPending { opacity: 0.45; cursor: default; }

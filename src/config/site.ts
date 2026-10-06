@@ -45,6 +45,15 @@ export const site = {
     note: 'Troškove dostave plaćate kuriru prilikom preuzimanja.',
   },
 
+  /**
+   * Social profiles, shown as icons in the footer and as `sameAs` in the Organization JSON-LD.
+   * Empty url = the icon shows dimmed and not clickable ("uskoro") until Daniel sends the link.
+   */
+  social: [
+    { network: 'instagram', label: 'Instagram', url: '' },
+    { network: 'facebook', label: 'Facebook', url: '' },
+  ],
+
   warrantyYears: 2,
 } as const;
 
