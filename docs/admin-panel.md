@@ -29,7 +29,7 @@ UI language: Serbian Latin; admin body text 14 px; only `--vn-*` tokens.
 | `#/provizija`, `#/provizija/stope` | Commission summary (earned / pending / cancelled, by line, product or category, CSV) and rates (default → category → product) |
 | `#/marketing` | Hero, promo banners, announcement bar with schedule and desktop/mobile preview |
 | `#/emailovi` (+ `/dnevnik`, `/podesavanja`) | Templates with variables and live preview, sending log, email settings with test mode |
-| `#/podesavanja` | Shop details, commission earn days, dashboard thresholds, idle logout, publishing |
+| `#/podesavanja` | Shop details, social links (Instagram, Facebook → footer icons and JSON-LD `sameAs`; empty = dimmed icon), commission earn days, dashboard thresholds, idle logout, publishing |
 
 The **product pop-up** (`ProductModal.tsx`) is the only place a product is edited; it opens from the table,
 gallery, dashboard and order detail. Tabs: description + specs, images + PDFs, stock (made-to-order flag and DA

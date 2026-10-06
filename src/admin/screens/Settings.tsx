@@ -7,6 +7,14 @@ import s from './screens.module.css';
 
 const textKeys = ['shop_phone', 'shop_hours', 'delivery_estimate', 'installation_phone', 'installation_price'] as const;
 const numKeys = ['commission_earn_days', 'price_rounding_rsd', 'order_stuck_days', 'stock_import_warn_days', 'admin_idle_minutes'] as const;
+/** Social profile links: shown as footer icons in the shop. Empty = icon dimmed ("uskoro"). */
+const socialKeys = [
+  { key: 'social_instagram_url', label: 'Instagram', host: /^(https?:\/\/)?(www\.)?instagram\.com\/.+/i, example: 'https://www.instagram.com/vodanatura' },
+  { key: 'social_facebook_url', label: 'Facebook', host: /^(https?:\/\/)?(www\.|m\.)?(facebook|fb)\.com\/.+/i, example: 'https://www.facebook.com/vodanatura' },
+] as const;
+const allTextKeys = [...textKeys, ...socialKeys.map((x) => x.key)];
+/** "instagram.com/x" or "http://…" → "https://instagram.com/x" */
+const normalizeUrl = (x: string) => (x.trim() ? x.trim().replace(/^(https?:\/\/)?/i, 'https://') : '');
 
 export function Settings() {
   const { api, catalog, reloadCatalog, email, markChanged } = useAdmin();
@@ -14,19 +22,21 @@ export function Settings() {
   const { busy, run } = useAction();
 
   useEffect(() => {
-    if (catalog && !v) setV(Object.fromEntries([...textKeys, ...numKeys].map((k) => [k, settingText(catalog.settings, k)])));
+    if (catalog && !v) setV(Object.fromEntries([...allTextKeys, ...numKeys].map((k) => [k, settingText(catalog.settings, k)])));
   }, [catalog, v]);
   if (!catalog || !v) return <Loading />;
 
   const placeholder = (x: string) => /\[.*\]/.test(x);
-  const changed = [...textKeys, ...numKeys].filter((k) => v[k] !== settingText(catalog.settings, k));
-  const bad = numKeys.filter((k) => v[k] !== '' && !(Number(v[k]) >= 0));
+  const changed = [...allTextKeys, ...numKeys].filter((k) => v[k] !== settingText(catalog.settings, k));
+  const socialError = (k: (typeof socialKeys)[number]) =>
+    v[k.key].trim() && !k.host.test(v[k.key].trim()) ? `Unesite celu adresu profila, npr. ${k.example}` : undefined;
+  const bad = [...numKeys.filter((k) => v[k] !== '' && !(Number(v[k]) >= 0)), ...socialKeys.filter((k) => socialError(k))];
   const save = () =>
     run(async () => {
       const out: Record<string, unknown> = {};
-      for (const k of changed) out[k] = (numKeys as readonly string[]).includes(k) ? (v[k] === '' ? null : Number(v[k])) : v[k];
+      for (const k of changed) out[k] = (numKeys as readonly string[]).includes(k) ? (v[k] === '' ? null : Number(v[k])) : socialKeys.some((x) => x.key === k) ? normalizeUrl(v[k]) : v[k].trim();
       await api.saveSettings(out);
-      if (changed.some((k) => (textKeys as readonly string[]).includes(k))) markChanged();
+      if (changed.some((k) => (allTextKeys as readonly string[]).includes(k))) markChanged();
       await reloadCatalog();
     }, 'Podešavanja sačuvana');
 
@@ -65,6 +75,20 @@ export function Settings() {
               {field('installation_phone', 'Telefon DA za ugradnju (Subotica)')}
               {field('installation_price', 'Cena ugradnje u Subotici')}
             </div>
+          </Card>
+          <Card title="Društvene mreže" extra={<small>ikonice u podnožju sajta</small>}>
+            <div className={ui.grid2}>
+              {socialKeys.map((k) => (
+                <Field key={k.key} label={k.label} hint={v[k.key] ? undefined : 'Prazno = ikonica je siva i ne može se kliknuti.'} error={socialError(k)}>
+                  {(id) => (
+                    <Input id={id} type="url" inputMode="url" placeholder={k.example} value={v[k.key]} onChange={(e) => setV({ ...v, [k.key]: e.target.value })} />
+                  )}
+                </Field>
+              ))}
+            </div>
+            <p className={ui.small} style={{ color: 'var(--vn-color-text-muted)' }}>
+              Posle čuvanja kliknite „Objavi” da bi se linkovi pojavili na sajtu.
+            </p>
           </Card>
           <Card title="Provizija i cene">
             <div className={ui.grid2}>

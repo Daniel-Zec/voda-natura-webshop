@@ -47,7 +47,8 @@ export const site = {
 
   /**
    * Social profiles, shown as icons in the footer and as `sameAs` in the Organization JSON-LD.
-   * Empty url = the icon shows dimmed and not clickable ("uskoro") until Daniel sends the link.
+   * The real links are set in Admin → Podešavanja → Društvene mreže (settings `social_instagram_url`,
+   * `social_facebook_url`) and win over these. Empty everywhere = icon dimmed and not clickable ("uskoro").
    */
   social: [
     { network: 'instagram', label: 'Instagram', url: '' },

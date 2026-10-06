@@ -10,6 +10,7 @@ import { SiteFooter } from '../components/layout/SiteFooter/SiteFooter';
 import { site } from '../config/site';
 import { mainNav, finderLink, footerNav } from '../config/navigation';
 import { routes, url } from '../lib/url';
+import { setting } from '../lib/catalog';
 
 interface Props {
   /** Full <title>, max ~60 characters (SEO guide templates) */
@@ -34,7 +35,13 @@ const robots = noindex || siteNoindex ? 'noindex, nofollow' : 'index, follow';
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const ogImageUrl = new URL(url(ogImage), Astro.site).toString();
 
-const socialUrls = site.social.map((s) => s.url as string).filter(Boolean);
+// Social links come from Admin → Podešavanja → Društvene mreže (settings social_<network>_url); site.ts is the fallback.
+const social = site.social.map((s) => ({
+  network: s.network,
+  label: s.label,
+  href: String(setting(`social_${s.network}_url`, s.url as string) || s.url || '').trim(),
+}));
+const socialUrls = social.map((s) => s.href).filter(Boolean);
 const organization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -130,7 +137,7 @@ const announcement = [
         address: [site.contact.address.street, `${site.contact.address.postalCode} ${site.contact.address.city}`],
       }}
       legal={footerNav.legal}
-      social={site.social.map((s) => ({ network: s.network, label: s.label, href: s.url }))}
+      social={social}
     />
 
     <div class="vn-toast" data-toast role="status" aria-live="polite" hidden></div>

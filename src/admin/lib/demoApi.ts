@@ -143,6 +143,8 @@ const settings: Settings = {
   delivery_estimate: 'oko 4 radna dana',
   installation_phone: '[TELEFON DECOR AMBIENT]',
   installation_price: '[CENA UGRADNJE]',
+  social_instagram_url: '',
+  social_facebook_url: '',
   order_stuck_days: 3,
   stock_import_warn_days: 7,
   price_sync_last_run: null,
